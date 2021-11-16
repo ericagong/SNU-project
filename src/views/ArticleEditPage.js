@@ -11,7 +11,7 @@ class ArticleEditPage extends Component {
             <div className = 'ArticleEditPage'>
                 <Header/>
                 ArticleEditPage
-                
+                <ArticleEdit/>
             </div>
         )
     }
