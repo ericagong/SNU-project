@@ -4,8 +4,25 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';  
+
+import userReducer from './store/reducers/userReducer';
+// import articleReducer from './store/reducers/articleReducer';
+// import commentReducer from './store/reducers/commentReducer';
+
+const rootReducer = combineReducers({
+    userR : userReducer,
+    // articleR : articleReducer,
+    // commentR : commentReducer,
+})
+
+const store = createStore(rootReducer)
+
 ReactDOM.render(
+    <Provider store = {store} >
         <App /> 
+    </Provider>
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
