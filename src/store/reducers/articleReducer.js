@@ -72,12 +72,6 @@ const initialArticleState = {
     selectedArticle : null
 }
 
-// export const GET_ARTICLES = 'GET_ARTICLES'
-// export const GET_ARTICLE = 'GET_ARTICLE'
-// export const CREATE_ARTICLE = 'CREATE_ARTICLE'
-// export const EDIT_ARTICLE = 'EDIT_ARTICLE'
-// export const DELETE_ARTICLE = 'DELETE_ARTICLE'
-
 const articleReducer = (state = initialArticleState, action) => {
   switch(action.type) {
     case actionTypes.GET_ARTICLES:
@@ -92,7 +86,7 @@ const articleReducer = (state = initialArticleState, action) => {
         title : action.title,
         content : action.content
       }
-      return { ...state, articles : [ ...articles, newArticle ]}
+      return { ...state, articles : [ ...state.articles, newArticle ]}
     case actionTypes.EDIT_ARTICLE:
       const modified = state.articles.map((article) => {
         if(article.id === action.targetArticle.id) {

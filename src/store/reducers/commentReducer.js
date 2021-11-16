@@ -148,7 +148,7 @@ const commentReducer = (state = initialCommentState, action) => {
         author_id : action.author_id,
         content : action.content,
       }
-      return { ...state, comments : [ ...commnets, newComment ]}
+      return { ...state, comments : [ ...state.comments, newComment ]}
     case actionTypes.EDIT_COMMENT:
       const modified = state.comments.map((comment) => {
         if(comment.id === action.targetComment.id) {

@@ -8,13 +8,13 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';  
 
 import userReducer from './store/reducers/userReducer';
-// import articleReducer from './store/reducers/articleReducer';
-// import commentReducer from './store/reducers/commentReducer';
+import articleReducer from './store/reducers/articleReducer';
+import commentReducer from './store/reducers/commentReducer';
 
 const rootReducer = combineReducers({
     userR : userReducer,
-    // articleR : articleReducer,
-    // commentR : commentReducer,
+    articleR : articleReducer,
+    commentR : commentReducer,
 })
 
 const store = createStore(rootReducer)
