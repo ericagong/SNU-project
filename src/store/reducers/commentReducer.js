@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/ActionTypes';
 
-const initialState = {
+const initialCommentState = {
     comments : [
         {
           "id": 1,
@@ -130,6 +130,41 @@ const initialState = {
         }
     ],
     selectedComment : null
+}
+
+// export const GET_COMMENTS = 'GET_COMMENTS'
+// export const CREATE_COMMENT = 'CREATE_COMMENT'
+// export const EDIT_COMMENT = 'EDIT_COMMENT'
+// export const DELETE_COMMENT = 'DELETE_COMMENT'
+
+const commentReducer = (state = initialCommentState, action) => {
+  switch(action.type) {
+    case actionTypes.GET_COMMENTS:
+      return state
+    case actionTypes.CREATE_COMMENT:
+      const newComment = {
+        id : state.comments.length + 1,
+        article_id : action.article_id,
+        author_id : action.author_id,
+        content : action.content,
+      }
+      return { ...state, comments : [ ...commnets, newComment ]}
+    case actionTypes.EDIT_COMMENT:
+      const modified = state.comments.map((comment) => {
+        if(comment.id === action.targetComment.id) {
+          return { ...comment, content : action.content }
+        }
+        else return { ...comment }
+      })
+      return { ...state, comment : modified }
+    case actionTypes.DELETE_COMMENT:
+      const deleted = state.comments.filter((comment) => {
+        return (comment.id !== action.targetComment.id)
+      })
+      return { ...state, comment : deleted }
+    default:
+      return state
+  }
 }
 
 export default commentReducer;

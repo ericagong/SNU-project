@@ -87,7 +87,7 @@ const articleReducer = (state = initialArticleState, action) => {
       return { ...state, selectedArticle : target }
     case actionTypes.CREATE_ARTICLE:
       const newArticle = {
-        id : action.id,
+        id : state.articles.length + 1,
         author_id : action.author_id,
         title : action.title,
         content : action.content
@@ -98,9 +98,7 @@ const articleReducer = (state = initialArticleState, action) => {
         if(article.id === action.targetArticle.id) {
           return { ...article, title : action.editTitle, content : action.editContent }
         }
-        else {
-          return { ...article }
-        }
+        else return { ...article }
       })
       return { ...state, articles : modified }
     case actionTypes.DELETE_ARTICLE:

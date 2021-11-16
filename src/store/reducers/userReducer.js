@@ -27,6 +27,8 @@ const initialUserState = {
     loginUser : null
 }
 
+// export const SET_USER = 'SET_USER'
+// export const GET_USERS = 'GET_USERS'
 
 const userReducer = (state = initialUserState, action) => {
     switch(action.type) {
@@ -37,9 +39,7 @@ const userReducer = (state = initialUserState, action) => {
                 if(user.id === action.targetUser.id) {
                     return { ...user, logged_in : !user.logged_in }
                 }
-                else {
-                    return { ...user }
-                }
+                else return { ...user }
             })
             return { ...state, users : modified }
         default:
