@@ -1,30 +1,31 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-class ArticlePreview extends Component {
+import * as actionTypes from '../../store/actions/ActionTypes';
+
+class ArticleCreate extends Component {
     state = {
+        user : {},
         title : '',
         content : '',
         tab : "Write",
-        // TODO: get curr user based on reducer
-        user : 'curr_user',
-        confirm : false,
+    }
+
+    constructor(props) {
+        super(props)
+        this.state.user = this.props.storedUsers.find((user) => {
+            return (user.logged_in === true)
+        })
     }
 
     clickBackHandler = () => {
         this.props.history.push('/articles')
     }
 
-    // TODO: Add new article to DB
     clickConfirmHandler = () => {
-        // TODO: change user to author_id
-        let newArticle = {
-            id : this.state.title,
-            author_id : this.state.user,
-            title : this.state.title,
-            content : this.state.content,
-        }
-        console.log(newArticle)
+        this.props.onStoreArticle(this.state.user, this.state.title, this.state.content)
+        this.props.history.push(`/articles/${this.props.storedSelectedArticle.id}`)
     }
 
     clickPreviewHandler = () => {
@@ -41,25 +42,24 @@ class ArticlePreview extends Component {
             currTab = (
                 <div className = 'WriteTab'>
                     <input 
-                    id = 'article-title-input' 
-                    type = 'text' 
-                    placeholder = 'Title'
-                    onChange = {(event) => this.setState( { title : event.target.value })}
-                    >
+                        id = 'article-title-input' 
+                        type = 'text' 
+                        placeholder = 'Title'
+                        value = {this.state.title}
+                        onChange = {(event) => this.setState( { title : event.target.value })}>
                     </input>
                     <textarea
                         id = 'article-content-input' 
                         type = 'text' 
                         row = '10'
                         placeholder = 'Content'
-                        onChange = {(event) => this.setState( { content : event.target.value })}
-                    >
+                        value = {this.state.content}
+                        onChange = {(event) => this.setState( { content : event.target.value })}>
                     </textarea>
                 </div>
             )
         }
         else if(this.state.tab === "Preview") {
-            // TODO: put article properties 
             currTab = (
                 <div className = 'PreviewTab'>
                     <p id = 'article-author'>{this.state.user}</p>
@@ -98,4 +98,19 @@ class ArticlePreview extends Component {
     }
 }
 
-export default withRouter(ArticlePreview);
+const mapDispatchToProps = dispatch => {
+    return {
+        onStoreArticle : (title, content) => {
+            dispatch({ type : actionTypes.CREATE_ARTICLE, title : title, content : content })
+        }
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        storedUsers : state.userR.users,
+        storedSelectedArticle : state.articleR.selectedArticle
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ArticleCreate));
