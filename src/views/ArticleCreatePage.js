@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+
+import Header from '../containers/header/Header';
+import ArticleCreate from '../containers/articles/ArticleCreate';
 
 class ArticleCreatePage extends Component {
 
@@ -7,7 +9,9 @@ class ArticleCreatePage extends Component {
     render () {
         return (
             <div className = 'ArticleCreatePage'>
+                <Header/>
                 ArticleCreatePage
+                <ArticleCreate/>
             </div>
         )
     }

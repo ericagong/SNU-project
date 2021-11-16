@@ -27,7 +27,7 @@ class Login extends Component {
             redirect = <Redirect to = '/articles'/>
         }
         return (
-            <div className = 'LoginPage'>
+            <div className = 'Login'>
                 {redirect}
                 LoginPage
                 <input 
