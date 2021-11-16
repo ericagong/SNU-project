@@ -29,7 +29,7 @@ class ArticleCreate extends Component {
     }
 
     clickConfirmHandler = () => {
-        this.props.onStoreArticle(this.state.user, this.state.title, this.state.content)
+        this.props.onCreateArticle(this.state.user, this.state.title, this.state.content)
         this.props.history.push(`/articles/${this.state.id}`)
     }
 
@@ -105,7 +105,7 @@ class ArticleCreate extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onStoreArticle : (title, content) => {
+        onCreateArticle : (title, content) => {
             dispatch({ type : actionTypes.CREATE_ARTICLE, title : title, content : content })
         }
     }

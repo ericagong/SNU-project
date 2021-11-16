@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Article from '../../components/article/Article';
+import * as actionTypes from '../../store/actions/ActionTypes';
 
 class ArticleList extends Component {
   state = {
@@ -18,27 +19,35 @@ class ArticleList extends Component {
     this.state.articles = this.props.storedArticles
   }
 
+  componentDidMount() {
+    this.props.onGetArticles()
+  }
 
   clickCreateHandler = () => {
       this.props.history.push('/articles/create')
   }
 
-  clickTitleHandler = (article_id) => {
-      this.props.history.push(`/articles/${article_id}`)
+  clickTitleHandler = (article) => {
+    this.props.onGetArticle(article)  
+    this.props.history.push(`/articles/${article.id}`)
   }
 
   render () {
     console.log(this.state.user)
     const articles = this.state.articles.map((article) => {
-        return (
-            <Article 
-                key = {article.id}
-                article_id = {article.id}
-                article_title = {article.title}
-                author_name = {article.author_id}
-                clickTitle = {() => this.clickTitleHandler(article.id)}
-            />
-        )
+      let author = this.props.storedUsers.find((user) => {
+        return (user.id === article.author_id)
+      })
+
+      return (
+          <Article 
+              key = {article.id}
+              article_id = {article.id}
+              article_title = {article.title}
+              author_name = {author.name}
+              clickTitle = {() => this.clickTitleHandler(article)}
+          />
+      )
     })
 
     return ( 
@@ -54,6 +63,17 @@ class ArticleList extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    onGetArticles : () => {
+      dispatch({ type : actionTypes.GET_ARTICLES})
+    },
+    onGetArticle : (targetArticle) => {
+      dispatch({ type: actionTypes.GET_ARTICLE, targetArticle : targetArticle})
+    },
+  }
+}
+
 const mapStateToProps = state => {
   return {
     storedUsers : state.userR.users,
@@ -61,4 +81,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(withRouter(ArticleList));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ArticleList));

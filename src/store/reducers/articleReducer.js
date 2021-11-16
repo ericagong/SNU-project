@@ -96,7 +96,7 @@ const articleReducer = (state = initialArticleState, action) => {
       })
       return { ...state, articles : modified }
     case actionTypes.DELETE_ARTICLE:
-      const deleted = state.article.filter((article) => {
+      const deleted = state.articles.filter((article) => {
         return (article.id !== action.targetArticle.id)
       })
       return { ...state, articles : deleted }
