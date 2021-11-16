@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
-import Article from '../../components/article/Article';
-
 class ArticlePreview extends Component {
     state = {
         title : '',
         content : '',
         tab : "Write",
+        // TODO: get curr user based on reducer
         user : 'curr_user',
         confirm : false,
     }
@@ -19,7 +18,6 @@ class ArticlePreview extends Component {
     // TODO: Add new article to DB
     clickConfirmHandler = () => {
         // TODO: change user to author_id
-        console.log("confirm")
         let newArticle = {
             id : this.state.title,
             author_id : this.state.user,
@@ -49,14 +47,14 @@ class ArticlePreview extends Component {
                     onChange = {(event) => this.setState( { title : event.target.value })}
                     >
                     </input>
-                    <input 
+                    <textarea
                         id = 'article-content-input' 
                         type = 'text' 
                         row = '10'
                         placeholder = 'Content'
                         onChange = {(event) => this.setState( { content : event.target.value })}
                     >
-                    </input>
+                    </textarea>
                 </div>
             )
         }
