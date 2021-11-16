@@ -7,7 +7,7 @@ const initialUserState = {
           "email": "swpp@snu.ac.kr",
           "password": "iluvswpp",
           "name": "Software Lover",
-          "logged_in": false
+          "logged_in": true
         },
         {
           "id": 2,

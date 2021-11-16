@@ -86,7 +86,7 @@ const articleReducer = (state = initialArticleState, action) => {
         title : action.title,
         content : action.content
       }
-      return { ...state, articles : [ ...state.articles, newArticle ]}
+      return { ...state, articles : [ ...state.articles, newArticle ], selectedArticle : newArticle }
     case actionTypes.EDIT_ARTICLE:
       const modified = state.articles.map((article) => {
         if(article.id === action.targetArticle.id) {

@@ -9,6 +9,7 @@ class ArticleCreate extends Component {
         user : {},
         title : '',
         content : '',
+        id : 0,
         tab : "Write",
     }
 
@@ -17,6 +18,10 @@ class ArticleCreate extends Component {
         this.state.user = this.props.storedUsers.find((user) => {
             return (user.logged_in === true)
         })
+        this.state.id = this.props.storedArticles.length + 1
+        
+        console.log("user :: " , this.state.user)
+        console.log("article_id :: ", this.state.id)
     }
 
     clickBackHandler = () => {
@@ -25,7 +30,7 @@ class ArticleCreate extends Component {
 
     clickConfirmHandler = () => {
         this.props.onStoreArticle(this.state.user, this.state.title, this.state.content)
-        this.props.history.push(`/articles/${this.props.storedSelectedArticle.id}`)
+        this.props.history.push(`/articles/${this.state.id}`)
     }
 
     clickPreviewHandler = () => {
@@ -62,7 +67,7 @@ class ArticleCreate extends Component {
         else if(this.state.tab === "Preview") {
             currTab = (
                 <div className = 'PreviewTab'>
-                    <p id = 'article-author'>{this.state.user}</p>
+                    {this.state.user && <p id = 'article-author'>{this.state.user.name}</p>}
                     <p id = 'article-title'>{this.state.title}</p>
                     <p id = 'article-content'>{this.state.content}</p>
                 </div>
@@ -109,7 +114,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
     return {
         storedUsers : state.userR.users,
-        storedSelectedArticle : state.articleR.selectedArticle
+        storedArticles : state.articleR.articles
     }
 }
 
