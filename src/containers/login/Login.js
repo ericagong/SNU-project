@@ -8,7 +8,20 @@ class Login extends Component {
     state = {
         email : '',
         password : '',
+        login : false,
     }
+
+    constructor(props) {
+        super(props)
+        const user = this.props.storedUsers.find((user) => {
+            return (user.logged_in === true)
+        })
+        if(user) this.state.login = true
+
+        console.log('[Constructor]')
+        console.log('login ::', this.state.login)
+    }
+    
 
     loginHandler = () => {
         if((this.state.email === 'swpp@snu.ac.kr') && (this.state.password === 'iluvswpp')) {
@@ -25,10 +38,7 @@ class Login extends Component {
 
     render () {
         let redirect = null
-        let user = this.props.storedUsers.find((user) => {
-            return (user.logged_in)
-        })
-        if(user) redirect = <Redirect to = '/articles'/>
+        if(this.state.login) redirect = <Redirect to = '/articles'/>
         return (
             <div className = 'Login'>
                 {redirect}

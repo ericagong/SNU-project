@@ -18,6 +18,7 @@ class ArticleCreate extends Component {
         this.state.user = this.props.storedUsers.find((user) => {
             return (user.logged_in === true)
         })
+        // TODO: change with axios
         this.state.id = this.props.storedArticles.length + 1
         
         console.log('[Constructor]')

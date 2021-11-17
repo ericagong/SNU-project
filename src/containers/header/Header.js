@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import * as actionTypes from '../../store/actions/ActionTypes';
 
-// TODO: The logout-button should not be displayed before the login.
 class Header extends Component {
     state = {
         user : {},
@@ -16,6 +15,7 @@ class Header extends Component {
         this.state.user = this.props.storedUsers.find((user) => {
             return (user.logged_in === true)
         })
+
         if(this.state.user) this.state.login = true
 
         console.log('[Constructor]')

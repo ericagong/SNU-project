@@ -18,12 +18,7 @@ class ArticleList extends Component {
     })
     console.log('[Constructor]')
     console.log('user ::', this.state.user)
-    // this.state.articles = this.props.storedArticles
   }
-
-  // componentDidMount() {
-  //   // this.props.onGetArticles()
-  // }
 
   clickCreateHandler = () => {
     this.props.history.push('/articles/create')

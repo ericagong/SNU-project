@@ -20,7 +20,17 @@ class ArticleDetail extends Component {
         return (user.logged_in === true)
     })
     this.state.article = this.props.storedSelectedArticle
-    
+    const article_id = parseInt(this.props.match.params.id)
+    console.log(article_id)
+    if(this.state.article.id !== article_id) {
+      this.state.article = this.props.storedArticles.find((article) => {
+        return (article.id === article_id)
+      })
+    }
+    // if (this.props.selectedArticle.id !== parseInt(this.props.match.params.id)) {
+    //   this.props.onGetArticle(parseInt(this.props.match.params.id));
+    // }
+
     this.state.author = this.props.storedUsers.find((user) => {
       return (user.id === this.state.article.author_id)
     })
