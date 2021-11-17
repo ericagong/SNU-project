@@ -20,8 +20,6 @@ class ArticleDetail extends Component {
     this.state.user = this.props.storedUsers.find((user) => {
         return (user.logged_in === true)
     })
-    // this.state.article_id = parseInt(this.props.match.params.id)
-    // this.state.comments = this.props.storedComments
     this.state.article = this.props.storedSelectedArticle
     console.log("Selected article", this.props.storedSelectedArticle)
     

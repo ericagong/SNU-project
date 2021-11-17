@@ -81,8 +81,10 @@ const articleReducer = (state = initialArticleState, action) => {
       const target = state.articles.find((article) => (article.id === action.targetArticle.id))
       return { ...state, selectedArticle : target }
     case actionTypes.CREATE_ARTICLE:
+      let length = state.articles.length
+      let lastArticle = state.articles[length-1]
       const newArticle = {
-        id : state.articles.length + 1,
+        id : lastArticle.id + 1,
         author_id : action.author_id,
         title : action.title,
         content : action.content
