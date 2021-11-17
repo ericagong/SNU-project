@@ -21,15 +21,12 @@ class ArticleDetail extends Component {
     })
     this.state.article = this.props.storedSelectedArticle
     const article_id = parseInt(this.props.match.params.id)
-    console.log(article_id)
+    
     if(this.state.article.id !== article_id) {
       this.state.article = this.props.storedArticles.find((article) => {
         return (article.id === article_id)
       })
     }
-    // if (this.props.selectedArticle.id !== parseInt(this.props.match.params.id)) {
-    //   this.props.onGetArticle(parseInt(this.props.match.params.id));
-    // }
 
     this.state.author = this.props.storedUsers.find((user) => {
       return (user.id === this.state.article.author_id)
@@ -74,56 +71,66 @@ class ArticleDetail extends Component {
   }
 
   render () {
-    const filteredComments = this.props.storedComments.filter((comment) => {
-      return (comment.article_id === this.state.article.id)
-    })
-    const comments = filteredComments.map((comment) => {  
-      let writter = this.props.storedUsers.find((user) => {
-        return (user.id === comment.author_id)
+    const comments = null
+    if(this.state.article && this.state.user) {
+      const filteredComments = this.props.storedComments.filter((comment) => {
+        return (comment.article_id === this.state.article.id)
       })
-      let visibility = (this.state.user.id === comment.author_id) ? true : false
-      return (
-        <div className = 'Comment' key = {comment.id}>
-          <Comment 
-            writter = {writter.name}
-            content = {comment.content}/>
-          {(visibility) && 
-            <button 
-            id = 'edit-comment-button'
-            onClick = {() => this.clickEditCommentHandler(comment)}>
-            edit-comment
-            </button>
-          }
-          {(visibility) && 
-            <button 
-            id = 'delete-comment-button'
-            onClick = {() => this.clickDeleteCommentHandler(comment)}>
-            delete-comment
-            </button>
-          }
-        </div>
-      )
-    })
+
+      comments = filteredComments.map((comment) => {  
+        let writter = this.props.storedUsers.find((user) => {
+          return (user.id === comment.author_id)
+        })
+  
+        let visibility = (this.state.user.id === comment.author_id) ? true : false
+        
+        return (
+          <div className = 'Comment' key = {comment.id}>
+            <Comment 
+              writter = {writter.name}
+              content = {comment.content}/>
+            {(visibility) && 
+              <button 
+              id = 'edit-comment-button'
+              onClick = {() => this.clickEditCommentHandler(comment)}>
+              edit-comment
+              </button>
+            }
+            {(visibility) && 
+              <button 
+              id = 'delete-comment-button'
+              onClick = {() => this.clickDeleteCommentHandler(comment)}>
+              delete-comment
+              </button>
+            }
+          </div>
+        )
+      })
+    }
+    
     const articleButtons = () => {
-      let visibility = (this.state.user.id === this.state.article.author_id) ? true : false
-      return (
-        <div className = 'ArticleButtons'>
-          {(visibility) && 
-            <button 
-              id = 'edit-article-button'
-              onClick = {() => this.clickEditArticleHandler(this.state.article)}>
-              edit-article
-            </button>
-          }
-          {(visibility) &&
-            <button 
-                id = 'delete-article-button'
-                onClick = {() => this.clickDeleteArticleHandler(this.state.article)}>
-                delete-article
-            </button>
-          }
-        </div>
-      )
+      if(this.state.user && this.state.article) {
+        let visibility = (this.state.user.id === this.state.article.author_id) ? true : false
+        return (
+          <div className = 'ArticleButtons'>
+            {(visibility) && 
+              <button 
+                id = 'edit-article-button'
+                onClick = {() => this.clickEditArticleHandler(this.state.article)}>
+                edit-article
+              </button>
+            }
+            {(visibility) &&
+              <button 
+                  id = 'delete-article-button'
+                  onClick = {() => this.clickDeleteArticleHandler(this.state.article)}>
+                  delete-article
+              </button>
+            }
+          </div>
+        )
+      }
+      else return
     }
 
     return ( 
@@ -146,7 +153,6 @@ class ArticleDetail extends Component {
                     type = 'text' 
                     row = '10'
                     placeholder = 'Comment'
-                    // TODO : 한번 제출하고 나서는 비워줘야 하는지?
                     value = {this.state.content}
                     onChange = {(event) => this.setState( { content : event.target.value })}
                 > 
