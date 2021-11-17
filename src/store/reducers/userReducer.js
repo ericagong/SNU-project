@@ -7,7 +7,7 @@ const initialUserState = {
           "email": "swpp@snu.ac.kr",
           "password": "iluvswpp",
           "name": "Software Lover",
-          "logged_in": true
+          "logged_in": false
         },
         {
           "id": 2,
@@ -33,8 +33,10 @@ const initialUserState = {
 const userReducer = (state = initialUserState, action) => {
     switch(action.type) {
         case actionTypes.GET_USERS:
+            console.log('GET_USER')
             return state
         case actionTypes.SET_USER:
+            console.log('SET_USER')
             const modified = state.users.map((user) => {
                 if(user.id === action.targetUser.id) {
                     return { ...user, logged_in : !user.logged_in }

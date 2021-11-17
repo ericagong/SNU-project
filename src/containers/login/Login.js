@@ -1,31 +1,34 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-// TODO: This is the only page that unauthorized users will have access to. Unauthorized users trying to access any other pages should be redirected to this page!
+import * as actionTypes from '../../store/actions/ActionTypes';
 
 class Login extends Component {
     state = {
         email : '',
         password : '',
-        login : false
     }
 
     loginHandler = () => {
-        if(this.state.login === false) {
-            if((this.state.email === 'swpp@snu.ac.kr') && (this.state.password === 'iluvswpp')) {
-                this.setState({ login : true })
-            }
-            else {
-                alert('Email or password is wrong')
-            }
+        if((this.state.email === 'swpp@snu.ac.kr') && (this.state.password === 'iluvswpp')) {
+            const user = this.props.storedUsers.find((user) => {
+                return ((user.email === this.state.email) && (user.password === this.state.password))
+            })
+            this.props.onSetUser(user)
+            this.setState({ login : true })
+        }
+        else {
+            alert('Email or password is wrong')
         }
     }
 
     render () {
         let redirect = null
-        if(this.state.login === true) {
-            redirect = <Redirect to = '/articles'/>
-        }
+        let user = this.props.storedUsers.find((user) => {
+            return (user.logged_in)
+        })
+        if(user) redirect = <Redirect to = '/articles'/>
         return (
             <div className = 'Login'>
                 {redirect}
@@ -54,4 +57,21 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = state => {
+    return {
+        storedUsers : state.userR.users,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        // onGetUsers : () => {
+        //     dispatch({ type : actionTypes.GET_USERS })
+        // },
+        onSetUser : (targetUser) => {
+            dispatch({ type : actionTypes.SET_USER, targetUser : targetUser})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

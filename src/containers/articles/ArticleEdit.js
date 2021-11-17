@@ -50,7 +50,7 @@ class ArticleEdit extends Component {
     // TODO: Are you sure? The change will be lost.
     clickBackHandler = () => {
         if((this.state.original_title !== this.state.title) 
-            || (this.state.original_content !== this.state.original_content)){
+            || (this.state.original_content !== this.state.content)){
                 let output = window.confirm('Are you sure? The change will be lost.')
                 if(output === false) return
                 else this.props.history.push('/articles')
@@ -60,9 +60,10 @@ class ArticleEdit extends Component {
 
     clickConfirmHandler = () => {
         this.props.onEditArticle(this.state.article, this.state.title, this.state.content)
-        this.state.article = this.props.storedArticles.find((article) => {
+        const modified = this.props.storedArticles.find((article) => {
             return (article.id === this.state.article.id)
         })
+        this.setState({ article : modified})
         this.props.history.push(`/articles/${this.state.article.id}`)
     }
 
