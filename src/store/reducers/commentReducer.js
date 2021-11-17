@@ -128,8 +128,8 @@ const initialCommentState = {
           "content": "Wow!",
           "id": 22
         }
-    ],
-    selectedComment : null
+  ],
+  selectedComment : null
 }
 
 // export const GET_COMMENTS = 'GET_COMMENTS'
@@ -142,12 +142,14 @@ const commentReducer = (state = initialCommentState, action) => {
     case actionTypes.GET_COMMENTS:
       return state
     case actionTypes.CREATE_COMMENT:
+      console.log("create comment")
       const newComment = {
         id : state.comments.length + 1,
         article_id : action.article_id,
         author_id : action.author_id,
         content : action.content,
       }
+      console.log(newComment)
       return { ...state, comments : [ ...state.comments, newComment ]}
     case actionTypes.EDIT_COMMENT:
       const modified = state.comments.map((comment) => {

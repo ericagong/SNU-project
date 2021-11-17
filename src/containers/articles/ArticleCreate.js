@@ -20,6 +20,7 @@ class ArticleCreate extends Component {
         })
         this.state.id = this.props.storedArticles.length + 1
         
+        console.log('[Constructor]')
         console.log("user :: " , this.state.user)
         console.log("article_id :: ", this.state.id)
     }
@@ -29,7 +30,7 @@ class ArticleCreate extends Component {
     }
 
     clickConfirmHandler = () => {
-        this.props.onCreateArticle(this.state.user, this.state.title, this.state.content)
+        this.props.onCreateArticle(this.state.user.id, this.state.title, this.state.content)
         this.props.history.push(`/articles/${this.state.id}`)
     }
 
@@ -56,7 +57,6 @@ class ArticleCreate extends Component {
                     <textarea
                         id = 'article-content-input' 
                         type = 'text' 
-                        row = '10'
                         placeholder = 'Content'
                         value = {this.state.content}
                         onChange = {(event) => this.setState( { content : event.target.value })}>
@@ -103,18 +103,18 @@ class ArticleCreate extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onCreateArticle : (title, content) => {
-            dispatch({ type : actionTypes.CREATE_ARTICLE, title : title, content : content })
-        }
-    }
-}
-
 const mapStateToProps = state => {
     return {
         storedUsers : state.userR.users,
         storedArticles : state.articleR.articles
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onCreateArticle : (author_id, title, content) => {
+            dispatch({ type : actionTypes.CREATE_ARTICLE, author_id : author_id, title : title, content : content })
+        }
     }
 }
 

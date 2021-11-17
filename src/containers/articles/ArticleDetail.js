@@ -10,8 +10,8 @@ class ArticleDetail extends Component {
   state = {
     user : {},
     article : {},
-    article_id : 0,
-    comments : [],
+    author : {},
+    // comments : [],
     content : '',
   }
 
@@ -20,48 +20,44 @@ class ArticleDetail extends Component {
     this.state.user = this.props.storedUsers.find((user) => {
         return (user.logged_in === true)
     })
-    this.state.article_id = parseInt(this.props.match.params.id)
-    this.state.comments = this.props.storedComments
-    this.state.article = this.props.storedArticles.find((article) => {
-      return (article.id === this.state.article_id)
+    // this.state.article_id = parseInt(this.props.match.params.id)
+    // this.state.comments = this.props.storedComments
+    this.state.article = this.props.storedSelectedArticle
+    console.log("Selected article", this.props.storedSelectedArticle)
+    
+    this.state.author = this.props.storedUsers.find((user) => {
+      return (user.id === this.state.article.author_id)
     })
 
+    console.log('[Constructor]')
     console.log("user :: " , this.state.user)
-    console.log("article_id :: ", this.state.article_id)
-    console.log("aricle :: ", this.state.article)
-    console.log("comments :: ", this.state.comments)
-}
+    console.log("targetArticle ;:" , this.props.storedSelectedArticle)
+    console.log("article :: ", this.state.article)
+    console.log("author :: ", this.state.author)
+    // console.log("comments :: ", this.state.comments)
+  }
 
   clickBackHandler = () => {
       this.props.history.push('/articles')
   }
 
-  // TODO: only article author can move to edit page.
   clickEditArticleHandler = (article_id) => {
-      this.props.history.push(`/articles/${article_id}/edit`)
+    this.props.history.push(`/articles/${article_id}/edit`)
   }
 
-  // TODO: only article author can delete article.
   clickDeleteArticleHandler = () => {
       this.props.history.push('/articles')
   }
-
-  // TODO: Add new article to DB
+  
   clickConfirmHandler = () => {
-      // TODO: change user to author_id
-      // TODO: get proper article_id
-      let newComment = {
-          id : this.state.commnents.length + 1,
-          article_id : this.state.article_id,
-          author_id : this.state.user,
-          content : this.state.content,
-      }
-      console.log(newComment)
+    this.props.onCreateComment(this.state.article.id, this.state.user.id, this.state.content) 
+    this.props.onGetComments()
+    
   }
 
   // TODO: add edit button
   clickEditCommentHandler = () => {
-      prompt("Edit Comment")
+    prompt("Edit Comment")
   }
 
   // TODO: add delete button
@@ -70,21 +66,33 @@ class ArticleDetail extends Component {
   }
 
   render () {
-    
-    const comments = this.state.comments.map((comment) => {
-        // TODO: change author_id to author_name
-        
-        let writter = this.props.storedUsers.find((user) => {
-          return (user.id === comment.author_id)
-        })
-        
-        return (
-            <Comment 
-                key = {comment.id}
-                writter = {writter.name}
-                content = {comment.content}/>
-        )
-        // TODO: add edit and delet button if the user is the writter of comments.
+    const comments = this.props.storedComments.map((comment) => {  
+      let writter = this.props.storedUsers.find((user) => {
+        return (user.id === comment.author_id)
+      })
+      let visibility = (this.state.user.id === comment.author_id) ? true : false
+      // TODO: add edit and delet button if the user is the writter of comments.
+      return (
+        <div className = 'Comment' key = {comment.id}>
+          <Comment 
+            writter = {writter.name}
+            content = {comment.content}/>
+          {(visibility) && 
+            <button 
+            id = 'edit-comment-button'
+            onClick = {() => this.clickEditCommentHandler()}>
+            edit-comment
+            </button>
+          }
+          {(visibility) && 
+            <button 
+            id = 'delete-comment-button'
+            onClick = {() => this.clickDeleteCommentHandler()}>
+            delete-comment
+            </button>
+          }
+        </div>
+      )
     })
 
     return ( 
@@ -95,9 +103,9 @@ class ArticleDetail extends Component {
                 back-detail-article
             </button>
             <div className = 'ArticleTab'>
-                <p id = 'article-author'>{this.state.user}</p>
-                <p id = 'article-title'>{this.state.title}</p>
-                <p id = 'article-content'>{this.state.content}</p>
+                <h1 id = 'article-title'>{this.state.article.title}</h1>
+                <h3 id = 'article-author'>{this.state.author.name}</h3>
+                <p id = 'article-content'>{this.state.article.content}</p>
                 {/* TODO: check whether user is article author or not */}
                 <button 
                     id = 'edit-article-button'
@@ -117,23 +125,15 @@ class ArticleDetail extends Component {
                     type = 'text' 
                     row = '10'
                     placeholder = 'Comment'
-                    onChange = {(event) => this.setState( { title : event.target.value })}
+                    value = {this.state.content}
+                    onChange = {(event) => this.setState( { content : event.target.value })}
                 > 
                 </textarea>
                 <button 
                     id = 'confirm-create-comment-button'
+                    disabled = {!this.state.content}
                     onClick = {() => this.clickConfirmHandler()}>
                     confirm-create-comment
-                </button>
-                <button 
-                    id = 'edit-comment-button'
-                    onClick = {() => this.clickEditCommentHandler()}>
-                    edit-comment
-                </button>
-                <button 
-                    id = 'delete-comment-button'
-                    onClick = {() => this.clickDeleteCommentHandler()}>
-                    delete-comment
                 </button>
             </div> 
         </div>
@@ -149,8 +149,8 @@ const mapDispatchToProps = dispatch => {
     onGetArticle : (targetArticle) => {
       dispatch({ type : actionTypes.GET_ARTICLE, targetArticle : targetArticle })
     },
-    onGetComments : () => {
-      dispatch({ type : actionTypes.GET_COMMENTS })
+    onGetComments : (modifiedComments) => {
+      dispatch({ type : actionTypes.GET_COMMENTS , modifiedComments : modifiedComments })
     },
     onCreateComment : (article_id, author_id, content) => {
       dispatch({ type : actionTypes.CREATE_COMMENT, article_id : article_id, author_id : author_id, content : content})

@@ -69,14 +69,15 @@ const initialArticleState = {
           "content": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity."
         }
     ],
-    selectedArticle : null
+    selectedArticle : {}
 }
 
 const articleReducer = (state = initialArticleState, action) => {
   switch(action.type) {
     case actionTypes.GET_ARTICLES:
       return state
-    case actionTypes.GET_ARTICLES:
+    case actionTypes.GET_ARTICLE:
+      console.log("hi" , action.targetArticle)
       const target = state.articles.find((article) => (article.id === action.targetArticle.id))
       return { ...state, selectedArticle : target }
     case actionTypes.CREATE_ARTICLE:

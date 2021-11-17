@@ -18,6 +18,7 @@ class Header extends Component {
         })
         if(this.state.user) this.state.login = true
 
+        console.log('[Constructor]')
         console.log("user :: " , this.state.user)
         console.log("login :: ", this.state.login)
     }
