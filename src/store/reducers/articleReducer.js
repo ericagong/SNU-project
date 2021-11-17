@@ -94,13 +94,20 @@ const articleReducer = (state = initialArticleState, action) => {
       return { ...state, articles : [ ...state.articles, newArticle ], selectedArticle : newArticle }
     case actionTypes.EDIT_ARTICLE:
       console.log('EDIT_ARTICLE')
-      const modified = state.articles.map((article) => {
+      const modifiedArticles = state.articles.map((article) => {
         if(article.id === action.targetArticle.id) {
           return { ...article, title : action.editTitle, content : action.editContent }
         }
         else return { ...article }
       })
-      return { ...state, articles : modified }
+      const modifiedArticle = {
+        id : action.targetArticle.id,
+        author_id : action.targetArticle.author_id,
+        title : action.editTitle,
+        content : action.editContent,
+      }
+      console.log("modified :: ", modifiedArticles)
+      return { ...state, articles : modifiedArticles, selectedArticle : modifiedArticle }
     case actionTypes.DELETE_ARTICLE:
       console.log('DELETE_ARTICLE')
       const deleted = state.articles.filter((article) => {
