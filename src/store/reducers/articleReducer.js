@@ -75,12 +75,14 @@ const initialArticleState = {
 const articleReducer = (state = initialArticleState, action) => {
   switch(action.type) {
     case actionTypes.GET_ARTICLES:
+      console.log('GET_ARTICLES')
       return state
     case actionTypes.GET_ARTICLE:
-      console.log("hi" , action.targetArticle)
+      console.log('GET_ARTICLE')
       const target = state.articles.find((article) => (article.id === action.targetArticle.id))
       return { ...state, selectedArticle : target }
     case actionTypes.CREATE_ARTICLE:
+      console.log('CREATE_ARTICLE')
       let length = state.articles.length
       let lastArticle = state.articles[length-1]
       const newArticle = {
@@ -91,6 +93,7 @@ const articleReducer = (state = initialArticleState, action) => {
       }
       return { ...state, articles : [ ...state.articles, newArticle ], selectedArticle : newArticle }
     case actionTypes.EDIT_ARTICLE:
+      console.log('EDIT_ARTICLE')
       const modified = state.articles.map((article) => {
         if(article.id === action.targetArticle.id) {
           return { ...article, title : action.editTitle, content : action.editContent }
@@ -99,9 +102,11 @@ const articleReducer = (state = initialArticleState, action) => {
       })
       return { ...state, articles : modified }
     case actionTypes.DELETE_ARTICLE:
+      console.log('DELETE_ARTICLE')
       const deleted = state.articles.filter((article) => {
         return (article.id !== action.targetArticle.id)
       })
+      console.log(deleted)
       return { ...state, articles : deleted }
     default:
       return state

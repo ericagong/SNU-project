@@ -21,9 +21,9 @@ class ArticleList extends Component {
     // this.state.articles = this.props.storedArticles
   }
 
-  componentDidMount() {
-    this.props.onGetArticles()
-  }
+  // componentDidMount() {
+  //   // this.props.onGetArticles()
+  // }
 
   clickCreateHandler = () => {
     this.props.history.push('/articles/create')
@@ -74,7 +74,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onGetArticles : () => {
-      dispatch({ type : actionTypes.GET_ARTICLES})
+      dispatch({ type : actionTypes.GET_ARTICLES })
     },
     onGetArticle : (targetArticle) => {
       dispatch({ type: actionTypes.GET_ARTICLE, targetArticle : targetArticle})

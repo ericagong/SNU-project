@@ -140,30 +140,33 @@ const initialCommentState = {
 const commentReducer = (state = initialCommentState, action) => {
   switch(action.type) {
     case actionTypes.GET_COMMENTS:
-      return state
+      console.log("GET_COMMENTS")
+      return { ...state, } 
     case actionTypes.CREATE_COMMENT:
-      console.log("create comment")
+      console.log("CREATE_COMMENT")
+      let length = state.comments.length
+      let lastComment = state.comments[length-1]
       const newComment = {
-        id : state.comments.length + 1,
+        id : lastComment.id + 1,
         article_id : action.article_id,
         author_id : action.author_id,
         content : action.content,
       }
-      console.log(newComment)
       return { ...state, comments : [ ...state.comments, newComment ]}
     case actionTypes.EDIT_COMMENT:
+      console.log("EDIT_COMMENT")
       const modified = state.comments.map((comment) => {
         if(comment.id === action.targetComment.id) {
           return { ...comment, content : action.content }
         }
         else return { ...comment }
       })
-      return { ...state, comment : modified }
+      return { ...state, comments : modified }
     case actionTypes.DELETE_COMMENT:
       const deleted = state.comments.filter((comment) => {
         return (comment.id !== action.targetComment.id)
       })
-      return { ...state, comment : deleted }
+      return { ...state, comments : deleted }
     default:
       return state
   }

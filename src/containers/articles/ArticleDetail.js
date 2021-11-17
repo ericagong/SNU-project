@@ -11,7 +11,6 @@ class ArticleDetail extends Component {
     user : {},
     article : {},
     author : {},
-    // comments : [],
     content : '',
   }
 
@@ -21,7 +20,6 @@ class ArticleDetail extends Component {
         return (user.logged_in === true)
     })
     this.state.article = this.props.storedSelectedArticle
-    console.log("Selected article", this.props.storedSelectedArticle)
     
     this.state.author = this.props.storedUsers.find((user) => {
       return (user.id === this.state.article.author_id)
@@ -29,47 +27,51 @@ class ArticleDetail extends Component {
 
     console.log('[Constructor]')
     console.log("user :: " , this.state.user)
-    console.log("targetArticle ;:" , this.props.storedSelectedArticle)
     console.log("article :: ", this.state.article)
     console.log("author :: ", this.state.author)
-    // console.log("comments :: ", this.state.comments)
   }
 
   clickBackHandler = () => {
       this.props.history.push('/articles')
   }
 
-  clickEditArticleHandler = (article_id) => {
-    this.props.history.push(`/articles/${article_id}/edit`)
+  clickEditArticleHandler = (article) => {
+    this.props.history.push(`/articles/${article.id}/edit`)
   }
 
-  clickDeleteArticleHandler = () => {
-      this.props.history.push('/articles')
+  clickDeleteArticleHandler = (article) => {
+    this.props.onDeleteArticle(article)
+    this.props.history.push('/articles')
   }
   
+  clickEditCommentHandler = (comment) => {
+    let input = prompt('Edit contents of comment', comment.content)
+    if(input === null) return
+    else {
+      if(input.length > 0) {
+        this.props.onEditCommnet(comment, input)
+      }
+      else alert('user cannot create empty comment')
+    }
+  }
+
+  clickDeleteCommentHandler = (comment) => {
+    this.props.onDeleteComment(comment)
+  }
+
   clickConfirmHandler = () => {
     this.props.onCreateComment(this.state.article.id, this.state.user.id, this.state.content) 
-    this.props.onGetComments()
-    
-  }
-
-  // TODO: add edit button
-  clickEditCommentHandler = () => {
-    prompt("Edit Comment")
-  }
-
-  // TODO: add delete button
-  clickDeleteCommentHandler = () => {
-
   }
 
   render () {
-    const comments = this.props.storedComments.map((comment) => {  
+    const filteredComments = this.props.storedComments.filter((comment) => {
+      return (comment.article_id === this.state.article.id)
+    })
+    const comments = filteredComments.map((comment) => {  
       let writter = this.props.storedUsers.find((user) => {
         return (user.id === comment.author_id)
       })
       let visibility = (this.state.user.id === comment.author_id) ? true : false
-      // TODO: add edit and delet button if the user is the writter of comments.
       return (
         <div className = 'Comment' key = {comment.id}>
           <Comment 
@@ -78,20 +80,41 @@ class ArticleDetail extends Component {
           {(visibility) && 
             <button 
             id = 'edit-comment-button'
-            onClick = {() => this.clickEditCommentHandler()}>
+            onClick = {() => this.clickEditCommentHandler(comment)}>
             edit-comment
             </button>
           }
           {(visibility) && 
             <button 
             id = 'delete-comment-button'
-            onClick = {() => this.clickDeleteCommentHandler()}>
+            onClick = {() => this.clickDeleteCommentHandler(comment)}>
             delete-comment
             </button>
           }
         </div>
       )
     })
+    const articleButtons = () => {
+      let visibility = (this.state.user.id === this.state.article.author_id) ? true : false
+      return (
+        <div className = 'ArticleButtons'>
+          {(visibility) && 
+            <button 
+              id = 'edit-article-button'
+              onClick = {() => this.clickEditArticleHandler(this.state.article)}>
+              edit-article
+            </button>
+          }
+          {(visibility) &&
+            <button 
+                id = 'delete-article-button'
+                onClick = {() => this.clickDeleteArticleHandler(this.state.article)}>
+                delete-article
+            </button>
+          }
+        </div>
+      )
+    }
 
     return ( 
         <div className = 'ArticleDetail'>
@@ -104,17 +127,7 @@ class ArticleDetail extends Component {
                 <h1 id = 'article-title'>{this.state.article.title}</h1>
                 <h3 id = 'article-author'>{this.state.author.name}</h3>
                 <p id = 'article-content'>{this.state.article.content}</p>
-                {/* TODO: check whether user is article author or not */}
-                <button 
-                    id = 'edit-article-button'
-                    onClick = {() => this.clickEditArticleHandler(this.state.article_id)}>
-                    edit-article
-                </button>
-                <button 
-                    id = 'delete-article-button'
-                    onClick = {() => this.clickDeleteArticleHandler()}>
-                    delete-article
-                </button>
+                {articleButtons()}
             </div>
             <div className = 'CommentTab'>
                 {comments}
@@ -123,6 +136,7 @@ class ArticleDetail extends Component {
                     type = 'text' 
                     row = '10'
                     placeholder = 'Comment'
+                    // TODO : 한번 제출하고 나서는 비워줘야 하는지?
                     value = {this.state.content}
                     onChange = {(event) => this.setState( { content : event.target.value })}
                 > 
@@ -140,6 +154,7 @@ class ArticleDetail extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
+  // TODO : delete not-required actionTypes
   return {
     onDeleteArticle : (targetArticle) => {
       dispatch({ type : actionTypes.DELETE_ARTICLE, targetArticle : targetArticle })
