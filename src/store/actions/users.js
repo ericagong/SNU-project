@@ -3,7 +3,6 @@ import axios from 'axios';
 import * as actionTypes from './ActionTypes';
 
 export const setUser_ = (targetUser) => {
-    console.log('[MIDDLEWARE] SetUser_')
     return { type : actionTypes.SET_USER, targetUser : targetUser }
 }
 
@@ -17,7 +16,6 @@ export const setUser = (targetUser) => {
 }
 
 export const getUsers_ = (users) => {
-    console.log('[MIDDLEWARE] GetUsers_')
     return { type : actionTypes.GET_USERS, users : users }
 }
 

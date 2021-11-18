@@ -7,6 +7,7 @@ export const getArticles_ = (articles) => {
 }
 
 export const getArticles = () => {
+    console.log('[Axios] getArticles')
     return dispatch => {
         return axios.get('/api/articles')
             .then(response => dispatch(getArticles_(response.data)))
@@ -18,6 +19,7 @@ export const getArticle_ = (targetArticle) => {
 }
 
 export const getArticle = (targetArticle) => {
+    console.log('[Axios] getArticle')
     return dispatch => {
         return axios.get(`/api/articles/${targetArticle.id}`)
             .then(response => dispatch(getArticle_(response.data)))
@@ -34,6 +36,7 @@ export const createArticle_ = (newArticle) => {
 }
 
 export const createArticle = (newArticle) => {
+    console.log('[Axios] CreateArticle')
     return dispatch => {
         return axios.post('/api/articles', newArticle)
             .then(response => {
@@ -52,6 +55,7 @@ export const editArticle_ = (targetArticle, editTitle, editContent) => {
 }
 
 export const editArticle = (targetArticle, editTitle, editContent) => {
+    console.log('[Axios] EditArticle')
     return dispatch => {
         return axios.put(`/api/articles/${targetArticle.id}`, 
         { ...targetArticle, title : editTitle, content : editContent })
@@ -64,6 +68,7 @@ export const deleteArticle_ = (targetArticle) => {
 }
 
 export const deleteArticle = (targetArticle) => {
+    console.log('[Axios] DeleteArticle')
     return dispatch => {
         return axios.delete(`/api/articles/${targetArticle.id}`)
         .then(response => dispatch(deleteArticle_(targetArticle)))

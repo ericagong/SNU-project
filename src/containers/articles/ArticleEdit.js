@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import * as actionTypes from '../../store/actions/ActionTypes';
+import * as actionCreators from '../../store/actions/index';
 
 class ArticleEdit extends Component {
     state = {
-        user : {},
+        // user : {},
         article : {},
         title : '',
         content : '',
@@ -18,36 +18,34 @@ class ArticleEdit extends Component {
 
     constructor(props) {
         super(props)
-        this.state.user = this.props.storedUsers.find((user) => {
-            return (user.logged_in === true)
-        })
+        // this.state.user = this.props.storedUsers.find((user) => {
+        //     return (user.logged_in === true)
+        // })
 
         const selectedArticle = this.props.storedArticles.find((article) => {
             return (article.id === parseInt(this.props.match.params.id))
         })
 
-        // console.log("selectedArticle" , selectedArticle)
+        // // console.log("selectedArticle" , selectedArticle)
 
         this.props.onGetArticle(selectedArticle)
         // console.log("SSA", this.props.storedSelectedArticle)
 
-        this.state.article = this.props.storedSelectedArticle
+        // this.state.article = this.props.storedSelectedArticle
         
-        this.state.title = this.state.article.title
-        this.state.content = this.state.article.content
-        
-        this.state.original_title = this.state.article.title
-        this.state.original_content = this.state.article.content
+        this.state.title = selectedArticle.title
+        this.state.original_title = selectedArticle.title
+        this.state.content = selectedArticle.content
+        this.state.original_content = selectedArticle.content
 
         console.log('[Constructor]')
-        console.log("user :: " , this.state.user)
-        console.log("article :: ", this.state.article)
+        // console.log("user :: " , this.state.user)
+        console.log("article :: ", selectedArticle)
         console.log("title :: ", this.state.title)
         console.log("content :: ", this.state.content)
     }
 
-    // TODO: If the title and contents have not been modified yet but are the same as the title and contents before editing, just go back to the detail page without any alert.
-    // TODO: Are you sure? The change will be lost.
+    
     clickBackHandler = () => {
         if((this.state.original_title !== this.state.title) 
             || (this.state.original_content !== this.state.content)){
@@ -58,12 +56,12 @@ class ArticleEdit extends Component {
         else this.props.history.push('/articles')
     }
 
-    clickConfirmHandler = () => {
-        this.props.onEditArticle(this.state.article, this.state.title, this.state.content)
+    clickConfirmHandler = (targetArticle) => {
+        this.props.onEditArticle(targetArticle, this.state.title, this.state.content)
         const modified = this.props.storedArticles.find((article) => {
-            return (article.id === this.state.article.id)
+            return (article.id === targetArticle.id)
         })
-        this.setState({ article : modified})
+        this.setState({ article : modified })
         this.props.history.push(`/articles/${this.state.article.id}`)
     }
 
@@ -76,6 +74,12 @@ class ArticleEdit extends Component {
     }
 
     render () {
+        let redirect = null
+        let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
+        if(!loginUser) redirect = <Redirect to ='/login'/>
+
+        let targetArticle = this.props.storedSelectedArticle
+
         let currTab = null
         if(this.state.tab === "Write") {
             currTab = (
@@ -103,7 +107,7 @@ class ArticleEdit extends Component {
         else if(this.state.tab === "Preview") {
             currTab = (
                 <div className = 'PreviewTab'>
-                    <p id = 'article-author'>{this.state.user.name}</p>
+                    <p id = 'article-author'>{loginUser.name}</p>
                     <p id = 'article-title'>{this.state.title}</p>
                     <p id = 'article-content'>{this.state.content}</p>
                 </div>
@@ -112,6 +116,7 @@ class ArticleEdit extends Component {
 
         return ( 
             <div className = 'ArticleEdit'>
+                {redirect}
                 <button 
                     id = 'preview-tab-button'
                     onClick = {() => this.clickPreviewHandler()}>
@@ -131,7 +136,7 @@ class ArticleEdit extends Component {
                 <button 
                     id = 'confirm-edit-article-button'
                     disabled = {!this.state.title || !this.state.content}
-                    onClick = {() => this.clickConfirmHandler()}>
+                    onClick = {() => this.clickConfirmHandler(targetArticle)}>
                     confirm-edit-article
                 </button>
             </div>
@@ -150,10 +155,12 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onEditArticle : (targetArticle, editTitle, editContent ) => {
-            dispatch({ type : actionTypes.EDIT_ARTICLE, targetArticle : targetArticle, editTitle : editTitle, editContent : editContent })
+            dispatch(actionCreators.editArticle(targetArticle, editTitle, editContent))
+            // dispatch({ type : actionTypes.EDIT_ARTICLE, targetArticle : targetArticle, editTitle : editTitle, editContent : editContent })
         },
         onGetArticle : (targetArticle) => {
-            dispatch( { type : actionTypes.GET_ARTICLE, targetArticle : targetArticle })
+            dispatch(actionCreators.getArticle(targetArticle))
+            // dispatch( { type : actionTypes.GET_ARTICLE, targetArticle : targetArticle })
         },
     }
 }

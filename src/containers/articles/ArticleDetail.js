@@ -1,44 +1,22 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Comment from '../../components/comment/Comment';
 import * as actionTypes from '../../store/actions/ActionTypes';
 
-// TODO: axios is not yet implemented on ArticleDetailPage.
 import * as actionCreators from '../../store/actions/index';
 
 
 class ArticleDetail extends Component {
   state = {
-    user : {},
-    article : {},
-    author : {},
     content : '',
   }
 
   constructor(props) {
     super(props)
-    this.state.user = this.props.storedUsers.find((user) => {
-        return (user.logged_in === true)
-    })
-    this.state.article = this.props.storedSelectedArticle
-    const article_id = parseInt(this.props.match.params.id)
-    
-    if(this.state.article.id !== article_id) {
-      this.state.article = this.props.storedArticles.find((article) => {
-        return (article.id === article_id)
-      })
-    }
-
-    this.state.author = this.props.storedUsers.find((user) => {
-      return (user.id === this.state.article.author_id)
-    })
-
-    console.log('[Constructor]')
-    console.log("user :: " , this.state.user)
-    console.log("article :: ", this.state.article)
-    console.log("author :: ", this.state.author)
+    this.props.onGetArticles()
+    console.log(this.props.storedArticles)
   }
 
   clickBackHandler = () => {
@@ -74,10 +52,25 @@ class ArticleDetail extends Component {
   }
 
   render () {
+    let redirect = null
+    let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
+    if(!loginUser) redirect = <Redirect to ='/login'/>
+
+    let article_id = parseInt(this.props.match.params.id)
+    console.log('storedArticles', this.props.storedArticles)
+    console.log(article_id)
+    let selectedArticle = this.props.storedArticles.find((article) => (article.id === article_id))
+    console.log('selectedArticle', selectedArticle)
+
+    let author = this.props.storedUsers.find((user) => (user.id === selectedArticle.author_id))
+    
+    console.log('selectedArticle', selectedArticle)
+    console.log('author', author)
+
     let comments = null
-    if(this.state.article && this.state.user) {
+    if(loginUser && selectedArticle) {
       const filteredComments = this.props.storedComments.filter((comment) => {
-        return (comment.article_id === this.state.article.id)
+        return (comment.article_id === selectedArticle.id)
       })
 
       comments = filteredComments.map((comment) => {  
@@ -85,7 +78,7 @@ class ArticleDetail extends Component {
           return (user.id === comment.author_id)
         })
   
-        let visibility = (this.state.user.id === comment.author_id) ? true : false
+        let visibility = (loginUser.id === comment.author_id) ? true : false
         
         return (
           <div className = 'Comment' key = {comment.id}>
@@ -112,21 +105,21 @@ class ArticleDetail extends Component {
     }
     
     const articleButtons = () => {
-      if(this.state.user && this.state.article) {
-        let visibility = (this.state.user.id === this.state.article.author_id) ? true : false
+      if(loginUser && selectedArticle) {
+        let visibility = (loginUser.id === selectedArticle.author_id) ? true : false
         return (
           <div className = 'ArticleButtons'>
             {(visibility) && 
               <button 
                 id = 'edit-article-button'
-                onClick = {() => this.clickEditArticleHandler(this.state.article)}>
+                onClick = {() => this.clickEditArticleHandler(selectedArticle)}>
                 edit-article
               </button>
             }
             {(visibility) &&
               <button 
                   id = 'delete-article-button'
-                  onClick = {() => this.clickDeleteArticleHandler(this.state.article)}>
+                  onClick = {() => this.clickDeleteArticleHandler(selectedArticle)}>
                   delete-article
               </button>
             }
@@ -138,15 +131,16 @@ class ArticleDetail extends Component {
 
     return ( 
         <div className = 'ArticleDetail'>
+            {redirect}
             <button 
                 id = 'back-detail-article-button'
                 onClick = {() => this.clickBackHandler()}>
                 back-detail-article
             </button>
             <div className = 'ArticleTab'>
-                <h1 id = 'article-title'>{this.state.article.title}</h1>
-                <h3 id = 'article-author'>{this.state.author.name}</h3>
-                <p id = 'article-content'>{this.state.article.content}</p>
+                <h1 id = 'article-title'>{selectedArticle.title}</h1>
+                <h3 id = 'article-author'>{author.name}</h3>
+                <p id = 'article-content'>{selectedArticle.content}</p>
                 {articleButtons()}
             </div>
             <div className = 'CommentTab'>
@@ -173,10 +167,13 @@ class ArticleDetail extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  // TODO : delete not-required actionTypes
   return {
+    onGetArticles : () => {
+      dispatch(actionCreators.getArticles())
+    },
     onDeleteArticle : (targetArticle) => {
-      dispatch({ type : actionTypes.DELETE_ARTICLE, targetArticle : targetArticle })
+      dispatch(actionCreators.deleteArticle(targetArticle))
+      // dispatch({ type : actionTypes.DELETE_ARTICLE, targetArticle : targetArticle })
     },
     onGetArticle : (targetArticle) => {
       dispatch({ type : actionTypes.GET_ARTICLE, targetArticle : targetArticle })

@@ -17,12 +17,15 @@ class ArticleCreate extends Component {
 
     clickConfirmHandler = (loginUser, newArticleID) => {
         console.log('[clickConfirmHandler]')
-        console.log('newArticleID :: ' , newArticleID)
-        console.log('loginUserID :: ' , loginUser)
-        console.log('title :: ' , this.state.title)
-        console.log('content :: ' , this.state.content)
+        // console.log('newArticleID :: ' , newArticleID)
+        // console.log('loginUserID :: ' , loginUser)
+        // console.log('title :: ' , this.state.title)
+        // console.log('content :: ' , this.state.content)
         this.props.onCreateArticle(newArticleID, loginUser.id, this.state.title, this.state.content)
-        this.props.history.push(`/articles/${newArticleID}`)
+        this.setState({ confirm : true })
+        setTimeout(()=> {
+            this.props.history.push(`/articles/${newArticleID}`)
+        }, 3000)
     }
 
     clickPreviewHandler = () => {
@@ -35,8 +38,11 @@ class ArticleCreate extends Component {
 
     render () {
         let redirect = null
+        
         let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
         if(!loginUser) redirect = <Redirect to ='/login'/>
+        
+        
         let articleNum = this.props.storedArticles.length
         let newArticleID = this.props.storedArticles[articleNum-1].id + 1
         let currTab = null
@@ -103,7 +109,8 @@ class ArticleCreate extends Component {
 const mapStateToProps = state => {
     return {
         storedUsers : state.userR.users,
-        storedArticles : state.articleR.articles
+        storedArticles : state.articleR.articles,
+        storedSelectedArticle : state.articleR.selectedArticle,
     }
 }
 

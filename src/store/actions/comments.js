@@ -7,6 +7,7 @@ export const getComments_ = (comments) => {
 }
 
 export const getComments = () => {
+    console.log('[Axios] GetComments')
     return dispatch => {
         return axios.get('/api/comments')
             .then(response => dispatch(getComments_(response.data)))
@@ -23,6 +24,7 @@ export const createComment_ = (newComment) => {
 }
 
 export const createComment = (newComment) => {
+    console.log('[Axios] CreateComment')
     return dispatch => {
         return axios.post('/api/comments', newComment)
             .then(response => {
@@ -39,6 +41,7 @@ export const editComment_ = (targetComment, editContent) => {
 }
 
 export const editComment = (targetComment, editContent) => {
+    console.log('[Axios] EditComment')
     return dispatch => {
         return axios.put(`/api/comments/${targetComment.id}`, 
         { ...targetComment, content : editContent })
@@ -51,6 +54,7 @@ export const deleteComment_ = (targetComment) => {
 }
 
 export const deleteComment = (targetComment) => {
+    console.log('[Axios] DeleteComment')
     return dispatch => {
         return axios.delete(`/api/comments/${targetComment.id}`)
         .then(response => dispatch(deleteComment_(targetComment)))

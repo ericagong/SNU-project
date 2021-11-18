@@ -7,6 +7,15 @@ import * as actionCreators from '../../store/actions/index';
 
 class ArticleList extends Component {
 
+  constructor(props) {
+    super(props)
+    this.props.onGetArticles()
+  }
+
+  componentDidMount() {
+    this.props.onGetArticles()
+  }
+
   clickCreateHandler = () => {
     this.props.history.push('/articles/create')
   }
@@ -20,6 +29,8 @@ class ArticleList extends Component {
     let redirect = null
     let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
     if(!loginUser) redirect = <Redirect to ='/login'/>
+    console.log('[render]')
+    console.log('storedArticles', this.props.storedArticles)
     const articles = this.props.storedArticles.map((article) => {
       let author = this.props.storedUsers.find((user) => {
         return (user.id === article.author_id)
