@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import * as actionTypes from '../../store/actions/ActionTypes';
 import * as actionCreators from '../../store/actions/index';
 
 class Login extends Component {
@@ -19,7 +18,6 @@ class Login extends Component {
     loginHandler = () => {
         console.log('[LoginHandler]')
         if((this.state.email === 'swpp@snu.ac.kr') && (this.state.password === 'iluvswpp')) {
-            console.log('storedUsers :: ' , this.props.storedUsers)
             const user = this.props.storedUsers.find((user) => {
                 return ((user.email === this.state.email) && (user.password === this.state.password))
             })
@@ -33,7 +31,7 @@ class Login extends Component {
     render () {
         let redirect = null
         let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
-        console.log(loginUser)
+        console.log('loginUser :: ', loginUser)
         if(loginUser) redirect = <Redirect to = '/articles'/>
         return (
             <div className = 'Login'>

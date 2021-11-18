@@ -2,44 +2,33 @@ import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import * as actionTypes from '../../store/actions/ActionTypes';
+import * as actionCreators from '../../store/actions/index';
 
 class Header extends Component {
-    state = {
-        user : {},
-        login : false,
+
+    componentDidMount() {
+        console.log('[ComponentDidMount]')
+        this.props.onGetUsers()
     }
 
-    constructor(props) {
-        super(props)
-        this.state.user = this.props.storedUsers.find((user) => {
-            return (user.logged_in === true)
-        })
-
-        if(this.state.user) this.state.login = true
-
-        console.log('[Constructor]')
-        console.log("user :: " , this.state.user)
-        console.log("login :: ", this.state.login)
-    }
-
-
-    clickLogoutHandler = () => {
-        this.props.onSetUser(this.state.user)
+    clickLogoutHandler = (loginUser) => {
+        console.log('[clickLogoutHandler]')
+        this.props.onSetUser(loginUser)
         this.props.history.push('/login')
     }
 
     render () {
         let redirect = null
-        if(this.state.login === false) redirect = <Redirect to ='/login'/>
+        let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
+        if(!loginUser) redirect = <Redirect to ='/login'/>
         return (
             <div className = 'Header'>
                 {redirect}
-                {(this.state.login) && <button 
+                <button 
                     id = 'logout-button'
-                    onClick = {() => this.clickLogoutHandler()}>
+                    onClick = {() => this.clickLogoutHandler(loginUser)}>
                     log-out
-                </button>}
+                </button>
             </div>
         )
     }
@@ -54,8 +43,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        onGetUsers : () => {
+            dispatch(actionCreators.getUsers())
+        },
         onSetUser : (targetUser) => {
-            dispatch({ type : actionTypes.SET_USER, targetUser : targetUser})
+            dispatch(actionCreators.setUser(targetUser))
         }
     }
 }
