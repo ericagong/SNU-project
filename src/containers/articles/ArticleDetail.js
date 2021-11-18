@@ -16,26 +16,26 @@ class ArticleDetail extends Component {
 
   constructor(props) {
     super(props)
-    this.state.user = this.props.storedUsers.find((user) => {
-        return (user.logged_in === true)
-    })
-    this.state.article = this.props.storedSelectedArticle
-    const article_id = parseInt(this.props.match.params.id)
+    // this.state.user = this.props.storedUsers.find((user) => {
+    //     return (user.logged_in === true)
+    // })
+    // this.state.article = this.props.storedSelectedArticle
+    // const article_id = parseInt(this.props.match.params.id)
     
-    if(this.state.article.id !== article_id) {
-      this.state.article = this.props.storedArticles.find((article) => {
-        return (article.id === article_id)
-      })
-    }
+    // if(this.state.article.id !== article_id) {
+    //   this.state.article = this.props.storedArticles.find((article) => {
+    //     return (article.id === article_id)
+    //   })
+    // }
 
-    this.state.author = this.props.storedUsers.find((user) => {
-      return (user.id === this.state.article.author_id)
-    })
+    // this.state.author = this.props.storedUsers.find((user) => {
+    //   return (user.id === this.state.article.author_id)
+    // })
 
-    console.log('[Constructor]')
-    console.log("user :: " , this.state.user)
-    console.log("article :: ", this.state.article)
-    console.log("author :: ", this.state.author)
+    // console.log('[Constructor]')
+    // console.log("user :: " , this.state.user)
+    // console.log("article :: ", this.state.article)
+    // console.log("author :: ", this.state.author)
   }
 
   clickBackHandler = () => {

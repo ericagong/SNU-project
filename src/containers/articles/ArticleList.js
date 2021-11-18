@@ -3,7 +3,6 @@ import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Article from '../../components/article/Article';
-// import * as actionTypes from '../../store/actions/ActionTypes';
 import * as actionCreators from '../../store/actions/index';
 
 class ArticleList extends Component {
