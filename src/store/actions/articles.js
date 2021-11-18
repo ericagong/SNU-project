@@ -25,7 +25,7 @@ export const getArticle = (targetArticle) => {
 }
 
 export const createArticle_ = (newArticle) => {
-    return { type : actionTypes.GET_ARTICLE, 
+    return { type : actionTypes.CREATE_ARTICLE, 
             id : newArticle.id, 
             author_id : newArticle.author_id,
             title : newArticle.title,
