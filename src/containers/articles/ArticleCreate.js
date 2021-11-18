@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-// import * as actionTypes from '../../store/actions/ActionTypes';
 import * as actionCreators from '../../store/actions/index';
 
 class ArticleCreate extends Component {
@@ -11,19 +10,6 @@ class ArticleCreate extends Component {
         content : '',
         tab : "Write",
     }
-
-    // constructor(props) {
-    //     super(props)
-    //     this.state.user = this.props.storedUsers.find((user) => {
-    //         return (user.logged_in === true)
-    //     })
-    //     // TODO: change with axios
-    //     this.state.id = this.props.storedArticles.length + 1
-        
-    //     console.log('[Constructor]')
-    //     console.log("user :: " , this.state.user)
-    //     console.log("article_id :: ", this.state.id)
-    // }
 
     clickBackHandler = () => {
         this.props.history.push('/articles')
@@ -125,7 +111,6 @@ const mapDispatchToProps = dispatch => {
     return {
         onCreateArticle : (id, author_id, title, content) => {
             dispatch(actionCreators.createArticle({ id : id, author_id : author_id, title : title, content : content}))
-            // dispatch({ type : actionTypes.CREATE_ARTICLE, author_id : author_id, title : title, content : content })
         }
     }
 }
