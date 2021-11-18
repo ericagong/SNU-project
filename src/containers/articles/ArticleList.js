@@ -1,35 +1,26 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Article from '../../components/article/Article';
-import * as actionTypes from '../../store/actions/ActionTypes';
+// import * as actionTypes from '../../store/actions/ActionTypes';
+import * as actionCreators from '../../store/actions/index';
 
 class ArticleList extends Component {
-  state = {
-    user : {},  
-    // articles : [],
-  }
-
-  constructor(props) {
-    super(props)
-    this.state.user = this.props.storedUsers.find((user) => {
-        return (user.logged_in === true)
-    })
-    console.log('[Constructor]')
-    console.log('user ::', this.state.user)
-  }
 
   clickCreateHandler = () => {
     this.props.history.push('/articles/create')
   }
 
-  clickTitleHandler = (article) => {
-    this.props.onGetArticle(article)  
-    this.props.history.push(`/articles/${article.id}`)
+  clickTitleHandler = (targetArticle) => {
+    this.props.onGetArticle(targetArticle)  
+    this.props.history.push(`/articles/${targetArticle.id}`)
   }
 
   render () {
+    let redirect = null
+    let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
+    if(!loginUser) redirect = <Redirect to ='/login'/>
     const articles = this.props.storedArticles.map((article) => {
       let author = this.props.storedUsers.find((user) => {
         return (user.id === article.author_id)
@@ -39,7 +30,7 @@ class ArticleList extends Component {
             <Article 
                 article_id = {article.id}
                 article_title = {article.title}
-                author_name = {author.name}
+                author_name = {(author) && author.name}
                 clickTitle = {() => this.clickTitleHandler(article)}
             />
           </div>
@@ -48,6 +39,7 @@ class ArticleList extends Component {
 
     return ( 
         <div className = 'ArticleList'>
+            {redirect}
             {articles}
             <button 
                 id = 'create-article-button'
@@ -69,10 +61,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onGetArticles : () => {
-      dispatch({ type : actionTypes.GET_ARTICLES })
+      dispatch(actionCreators.getArticles())
     },
     onGetArticle : (targetArticle) => {
-      dispatch({ type: actionTypes.GET_ARTICLE, targetArticle : targetArticle})
+      dispatch(actionCreators.getArticle(targetArticle))
     },
   }
 }

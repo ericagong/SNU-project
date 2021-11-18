@@ -71,7 +71,7 @@ class ArticleDetail extends Component {
   }
 
   render () {
-    const comments = null
+    let comments = null
     if(this.state.article && this.state.user) {
       const filteredComments = this.props.storedComments.filter((comment) => {
         return (comment.article_id === this.state.article.id)
