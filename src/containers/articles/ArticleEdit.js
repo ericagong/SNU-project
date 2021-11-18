@@ -76,23 +76,28 @@ class ArticleEdit extends Component {
         if(this.state.tab === "Write") {
             currTab = (
                 <div className = 'WriteTab'>
-                    <input 
-                        id = 'article-title-input' 
-                        type = 'text' 
-                        placeholder = 'Title'
-                        value = {this.state.title}
-                        onChange = {(event) => this.setState( { title : event.target.value })}
-                    >
-                    </input>
-                    <textarea
-                        id = 'article-content-input' 
-                        type = 'text' 
-                        row = '10'
-                        placeholder = 'Content'
-                        value = {this.state.content}
-                        onChange = {(event) => this.setState( { content : event.target.value })}
-                    >
-                    </textarea>
+                    <p className = 'title'>
+                        <label>Title</label>
+                        <input 
+                            id = 'article-title-input' 
+                            type = 'text' 
+                            placeholder = 'Title'
+                            value = {this.state.title}
+                            onChange = {(event) => this.setState( { title : event.target.value })}
+                        >
+                        </input>
+                    </p>
+                    <p className = 'Content'>
+                        <label>Content</label>
+                        <textarea
+                            id = 'article-content-input' 
+                            type = 'text' 
+                            row = '10'
+                            value = {this.state.content}
+                            onChange = {(event) => this.setState( { content : event.target.value })}
+                        >
+                        </textarea>
+                    </p>
                 </div>
             )
         }

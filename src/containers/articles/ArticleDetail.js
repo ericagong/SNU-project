@@ -148,15 +148,17 @@ class ArticleDetail extends Component {
             </div>
             <div className = 'CommentTab'>
                 {comments}
-                <textarea
-                    id = 'new-comment-content-input' 
-                    type = 'text' 
-                    row = '10'
-                    placeholder = 'Comment'
-                    value = {this.state.content}
-                    onChange = {(event) => this.setState( { content : event.target.value })}
-                > 
-                </textarea>
+                <p className = 'CommentContent'>
+                  <label>Comment</label>
+                  <textarea
+                      id = 'new-comment-content-input' 
+                      type = 'text' 
+                      row = '10'
+                      value = {this.state.content}
+                      onChange = {(event) => this.setState( { content : event.target.value })}
+                  > 
+                  </textarea>
+                </p>
                 <button 
                     id = 'confirm-create-comment-button'
                     disabled = {!this.state.content}
