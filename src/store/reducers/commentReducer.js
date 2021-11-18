@@ -17,10 +17,8 @@ const commentReducer = (state = initialCommentState, action) => {
       return { ...state, comments : action.comments } 
     case actionTypes.CREATE_COMMENT:
       console.log("CREATE_COMMENT")
-      let length = state.comments.length
-      let lastComment = state.comments[length-1]
       const newComment = {
-        id : lastComment.id + 1,
+        id : action.id,
         article_id : action.article_id,
         author_id : action.author_id,
         content : action.content,

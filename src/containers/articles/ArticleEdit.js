@@ -18,20 +18,13 @@ class ArticleEdit extends Component {
 
     constructor(props) {
         super(props)
-        // this.state.user = this.props.storedUsers.find((user) => {
-        //     return (user.logged_in === true)
-        // })
 
         const selectedArticle = this.props.storedArticles.find((article) => {
             return (article.id === parseInt(this.props.match.params.id))
         })
 
-        // // console.log("selectedArticle" , selectedArticle)
-
         this.props.onGetArticle(selectedArticle)
-        // console.log("SSA", this.props.storedSelectedArticle)
-
-        // this.state.article = this.props.storedSelectedArticle
+        
         
         this.state.title = selectedArticle.title
         this.state.original_title = selectedArticle.title
@@ -39,7 +32,6 @@ class ArticleEdit extends Component {
         this.state.original_content = selectedArticle.content
 
         console.log('[Constructor]')
-        // console.log("user :: " , this.state.user)
         console.log("article :: ", selectedArticle)
         console.log("title :: ", this.state.title)
         console.log("content :: ", this.state.content)
@@ -62,7 +54,7 @@ class ArticleEdit extends Component {
             return (article.id === targetArticle.id)
         })
         this.setState({ article : modified })
-        this.props.history.push(`/articles/${this.state.article.id}`)
+        this.props.history.push(`/articles/${targetArticle.id}`)
     }
 
     clickPreviewHandler = () => {

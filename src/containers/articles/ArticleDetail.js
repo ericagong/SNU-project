@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Comment from '../../components/comment/Comment';
-import * as actionTypes from '../../store/actions/ActionTypes';
 
+// TODO: change edit Comment 
+
+import Comment from '../../components/comment/Comment';
 import * as actionCreators from '../../store/actions/index';
 
 
@@ -16,7 +17,7 @@ class ArticleDetail extends Component {
   constructor(props) {
     super(props)
     this.props.onGetArticles()
-    console.log(this.props.storedArticles)
+    this.props.onGetComments()
   }
 
   clickBackHandler = () => {
@@ -38,6 +39,9 @@ class ArticleDetail extends Component {
     else {
       if(input.length > 0) {
         this.props.onEditCommnet(comment, input)
+        setTimeout(() => {
+          this.forceUpdate()
+        }, 2000)
       }
       else alert('user cannot create empty comment')
     }
@@ -47,25 +51,24 @@ class ArticleDetail extends Component {
     this.props.onDeleteComment(comment)
   }
 
-  clickConfirmHandler = () => {
-    this.props.onCreateComment(this.state.article.id, this.state.user.id, this.state.content) 
+  clickConfirmHandler = (article_id, user_id) => {
+    this.props.onCreateComment(article_id, user_id, this.state.content) 
   }
 
   render () {
+    console.log("render")
     let redirect = null
     let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
     if(!loginUser) redirect = <Redirect to ='/login'/>
 
     let article_id = parseInt(this.props.match.params.id)
-    console.log('storedArticles', this.props.storedArticles)
-    console.log(article_id)
-    let selectedArticle = this.props.storedArticles.find((article) => (article.id === article_id))
-    console.log('selectedArticle', selectedArticle)
-
-    let author = this.props.storedUsers.find((user) => (user.id === selectedArticle.author_id))
     
-    console.log('selectedArticle', selectedArticle)
-    console.log('author', author)
+    let selectedArticle = this.props.storedArticles.find((article) => (article.id === article_id))
+
+    let author = null
+    if(selectedArticle) {
+      author = this.props.storedUsers.find((user) => (user.id === selectedArticle.author_id))
+    }
 
     let comments = null
     if(loginUser && selectedArticle) {
@@ -79,7 +82,7 @@ class ArticleDetail extends Component {
         })
   
         let visibility = (loginUser.id === comment.author_id) ? true : false
-        
+        console.log("render comments", comment)
         return (
           <div className = 'Comment' key = {comment.id}>
             <Comment 
@@ -139,7 +142,7 @@ class ArticleDetail extends Component {
             </button>
             <div className = 'ArticleTab'>
                 <h1 id = 'article-title'>{selectedArticle.title}</h1>
-                <h3 id = 'article-author'>{author.name}</h3>
+                {(author) && <h3 id = 'article-author'>{author.name}</h3>}
                 <p id = 'article-content'>{selectedArticle.content}</p>
                 {articleButtons()}
             </div>
@@ -157,7 +160,7 @@ class ArticleDetail extends Component {
                 <button 
                     id = 'confirm-create-comment-button'
                     disabled = {!this.state.content}
-                    onClick = {() => this.clickConfirmHandler()}>
+                    onClick = {() => this.clickConfirmHandler(selectedArticle.id, loginUser.id)}>
                     confirm-create-comment
                 </button>
             </div> 
@@ -173,22 +176,25 @@ const mapDispatchToProps = dispatch => {
     },
     onDeleteArticle : (targetArticle) => {
       dispatch(actionCreators.deleteArticle(targetArticle))
-      // dispatch({ type : actionTypes.DELETE_ARTICLE, targetArticle : targetArticle })
     },
     onGetArticle : (targetArticle) => {
-      dispatch({ type : actionTypes.GET_ARTICLE, targetArticle : targetArticle })
+      dispatch(actionCreators.getArticle(targetArticle))
+      // dispatch({ type : actionTypes.GET_ARTICLE, targetArticle : targetArticle })
     },
     onGetComments : (modifiedComments) => {
-      dispatch({ type : actionTypes.GET_COMMENTS , modifiedComments : modifiedComments })
+      dispatch(actionCreators.getComments(modifiedComments))
     },
     onCreateComment : (article_id, author_id, content) => {
-      dispatch({ type : actionTypes.CREATE_COMMENT, article_id : article_id, author_id : author_id, content : content})
+      dispatch(actionCreators.createComment({ article_id : article_id, author_id : author_id, content : content }))
+      // dispatch({ type : actionTypes.CREATE_COMMENT, article_id : article_id, author_id : author_id, content : content})
     },
     onEditCommnet : (targetComment, content) => {
-      dispatch({ type : actionTypes.EDIT_COMMENT, targetComment : targetComment, content : content})
+      dispatch(actionCreators.editComment(targetComment, content))
+      // dispatch({ type : actionTypes.EDIT_COMMENT, targetComment : targetComment, content : content})
     },
     onDeleteComment : (targetComment) => {
-      dispatch({ type : actionTypes.DELETE_COMMENT, targetComment : targetComment })
+      dispatch(actionCreators.deleteComment(targetComment))
+      // dispatch({ type : actionTypes.DELETE_COMMENT, targetComment : targetComment })
     },
   }
 }

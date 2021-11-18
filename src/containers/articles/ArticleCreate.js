@@ -17,10 +17,6 @@ class ArticleCreate extends Component {
 
     clickConfirmHandler = (loginUser, newArticleID) => {
         console.log('[clickConfirmHandler]')
-        // console.log('newArticleID :: ' , newArticleID)
-        // console.log('loginUserID :: ' , loginUser)
-        // console.log('title :: ' , this.state.title)
-        // console.log('content :: ' , this.state.content)
         this.props.onCreateArticle(newArticleID, loginUser.id, this.state.title, this.state.content)
         this.setState({ confirm : true })
         setTimeout(()=> {
