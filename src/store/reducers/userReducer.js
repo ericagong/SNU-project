@@ -1,29 +1,7 @@
 import * as actionTypes from '../actions/ActionTypes';
 
 const initialUserState = {
-    users : [
-        {
-          "id": 1,
-          "email": "swpp@snu.ac.kr",
-          "password": "iluvswpp",
-          "name": "Software Lover",
-          "logged_in": false
-        },
-        {
-          "id": 2,
-          "email": "alan@turing.com",
-          "password": "iluvswpp",
-          "name": "Alan Turing",
-          "logged_in": false
-        },
-        {
-          "id": 3,
-          "email": "edsger@dijkstra.com",
-          "password": "iluvswpp",
-          "name": "Edsger Dijkstra",
-          "logged_in": false
-        }
-    ],
+    users : [],
     loginUser : null
 }
 
@@ -33,8 +11,8 @@ const initialUserState = {
 const userReducer = (state = initialUserState, action) => {
     switch(action.type) {
         case actionTypes.GET_USERS:
-            console.log('GET_USER')
-            return state
+            console.log('GET_USERS')
+            return { ...state, users : action.users }
         case actionTypes.SET_USER:
             console.log('SET_USER')
             const modified = state.users.map((user) => {

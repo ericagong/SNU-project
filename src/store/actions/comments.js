@@ -41,7 +41,7 @@ export const editComment_ = (targetComment, editContent) => {
 export const editComment = (targetComment, editContent) => {
     return axios.put(`/api/comments/${targetComment.id}`, 
         { ...targetComment, content : editContent })
-        .then(response => dispatch(editComment_(targetComment, editContent)))
+        // .then(response => dispatch(editComment_(targetComment, editContent)))
 }
 
 export const deleteComment_ = (targetComment) => {
@@ -50,5 +50,5 @@ export const deleteComment_ = (targetComment) => {
 
 export const deleteComment = (targetComment) => {
     return axios.delete(`/api/comments/${targetComment.id}`)
-        .then(response => dispatch(deleteComment_(targetComment)))
+        // .then(response => dispatch(deleteComment_(targetComment)))
 }

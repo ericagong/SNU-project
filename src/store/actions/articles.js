@@ -54,7 +54,7 @@ export const editArticle_ = (targetArticle, editTitle, editContent) => {
 export const editArticle = (targetArticle, editTitle, editContent) => {
     return axios.put(`/api/articles/${targetArticle.id}`, 
         { ...targetArticle, title : editTitle, content : editContent })
-        .then(response => dispatch(editArticle_(targetArticle, editTitle, editContent)))
+        // .then(response => dispatch(editArticle_(targetArticle, editTitle, editContent)))
 }
 
 export const deleteArticle_ = (targetArticle) => {
@@ -63,5 +63,5 @@ export const deleteArticle_ = (targetArticle) => {
 
 export const deleteArticle = (targetArticle) => {
     return axios.delete(`/api/articles/${targetArticle.id}`)
-        .then(response => dispatch(deleteArticle_(targetArticle)))
+        // .then(response => dispatch(deleteArticle_(targetArticle)))
 }

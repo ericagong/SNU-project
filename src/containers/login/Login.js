@@ -3,33 +3,27 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import * as actionTypes from '../../store/actions/ActionTypes';
+import * as actionCreators from '../../store/actions/index';
 
 class Login extends Component {
     state = {
         email : '',
         password : '',
-        login : false,
     }
 
-    constructor(props) {
-        super(props)
-        const user = this.props.storedUsers.find((user) => {
-            return (user.logged_in === true)
-        })
-        if(user) this.state.login = true
-
-        console.log('[Constructor]')
-        console.log('login ::', this.state.login)
+    componentDidMount() {
+        console.log('[ComponentDidMount]')
+        this.props.onGetUsers()
     }
-    
 
     loginHandler = () => {
+        console.log('[LoginHandler]')
         if((this.state.email === 'swpp@snu.ac.kr') && (this.state.password === 'iluvswpp')) {
+            console.log('storedUsers :: ' , this.props.storedUsers)
             const user = this.props.storedUsers.find((user) => {
                 return ((user.email === this.state.email) && (user.password === this.state.password))
             })
             this.props.onSetUser(user)
-            this.setState({ login : true })
         }
         else {
             alert('Email or password is wrong')
@@ -38,7 +32,9 @@ class Login extends Component {
 
     render () {
         let redirect = null
-        if(this.state.login) redirect = <Redirect to = '/articles'/>
+        let loginUser = this.props.storedUsers.find((user) => (user.logged_in))
+        console.log(loginUser)
+        if(loginUser) redirect = <Redirect to = '/articles'/>
         return (
             <div className = 'Login'>
                 {redirect}
@@ -75,11 +71,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // onGetUsers : () => {
-        //     dispatch({ type : actionTypes.GET_USERS })
-        // },
+        onGetUsers : () => {
+            dispatch(actionCreators.getUsers())
+        },
         onSetUser : (targetUser) => {
-            dispatch({ type : actionTypes.SET_USER, targetUser : targetUser})
+            dispatch(actionCreators.setUser(targetUser))
         }
     }
 }
