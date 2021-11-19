@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import Button from './../../Assets/Images/Button.png'
+// import Box from './../../Assets/Images/Box.png'
+
+import './Problems.css';
 
 class Probelms extends Component {
 
@@ -21,11 +25,13 @@ class Probelms extends Component {
                     이러한 시스템이 구축되지 않는다면 Suggester는 정보의 질을 따지지 않고 공급할 것이고, 따라서 User는 수많은 정보 속에서 양질의 정보를 찾아 헤매는 악순환이 반복될 수 밖에 없음.
                     </p>
                 </div>      
-                <button 
+                {/* <button 
                     id = 'next-button'
                     onClick = {() => this.clickNextHandler()}>
                     Next
-                </button>
+                </button> */}
+                <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
+                <div className="ButtonText">Next</div>
             </div>
         )
     }

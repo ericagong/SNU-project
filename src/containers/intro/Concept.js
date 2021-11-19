@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import Button from './../../Assets/Images/Button.png'
+// import Box from './../../Assets/Images/Box.png'
+
+import './Concept.css';
 
 class Concept extends Component {
 
@@ -32,11 +36,13 @@ class Concept extends Component {
                         9. 위 과정이 지속적으로 반복된다.
                     </p>
                 </div>      
-                <button 
+                {/* <button 
                     id = 'next-button'
                     onClick = {() => this.clickNextHandler()}>
                     Next
-                </button>
+                </button> */}
+                <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
+                <div className="ButtonText">Next</div>
             </div>
         )
     }
