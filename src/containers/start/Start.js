@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class Start extends Component {
 
-    clickLogoutHandler = (loginUser) => {
-        console.log('[clickLogoutHandler]')
-        this.props.onSetUser(loginUser)
-        this.props.history.push('/login')
+    clickNextHandler = () => {
+        this.props.history.push('/intro/problems')
     }
 
     render () {
         return (
-            <div className = 'Header'>
-                {redirect}
+            <div className = 'Start'>
+                <div className = 'GameInfo'>
+                    <p className = 'GameTitle'>
+                        GameTitle
+                    </p>
+                    <p className = 'PlayTime'>
+                        PlayTime
+                    </p>
+                    <p className = 'Creators'>
+                        Name of Creators
+                    </p>
+                </div>      
                 <button 
-                    id = 'logout-button'
-                    onClick = {() => this.clickLogoutHandler(loginUser)}>
-                    log-out
+                    id = 'next-button'
+                    onClick = {() => this.clickNextHandler()}>
+                    Next
                 </button>
             </div>
         )
