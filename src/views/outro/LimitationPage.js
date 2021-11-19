@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-// import Login from '../containers/login/Login';
-// import Footer from '../../components/footer/Footer';
+import Limitations from '../../containers/outro/Limitations';
+import Footer from '../../containers/footer/Footer';
 
 class LimitationPage extends Component {
     render () {
         return (
             <div className = 'LimitationPage'>
                 LimitationPage
-                {/* <Login/>
-                <Footer/> */}
+                <Limitations/>
+                <Footer/>
             </div>
         )
     }
