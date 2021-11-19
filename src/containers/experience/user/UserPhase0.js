@@ -34,7 +34,7 @@ class UserPhase0 extends Component {
     }
 
     startTransferHandler = () => {
-        this.props.history.push('/experience/user/phase1')
+        this.props.history.push(`/experience/user/phase1/${this.state.pickedSuggesterID}/${this.state.deposit}`)
     }
 
     render () {
@@ -129,17 +129,18 @@ class UserPhase0 extends Component {
                         {(this.state.pickedSuggester) &&
                             <div className = 'Suggester'>
                                 <Suggester 
-                                name = {this.state.pickedSuggester.name}
-                                reputation = {this.state.pickedSuggester.reputation}
-                                final = "true"
+                                    name = {this.state.pickedSuggester.name}
+                                    reputation = {this.state.pickedSuggester.reputation}
+                                    deposit = {this.state.deposit}
+                                    final = "true"
                                 />
-                                <div className = 'SuggesterDeposit'>Suggester Deposit : {this.state.deposit}</div>
                             </div>
                         }
                         <img id = 'channel-image' alt = 'channel-image-alt' src = './'/>
                         <div className = 'User'>
-                            <User/>
-                            <div className = 'UserDeposit'>User Deposit : {this.state.deposit}</div>
+                            <User
+                                deposit = {this.state.deposit}
+                            />
                         </div>
                         <button 
                             id = 'transfer-button'
