@@ -6,12 +6,14 @@ const Suggester = (props) => {
     return (
         <div className = 'Suggester'>
             <img id = 'suggester-image' alt = 'suggester-image-alt' src = './'/>
-            <button 
+            {(props.final === "false") && 
+                <button 
                 className = 'SelectSuggester'
                 onClick = {props.click}
-            >
+                >
                 {props.name}
-            </button>
+                </button>
+            }
             <div className = 'Reputation'>
                 {props.reputation}
             </div>
