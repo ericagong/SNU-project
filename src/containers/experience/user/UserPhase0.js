@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
 import Suggester from '../../../components/experience/Suggester';
+import User from '../../../components/experience/User';
 
 class UserPhase0 extends Component {
     state = {
@@ -126,14 +127,20 @@ class UserPhase0 extends Component {
                 <div className = 'AfterLoading'>
                     <div className = 'SetChannel'>
                         {(this.state.pickedSuggester) &&
-                            <Suggester 
-                            name = {this.state.pickedSuggester.name}
-                            reputation = {this.state.pickedSuggester.reputation}
-                            final = "true"
-                            />
+                            <div className = 'Suggester'>
+                                <Suggester 
+                                name = {this.state.pickedSuggester.name}
+                                reputation = {this.state.pickedSuggester.reputation}
+                                final = "true"
+                                />
+                                <div className = 'SuggesterDeposit'>Suggester Deposit : {this.state.deposit}</div>
+                            </div>
                         }
                         <img id = 'channel-image' alt = 'channel-image-alt' src = './'/>
-                        <div className = 'User'>User</div>
+                        <div className = 'User'>
+                            <User/>
+                            <div className = 'UserDeposit'>User Deposit : {this.state.deposit}</div>
+                        </div>
                         <button 
                             id = 'transfer-button'
                             onClick = {() => this.startTransferHandler()}>
