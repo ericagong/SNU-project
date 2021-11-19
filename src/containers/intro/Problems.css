@@ -3,7 +3,7 @@
     src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
   }
 
-.Title{
+.ProblemTitle{
     display: flex;
     justify-content: center;
     position: absolute;

@@ -7,7 +7,7 @@ class CurrentProbelmPage extends Component {
     render () {
         return (
             <div className = 'CurrentProbelmPage'>
-                CurrentProblemPage
+                {/* CurrentProblemPage */}
                 <Problems/>
                 <Footer />
             </div>

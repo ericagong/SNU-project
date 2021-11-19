@@ -1,16 +1,18 @@
 @font-face{
     font-family: 'Futura Handwritten';
-    src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
-  }
+    src: url('../../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+}
 
-.ChooseRoleTitle{
+.SuggesterGuide{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 40px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
     line-height: 50px;
     display: flex;
     align-items: center;
@@ -18,14 +20,16 @@
     font-family: 'Futura Handwritten';
 }
 
-.ChooseRoleUser{
+.Suggesters{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 40%;
-    left: 30%;
+    top: 100px;
+    left: 50%;
     transform: translateX(-50%);
-    font-size: 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
     line-height: 50px;
     display: flex;
     align-items: center;
@@ -33,14 +37,16 @@
     font-family: 'Futura Handwritten';
 }
 
-.ChooseRoleSuggester{
+.PickedSuggesterDescription{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 40%;
-    left: 70%;
+    top: 250px;
+    left: 50%;
     transform: translateX(-50%);
-    font-size: 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
     line-height: 50px;
     display: flex;
     align-items: center;
@@ -48,7 +54,24 @@
     font-family: 'Futura Handwritten';
 }
 
-.ButtonStyle{
+.DepositGuide{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.UserPhaseButtonStyle{
     position: absolute;
     width: 174px;
     height: 63px;
@@ -57,7 +80,7 @@
     transform: translateX(-50%);
 }
 
-.ButtonText{
+.UserPhaseButtonText{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -73,3 +96,4 @@
     text-align: center;
     font-family: 'Futura Handwritten';
 }
+

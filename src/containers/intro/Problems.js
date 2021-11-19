@@ -14,6 +14,7 @@ class Probelms extends Component {
     render () {
         return (
             <div className = 'Problems'>
+                <p className='ProblemTitle'>Problems</p>
                 <div className = 'CurrentProblems'>
                     <p className = 'Situation'>
                         오늘날 인터넷 상에서 User는 다양한 Suggester에게 여러 정보를 얻을 수 있음. 하지만 Suggester가 제공하는 정보의 질은 보장받지 못함.

@@ -14,6 +14,7 @@ class Concept extends Component {
     render () {
         return (
             <div className = 'Concept'>
+                <p className='ConceptTitle'>Concept</p>
                 <div className = 'Roles'>
                     <p className = 'RoleExplain'>
                         - 시스템에 참여하는 참가자는 두 역할 중 하나를 맡는다.

@@ -12,7 +12,7 @@ class Background extends Component {
     render () {
         return (
             <div className = 'Background'>
-                <p className='Title'>Background</p>
+                <p className='BackgroundTitle'>Background</p>
                 <div className = 'ProjectBackground'>
                     <p className = 'StartingPoint'>
                         해당 문제를 Suggester와 User 사이 서로에게 영향을 끼칠 수 있는 채널을 만들어 해결하겠다는 발상이 "Two Of Two Scorched Earth" 프로젝트의 출발점임. 

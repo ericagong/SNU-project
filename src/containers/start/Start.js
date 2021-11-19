@@ -22,7 +22,7 @@ class Start extends Component {
                         PlayTime
                     </p>
                     <p className = 'Creators'>
-                        Name of Creators
+                        Name of Creators 
                     </p>
                 </div>  
                 <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />

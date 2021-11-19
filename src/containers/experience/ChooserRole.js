@@ -13,19 +13,20 @@ class ChooseRole extends Component {
     render () {
         return (
             <div className = 'ChooseRole'>
+                <div className= 'ChooseRoleTitle' >Choose Role</div>
                 <div className = 'RoleDescription'>
-                    <div className = 'User'>
+                    <div className = 'ChooseRoleUser'>
                         User
                     </div>
-                    <div className = 'Suggester'>
+                    <div className = 'ChooseRoleSuggester'>
                         Suggester
                     </div>
                 </div>
-                <button 
+                {/* <button 
                     id = 'user-button'
                     onClick = {() => this.clickUserHandler()}>
                     Experience User
-                </button>
+                </button> */}
                 <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickUserHandler()} />
                 <div className="ButtonText" onClick = {() => this.clickUserHandler()}>Experience User</div>
             </div>
