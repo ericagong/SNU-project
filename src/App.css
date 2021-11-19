@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face{
+  font-family: 'Futura Handwritten';
+  src: url('./Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+}

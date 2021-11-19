@@ -1,25 +1,56 @@
+@font-face{
+    font-family: 'Futura Handwritten';
+    src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+  }
+
 .GameTitle{
     display: flex;
     justify-content: center;
-    top: 82px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 50px;
     line-height: 50px;
     display: flex;
     align-items: center;
     text-align: center;
+    font-family: 'Futura Handwritten';
 }
-/* 
-.BoxStyle{
+
+.PlayTime{
+    display: flex;
+    justify-content: center;
     position: absolute;
-    width: 380.4px;
-    height: 206.4px;
-    top: 130px;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
-} */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.Creators{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
 
 .ButtonStyle{
     position: absolute;
@@ -28,4 +59,21 @@
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.ButtonText{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
 }
