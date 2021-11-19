@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Background from '../../containers/intro/Background';
 
-// import Login from '../containers/login/Login';
-// import Footer from '../../components/footer/Footer';
+import Background from '../../containers/intro/Background';
+import Footer from '../../containers/footer/Footer';
 
 class ProjectBackgroundPage extends Component {
     render () {
@@ -10,8 +9,7 @@ class ProjectBackgroundPage extends Component {
             <div className = 'ProjectBackgroundPage'>
                 ProjectBackgroundPage
                 <Background/>
-                {/* <Login/>
-                <Footer/> */}
+                <Footer/>
             </div>
         )
     }

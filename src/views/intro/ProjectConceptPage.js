@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-// import Login from '../containers/login/Login';
-// import Footer from '../../components/footer/Footer';
 
 import Concept from '../../containers/intro/Concept';
+import Footer from '../../containers/footer/Footer';
 
 class ProjectConceptPage extends Component {
     render () {
@@ -11,8 +10,7 @@ class ProjectConceptPage extends Component {
             <div className = 'ProjectConceptPage'>
                 ProjectConceptPage
                 <Concept />
-                {/* <Login/>
-                <Footer/> */}
+                <Footer/>
             </div>
         )
     }

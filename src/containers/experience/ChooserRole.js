@@ -7,22 +7,21 @@ class ChooseRole extends Component {
         this.props.history.push('/experience/user/phase0')
     }
 
-    clickUserHandler = () => {
-        this.props.history.push('/experience/suggester/phase0')
-    }
-
     render () {
         return (
             <div className = 'ChooseRole'>
+                <div className = 'RoleDescription'>
+                    <div className = 'User'>
+                        User
+                    </div>
+                    <div className = 'Suggester'>
+                        Suggester
+                    </div>
+                </div>
                 <button 
                     id = 'user-button'
                     onClick = {() => this.clickUserHandler()}>
-                    User
-                </button>
-                <button 
-                    id = 'suggester-button'
-                    onClick = {() => this.clickSuggesterHandler()}>
-                    Suggester
+                    Experience User
                 </button>
             </div>
         )

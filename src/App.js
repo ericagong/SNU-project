@@ -16,6 +16,8 @@ import SuggesterPhase1Page from './views/experience/suggester/SuggesterPhase1Pag
 import TerminateCondition0Page from './views/experience/terminate/TerminateCondition0Page';
 import TerminateCondition1Page from './views/experience/terminate/TerminateCondition1Page';
 
+import SandboxPage from './views/sandbox/SandboxPage';
+
 import LimitationPage from './views/outro/LimitationPage';
 
 import EndingPage from './views/end/EndingPage';
@@ -41,6 +43,8 @@ function App() {
           <Route path='/experience/termination/condition0' exact component={TerminateCondition0Page}/>
           <Route path='/experience/termination/condition1' exact component={TerminateCondition1Page}/>
           
+          <Route path='/sandbox' exact component={SandboxPage}/>
+
           <Route path='/outro/limitations' exact component={LimitationPage}/>
           
           <Route path='/end' exact component={EndingPage}/>
