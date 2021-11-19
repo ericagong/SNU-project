@@ -26,16 +26,19 @@ class Start extends Component {
                     </p>
                     <img className='BoxStyle' src={Box} alt={Box}/>
                 </div>  
-                <div>    
+
                 {/* <img className="ButtonStyle" src={Button} alt={Button} /> */}
-                <button 
+                {/* <button 
                     id = 'next-button'
                     onClick = {() => this.clickNextHandler()}>
                     Next 
-                </button>
+                </button> */}
                 
+                <button type="button" onClick = {() => this.clickNextHandler()}>
                     <img className="ButtonStyle" src={Button} alt={Button} />
-                </div>
+                        Next
+                </button>
+
             </div>
         )
     }
