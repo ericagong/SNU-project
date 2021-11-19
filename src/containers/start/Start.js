@@ -26,7 +26,7 @@ class Start extends Component {
                     </p>
                 </div>  
                 <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
-                <div className="ButtonText">Next</div>
+                <div className="ButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
             </div>
         )
     }
