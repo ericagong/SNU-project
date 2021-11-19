@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-// import Login from '../containers/login/Login';
-// import Footer from '../../components/footer/Footer';
 import Start from '../../containers/start/Start';
+import Footer from '../../containers/footer/Footer';
 
 class StartPage extends Component {
     render () {
@@ -10,6 +9,7 @@ class StartPage extends Component {
             <div className = 'StartPage'>
                 startPage
                 <Start/>
+                <Footer/>
             </div>
         )
     }
