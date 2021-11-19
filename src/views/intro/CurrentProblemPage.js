@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-// import Login from '../containers/login/Login';
-// import Footer from '../../components/footer/Footer';
 import Problems from '../../containers/intro/Problems';
+import Footer from '../../containers/footer/Footer';
 
 class CurrentProbelmPage extends Component {
     render () {
@@ -10,8 +9,7 @@ class CurrentProbelmPage extends Component {
             <div className = 'CurrentProbelmPage'>
                 CurrentProblemPage
                 <Problems/>
-                {/* <Login/>
-                <Footer/> */}
+                <Footer />
             </div>
         )
     }

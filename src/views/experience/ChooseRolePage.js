@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-// import Login from '../containers/login/Login';
-// import Footer from '../../components/footer/Footer';
+import ChooserRole from '../../containers/experience/ChooserRole';
+import Footer from '../../containers/footer/Footer';
 
 class ChooseRolePage extends Component {
     render () {
         return (
             <div className = 'ChooseRolePage'>
                 ChooseRolePage
-                {/* <Login/>
-                <Footer/> */}
+                <ChooserRole/>
+                <Footer/>
             </div>
         )
     }
