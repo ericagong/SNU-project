@@ -14,8 +14,8 @@
 
 .BoxStyle{
     position: absolute;
-    width: 634px;
-    height: 344px;
+    width: 380.4px;
+    height: 206.4px;
     top: 130px;
     left: 50%;
     transform: translateX(-50%);
@@ -23,9 +23,9 @@
 
 .ButtonStyle{
     position: absolute;
-    width: 290px;
-    height: 105px;
-    top: 500px;
+    width: 174px;
+    height: 63px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
 }
