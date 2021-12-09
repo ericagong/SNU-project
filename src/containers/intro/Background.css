@@ -43,6 +43,7 @@
 .ButtonStyle:active{
     left: 49%;
     transform: translateX(-51%);
+    opacity: 70%;
 }
 
 .ButtonText{
