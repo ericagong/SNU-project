@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
+import Suggester from '../../components/experience/Suggester'
+import User from '../../components/experience/User'
+
 class Sandbox extends Component {
 
   state = {
@@ -204,6 +207,13 @@ class Sandbox extends Component {
   }
 
   render () {
+    let riskTakers = []
+    let cowards = []
+    let easygoings = []
+    let tactfuls = []
+    
+    
+
     if(this.state.setEnv && this.checkAlive()) {
       this.match()
       console.log("match")
@@ -231,11 +241,16 @@ class Sandbox extends Component {
             <div className = 'Simulation'>
                 샌드박스 모듈
             </div>      
-            <div className = 'display'>
+            <div className = 'Display'>
               [Display]
-              Suggesters
-              [Easygoing] {this.state.easygoingPop}
-              [Tactful] {this.state.tactfulPop}
+              <div className = 'Suggesters'>
+                [Suggesters] 
+                [Easygoing] {this.state.easygoingPop}
+                [Tactful] {this.state.tactfulPop}
+
+              </div>
+              
+              
               Users
               [RiskTaker] {this.state.riskTakerPop}
               [Coward] {this.state.cowardPop}
