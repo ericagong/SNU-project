@@ -177,10 +177,8 @@ class Sandbox extends Component {
                   [RiskTaker] {this.state.riskTakerPop}
                   [Coward] {this.state.cowardPop}
                 </div>
-                <img className="LeftLongButtonStyle" src={LongButton} alt={LongButton} onClick = {() => this.setState({ currTab : 'Population'})} />
-                <div className="LeftLongButtonText" onClick = {() => this.setState({ currTab : 'Population'})}>Population Tab</div>
-                <img className="RightLongButtonStyle" src={LongButton} alt={LongButton} onClick = {() => this.setState({ currTab : 'Environment'})} />
-                <div className="RightLongButtonText" onClick = {() => this.setState({ currTab : 'Environment'})}>Environment Tab</div>
+                <div className="PopulationTabText" onClick = {() => this.setState({ currTab : 'Population'})}>Population Tab</div>
+                <div className="EnvironmentTabText" onClick = {() => this.setState({ currTab : 'Environment'})}>Environment Tab</div>
                 {/* <button 
                     id = 'population-tab'
                     onClick = {() => this.setState({ currTab : 'Population'})}>
@@ -193,69 +191,76 @@ class Sandbox extends Component {
                 </button> */}
                 <div className = 'Inputbox'>
                   { (this.state.currTab === 'Population') &&
-                    <div className = 'Popoulation'>
-                      <label>Suggesters</label>
+                    <div className = 'Population'>
+                      <label className = 'Sandbox_SuggestersText'>Suggesters</label>
                       <p>
-                        <label>[Easygoing]</label>
                         <img id = 'character1' alt = {Character1} src = {Character1} />
-                        
-                        <input 
-                          id = 'easygoing-population'
-                          type = 'number'
-                          min = '1'
-                          max = '5'
-                          value = {this.state.easygoingPop}
-                          onChange = {(event) => this.setState({easygoingPop : event.target.value })}>
-                        </input>
-                        <div>
-                          (min: 1, max: 5)
+                        <div id = 'character1_container'>
+                          <label>[Easygoing]</label>
+                          <input 
+                            id = 'easygoing-population'
+                            type = 'number'
+                            min = '1'
+                            max = '5'
+                            value = {this.state.easygoingPop}
+                            onChange = {(event) => this.setState({easygoingPop : event.target.value })}>
+                          </input>
+                          <div>
+                            (min: 1, max: 5)
+                          </div>
                         </div>
                       </p>
                       <p>
-                        <label>[Tactful]</label>
                         <img id = 'character2' alt = {Character2} src = {Character2} />
-                        <input 
-                          id = 'tactful-population'
-                          type = 'number'
-                          min = '1'
-                          max = '5'
-                          value = {this.state.tactfulPop}
-                          onChange = {(event) => this.setState({tactfulPop : event.target.value })}>
-                        </input>
-                        <div>
-                          (min: 1, max: 5)
+                        <div id = 'character2_container'>
+                          <label>[Tactful]</label>
+                          <input 
+                            id = 'tactful-population'
+                            type = 'number'
+                            min = '1'
+                            max = '5'
+                            value = {this.state.tactfulPop}
+                            onChange = {(event) => this.setState({tactfulPop : event.target.value })}>
+                          </input>
+                          <div>
+                            (min: 1, max: 5)
+                          </div>
                         </div>
                       </p>
                       
-                      <label>Users</label>
+                      <label className = 'Sandbox_UsersText'>Users</label>
                       <p>
-                        <label>[RiskTaker]</label>
                         <img id = 'character4' alt = {Character4} src = {Character4} />
-                        <input 
-                          id = 'risktaker-population'
-                          type = 'number'
-                          min = '3'
-                          max = '10'
-                          value = {this.state.riskTakerPop}
-                          onChange = {(event) => this.setState({riskTakerPop : event.target.value })}>
-                        </input>
-                        <div>
-                          (min: 3, max: 10)
+                        <div id = 'character4_container'>
+                          <label>[RiskTaker]</label>
+                          <input 
+                            id = 'risktaker-population'
+                            type = 'number'
+                            min = '3'
+                            max = '10'
+                            value = {this.state.riskTakerPop}
+                            onChange = {(event) => this.setState({riskTakerPop : event.target.value })}>
+                          </input>
+                          <div>
+                            (min: 3, max: 10)
+                          </div>
                         </div>
                       </p>
                       <p>
-                        <label>[Coward]</label>
                         <img id = 'character5' alt = {Character5} src = {Character5} />
-                        <input 
-                          id = 'coward-population'
-                          type = 'number'
-                          min = '2'
-                          max = '10'
-                          value = {this.state.cowardPop}
-                          onChange = {(event) => this.setState({cowardPop : event.target.value })}>
-                        </input>
-                        <div>
-                          (min: 2, max: 10)
+                        <div id = 'character5_container'>
+                          <label>[Coward]</label>
+                          <input 
+                            id = 'coward-population'
+                            type = 'number'
+                            min = '2'
+                            max = '10'
+                            value = {this.state.cowardPop}
+                            onChange = {(event) => this.setState({cowardPop : event.target.value })}>
+                          </input>
+                          <div>
+                            (min: 2, max: 10)
+                          </div>
                         </div>
                       </p>
                     </div>

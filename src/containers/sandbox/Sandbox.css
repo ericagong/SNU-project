@@ -18,6 +18,20 @@
     font-family: 'Futura Handwritten';
 }
 
+.display{
+    position: absolute;
+    /* display: flex; */
+    width: 80%;
+
+    bottom : 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+    font-family: 'Futura Handwritten';
+    font-size: 15px;
+}
+
 .ButtonStyle{
     position: absolute;
     height: 63px;
@@ -49,29 +63,14 @@
     font-family: 'Futura Handwritten';
 }
 
-.LeftLongButtonStyle{
-    position: absolute;
-    height: 63px;
-    top: 100px;
-    left: 25%;
-    transform: translateX(-25%);
-}
-
-.LeftLongButtonStyle:active{
-    left: 24%;
-    transform: translateX(-26%);
-    opacity: 70%;
-}
-
-.LeftLongButtonText{
+.PopulationTabText{
     position: absolute;
     display: flex;
     justify-content: center;
     position: absolute;
     top: 108px;
-    /* bottom: 105px; */
-    left: 29%;
-    transform: translateX(-29%);
+    left: 34%;
+    transform: translateX(-50%);
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -82,29 +81,52 @@
     font-family: 'Futura Handwritten';
 }
 
-.RightLongButtonStyle{
-    position: absolute;
-    height: 63px;
-    top: 100px;
-    left: 75%;
-    transform: translateX(-75%);
-}
-
-.RightLongButtonStyle:active{
-    right: 74%;
-    transform: translateX(-76%);
-    opacity: 70%;
-}
-
-.RightLongButtonText{
+.EnvironmentTabText{
     position: absolute;
     display: flex;
     justify-content: center;
     position: absolute;
     top: 108px;
-    /* bottom: 105px; */
-    left: 71%;
-    transform: translateX(-71%);
+    left: 66%;
+    transform: translateX(-50%);
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.Sandbox_SuggestersText{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 158px;
+    left: 34%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.Sandbox_UsersText{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 158px;
+    left: 66%;
+    transform: translateX(-50%);
+
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -119,16 +141,50 @@
     position: absolute;
     height: 150px;
     left: 25%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
+}
+
+#character1:active{
+    top: 44%;
+}
+
+#character1_container{
+    position: absolute;
+    left: 25%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 5px;
+    font-family: 'Futura Handwritten';
 }
 
 #character2{
     position: absolute;
     height: 150px;
     left: 40%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
+}
+
+#character2:active{
+    top: 44%;
+}
+
+#character2_container{
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 5px;
+    font-family: 'Futura Handwritten';
 }
 
 
@@ -136,8 +192,25 @@
     position: absolute;
     height: 150px;
     left: 60%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
+}
+
+#character4:active{
+    top: 44%;
+}
+
+#character4_container{
+    position: absolute;
+    left: 60%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 5px;
+    font-family: 'Futura Handwritten';
 }
 
 
@@ -145,6 +218,23 @@
     position: absolute;
     height: 150px;
     left: 75%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
+}
+
+#character5:active{
+    top: 44%;
+}
+
+#character5_container{
+    position: absolute;
+    left: 75%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 5px;
+    font-family: 'Futura Handwritten';
 }
