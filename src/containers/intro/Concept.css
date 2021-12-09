@@ -18,6 +18,18 @@
     font-family: 'Futura Handwritten';
 }
 
+.ProjectConcept{
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 10px;
+    text-align: left;
+    
+}
 .ButtonStyle{
     position: absolute;
     width: 174px;

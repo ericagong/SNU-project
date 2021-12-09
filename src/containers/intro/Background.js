@@ -29,8 +29,8 @@ class Background extends Component {
                         이렇게 Suggester와 User가 서로 영향을 미칠 수 있는 채널은 Smart contract 기술에 의해 구현될 수 있음. 
                         <div className = 'TechnologyDescription'>
                             채널은 Oleg Andreev가 제안한 개념인 스마트 컨트랙트 기술(신뢰할 수 있는 중개자가 없는 상황에서도 두 객체가 거래할 수 있는 거래상황, 추가 정리 필요)에 기반하고 있음.  
-                            <button id = 'smartcontract-ideas'onClick={() => window.open('https://ethresear.ch/t/list-of-primitives-useful-for-using-cryptoeconomics-driven-internet-social-media-applications/3198', '_blank')}>List of primitives useful for using cryptoeconomics-driven internet/ social media applications</button>
-                            <button id = 'original-idea' onClick={() => window.open('https://blog.oleganza.com/post/58240549599/contracts-without-trust-and-third-parties', '_blank')}>Oleg Andreev's original idea</button>
+                            <div id = 'smartcontract-ideas'onClick={() => window.open('https://ethresear.ch/t/list-of-primitives-useful-for-using-cryptoeconomics-driven-internet-social-media-applications/3198', '_blank')}>List of primitives useful for using cryptoeconomics-driven internet/ social media applications</div>
+                            <div id = 'original-idea' onClick={() => window.open('https://blog.oleganza.com/post/58240549599/contracts-without-trust-and-third-parties', '_blank')}>Oleg Andreev's original idea</div>
                         </div>
                     </p>
                     <p className = 'Goal'>
