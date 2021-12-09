@@ -19,15 +19,15 @@
 }
 
 .Limitation{
-        position: absolute;
-        /* width: 50%; */
-        /* height: 80%; */
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    
-        font-size: 10px;
-        text-align: left;
+    position: absolute;
+    /* width: 50%; */
+    /* height: 80%; */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 10px;
+    text-align: left;
 }
 
 #next-button{

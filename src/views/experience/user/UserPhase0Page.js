@@ -9,7 +9,7 @@ class UserPhase0Page extends Component {
     render () {
         return (
             <div className = 'UserPhase0Page'>
-                UserPhase0Page
+                {/* UserPhase0Page */}
                 <UserPhase0 />
                 <Footer/>
             </div>

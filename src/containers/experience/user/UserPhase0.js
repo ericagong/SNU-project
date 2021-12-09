@@ -6,7 +6,9 @@ import User from '../../../components/experience/User';
 
 import Button from '../../../Assets/Images/Button.png';
 
+
 import './UserPhase0.css';
+
 
 class UserPhase0 extends Component {
     state = {
@@ -85,10 +87,13 @@ class UserPhase0 extends Component {
         
         return (
             <div className = 'UserPhase0'>
+                <p className = 'UserPhaseTitle'>
+                        UserPhase
+                </p>
             {(this.state.loading === false) && 
                 <div className = 'BeforeLoading'>
                     <div className = 'SuggesterGuide'>{suggesterGuideMsg}</div>
-                    <div className = 'Suggesters'>
+                    <div className = 'UserPhaseSuggesters'>
                         {suggesters}   
                     </div>
                     {(this.state.pickedSuggesterID !== 0) && 

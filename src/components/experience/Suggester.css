@@ -1,0 +1,44 @@
+#suggester-image{
+    width: 100px;
+}
+
+.Suggester{
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.SelectSuggester{
+    /* display: flex; */
+    /* justify-content: center; */
+    position: relative;
+    /* bottom: 105px; */
+    /* margin-top: -100px; */
+    bottom: 27px;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.deposit{
+
+}
+
+.Reputation{
+    /* display: flex; */
+    /* justify-content: center; */
+    position: relative;
+    /* bottom: 105px; */
+    margin-top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}

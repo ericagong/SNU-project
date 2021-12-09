@@ -3,16 +3,14 @@
     src: url('../../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
 }
 
-.SuggesterGuide{
+.UserPhaseTitle{
     display: flex;
     justify-content: center;
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 50px;
     line-height: 50px;
     display: flex;
     align-items: center;
@@ -20,11 +18,28 @@
     font-family: 'Futura Handwritten';
 }
 
-.Suggesters{
+.SuggesterGuide{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 100px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    /* line-height: 50px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.UserPhaseSuggesters{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%);
     font-style: normal;
@@ -47,7 +62,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-    line-height: 50px;
+    /* line-height: 50px; */
     display: flex;
     align-items: center;
     text-align: center;
@@ -64,7 +79,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-    line-height: 50px;
+    /* line-height: 50px; */
     display: flex;
     align-items: center;
     text-align: center;
@@ -90,7 +105,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-    line-height: 50px;
+    /* line-height: 50px; */
     display: flex;
     align-items: center;
     text-align: center;
