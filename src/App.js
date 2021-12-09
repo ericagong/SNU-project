@@ -37,7 +37,7 @@ function App() {
 
           <Route path='/experience/role' exact component={ChooseRolePage}/>
           <Route path='/experience/user/phase0' exact component={UserPhase0Page}/>
-          <Route path='/experience/user/phase1/:id/:deposit' exact component={UserPhase1Page}/>
+          <Route path='/experience/user/phase1/:id/:reputation/:deposit' exact component={UserPhase1Page}/>
           <Route path='/experience/suggester/phase0' exact component={SuggesterPhase0Page}/>
           <Route path='/experience/suggester/phase1' exact component={SuggesterPhase1Page}/>
           <Route path='/experience/termination/condition0' exact component={TerminateCondition0Page}/>

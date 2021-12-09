@@ -5,12 +5,13 @@ import Footer from '../../../containers/footer/Footer';
 
 class UserPhase1Page extends Component {
     render () {
-        let deposit = parseInt(this.props.match.params.deposit)
+        let reputation = parseInt(this.props.match.params.reputation)
         let suggesterID = parseInt(this.props.match.params.id)
+        let userDeposit = parseInt(this.props.match.params.deposit)
         return (
             <div className = 'UserPhase1Page'>
                 UserPhase1Page
-                <UserPhase1 deposit={deposit} suggesterID={suggesterID}/>
+                <UserPhase1 repuation = {reputation} suggesterID = {suggesterID} deposit = {userDeposit}/>
                 <Footer/>
             </div>
         )

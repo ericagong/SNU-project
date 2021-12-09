@@ -9,16 +9,18 @@ class UserPhase1 extends Component {
         init : true,
         satisfy : false,
         change : false,
-        deposit : 0,
+        deposit : 500,
         suggesterDeposit : 1000,
         userDeposit : 1000,
         suggesterID : 0,
+        suggesterRep : 0,
     }
 
     constructor(props) {
         super(props)
-        this.state.deposit = parseInt(this.props.deposit)
+        this.state.suggesterRep = parseInt(this.props.reputation)
         this.state.suggesterID = parseInt(this.props.id)
+        this.state.userDeposit = parseInt(this.props.deposit)
     }
     
 
@@ -45,7 +47,8 @@ class UserPhase1 extends Component {
 
         if(this.state.init === true) this.initState()
         
-        let initialGuideMsg = `User가 [Deposit : ${this.state.deposit}]으로 Suggester${this.state.suggesterID}와 거래를 희망합니다.`
+        let initialGuideMsg = `User가 [Deposit : ${this.state.userDeposit}] 예치 후, Suggester${this.state.suggesterID}와 거래를 희망합니다.\n
+            이 때, 거래의 reward나 burn에 사용되는 금액은 ${this.state.deposit}으로 동일합니다.`
         let imageGuideMsg = '하단의 이미지에 만족하면 Reward를 불만족하면 Burn을 눌러주세요.'
         let depositGuideMsg = 'Deposit 변화를 확인하세요.'
         let recurGuideMsg = '해당 행위는 Withdraw가 일어날 때까지 반복됩니다.'
