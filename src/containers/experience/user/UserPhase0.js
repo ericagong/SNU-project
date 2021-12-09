@@ -57,6 +57,7 @@ class UserPhase0 extends Component {
             { id : 3, name : 'Suggester3', reputation : 80 },
         ]
 
+
         let suggesters = initialSuggetsers.map((suggester) => {
             let target = (this.state.pickedSuggesterID === suggester.id)
             return (
@@ -72,6 +73,8 @@ class UserPhase0 extends Component {
         })
 
         let suggesterGuideMsg = '거래 하고자 하는 Suggester를 골라주세요.'
+        let depositSetGuideMsg = `Suggester가 제공한 사진을 받고 Reward 할 경우, Suggester의 예치금이 500 증가하고, 당신의 예치금이 500 감소합니다.\n
+                               Burn 할 경우, Suggester의 예치금과 당신의 예치금이 동시에 500 만큼 사라집니다. `
         let suggesterSelectMsg = ''
         let depositGuideMsg = ''
         let depositSelectMsg = ''
@@ -102,13 +105,13 @@ class UserPhase0 extends Component {
                         <div className = 'AfterSelect'> 
                             <div className = 'SetDeposit'>
                                 <div className = 'DepositGuide'>{depositGuideMsg}</div>
-                                {/* TODO: change min max value */}
+                                {depositSetGuideMsg}
                                 <input 
                                     className = 'Deposit'
                                     type = 'number'
-                                    min = '0'
-                                    max = '100'
-                                    placeholder = 'Set Deposit $0 - $100'
+                                    min = '500'
+                                    max = '1000'
+                                    placeholder = 'Set Deposit $500 - $1000'
                                     onChange = {(event) => this.setState( { deposit : event.target.value })}
                                 />
                                 {(this.state.deposit !== 0) && 
