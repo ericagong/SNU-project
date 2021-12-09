@@ -40,7 +40,6 @@ class UserPhase0 extends Component {
         else {
             alert('Suggester 중 한 명을 선택하고, user deposit을 설정하여야 거래를 시작할 수 있습니다.')
         }
-        
     }
 
     render () {

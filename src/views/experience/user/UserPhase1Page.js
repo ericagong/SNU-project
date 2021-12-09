@@ -11,7 +11,7 @@ class UserPhase1Page extends Component {
         return (
             <div className = 'UserPhase1Page'>
                 UserPhase1Page
-                <UserPhase1 repuation = {reputation} suggesterID = {suggesterID} deposit = {userDeposit}/>
+                <UserPhase1 reputation = {reputation} id = {suggesterID} deposit = {userDeposit}/>
                 <Footer/>
             </div>
         )
