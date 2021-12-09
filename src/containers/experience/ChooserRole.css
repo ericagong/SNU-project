@@ -56,6 +56,11 @@
     transform: translateX(-50%);
 }
 
+.LongButtonStyle:active{
+    left: 49%;
+    transform: translateX(-51%);
+}
+
 .ButtonText{
     display: flex;
     justify-content: center;

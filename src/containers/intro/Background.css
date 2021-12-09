@@ -40,6 +40,11 @@
     transform: translateX(-50%);
 }
 
+.ButtonStyle:active{
+    left: 49%;
+    transform: translateX(-51%);
+}
+
 .ButtonText{
     display: flex;
     justify-content: center;

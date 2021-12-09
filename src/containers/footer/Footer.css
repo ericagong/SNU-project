@@ -109,6 +109,107 @@
 
 .button0{
     position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 470px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button9_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 20px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button8_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 70px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button7_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 120px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button6_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 170px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button5_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 220px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button4_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 270px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button3_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 320px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button2_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 370px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button1_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 420px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button0_now{
+    position: absolute;
     height: 40px;
     width: 40px;
     bottom: 10px;
