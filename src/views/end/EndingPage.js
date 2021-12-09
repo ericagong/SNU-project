@@ -7,7 +7,7 @@ class EndingPage extends Component {
     render () {
         return (
             <div className = 'EndingPage'>
-                EndingPage
+                {/* EndingPage */}
                 <End/>
                 <Footer />
             </div>
