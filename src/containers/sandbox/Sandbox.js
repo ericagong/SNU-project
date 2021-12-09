@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
+import Button from './../../Assets/Images/Button.png'
+
+import './Sandbox.css'
+
 class Sandbox extends Component {
 
     state = {
@@ -281,11 +285,13 @@ class Sandbox extends Component {
                     Start Simulation
                 </button>  
                 
-                <button 
+                {/* <button 
                     id = 'next-button'
                     onClick = {() => this.clickNextHandler()}>
                     Next
-                </button>
+                </button> */}
+                <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
+                <div className="ButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
             </div>
         )
     }
