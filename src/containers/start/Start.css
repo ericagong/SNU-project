@@ -63,7 +63,7 @@
 
 .ButtonStyle:active{
     left: 49%;
-    transform: translateX(-51%);
+    transform: translateX(-50%);
     opacity: 70%;
 }
 

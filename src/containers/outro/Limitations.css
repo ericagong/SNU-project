@@ -39,6 +39,12 @@
     transform: translateX(-50%);
 }
 
+#next-button:active{
+    left: 49%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
 #button-text{
     display: flex;
     justify-content: center;
