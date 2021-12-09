@@ -51,6 +51,9 @@ class UserPhase0 extends Component {
             { id : 3, name : 'Suggester3', reputation : 80 },
         ]
 
+        let depositGuideMsg = `Suggester가 제공한 사진을 받고 Reward 할 경우, Suggester의 예치금이 500 증가하고, 당신의 예치금이 500 감소합니다.\n
+                               Burn 할 경우, Suggester의 예치금과 당신의 예치금이 동시에 500 만큼 사라집니다. `
+
         let suggesters = initialSuggetsers.map((suggester) => {
             let target = (this.state.pickedSuggesterID === suggester.id)
             return (

@@ -11,7 +11,7 @@ class UserPhase1 extends Component {
         change : false,
         deposit : 0,
         suggesterDeposit : 1000,
-        userDeposit : 200,
+        userDeposit : 1000,
         suggesterID : 0,
     }
 
@@ -24,14 +24,10 @@ class UserPhase1 extends Component {
 
     initState = () => {
         setTimeout(() => {
-            console.log("change init to false")
             this.setState({init : false})
         }, 2000)
     }
 
-    // startTransferHandler = () => {
-    //     this.props.history.push('/experience/suggester/phase0')
-    // }
 
     clickSatisfyHandler = (behavior) => {
         if(behavior === "Reward") this.setState({ satisfy : true, change : true, 
