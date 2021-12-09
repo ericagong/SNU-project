@@ -48,9 +48,8 @@
     font-family: 'Futura Handwritten';
 }
 
-.ButtonStyle{
+.LongButtonStyle{
     position: absolute;
-    width: 174px;
     height: 63px;
     bottom: 100px;
     left: 50%;

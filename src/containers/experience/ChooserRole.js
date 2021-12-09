@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
-import Button from './../../Assets/Images/Button.png'
+import LongButton from './../../Assets/Images/LongButton.png'
 
 import './ChooserRole.css';
 
@@ -27,7 +27,7 @@ class ChooseRole extends Component {
                     onClick = {() => this.clickUserHandler()}>
                     Experience User
                 </button> */}
-                <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickUserHandler()} />
+                <img className="LongButtonStyle" src={LongButton} alt={LongButton} onClick = {() => this.clickUserHandler()} />
                 <div className="ButtonText" onClick = {() => this.clickUserHandler()}>Experience User</div>
             </div>
         )
