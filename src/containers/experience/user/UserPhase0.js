@@ -105,7 +105,7 @@ class UserPhase0 extends Component {
                         <div className = 'AfterSelect'> 
                             <div className = 'SetDeposit'>
                                 <div className = 'DepositGuide'>{depositGuideMsg}</div>
-                                {depositSetGuideMsg}
+                                <div className = 'depositSetGuideMsg'>{depositSetGuideMsg}</div>
                                 <input 
                                     className = 'Deposit'
                                     type = 'number'

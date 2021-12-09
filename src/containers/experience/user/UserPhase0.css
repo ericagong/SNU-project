@@ -56,12 +56,12 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 250px;
+    top: 57%;
     left: 50%;
     transform: translateX(-50%);
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     /* line-height: 50px; */
     display: flex;
     align-items: center;
@@ -73,12 +73,55 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 300px;
+    top: 60%;
     left: 50%;
     transform: translateX(-50%);
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
+    /* line-height: 50px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.depositSetGuideMsg{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    width: 450px;
+    transform: translateX(-50%);
+    font-style: normal;
+    /* font-weight: bold; */
+    font-size: 10px;
+    /* line-height: 50px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.Deposit{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SelectedDepositDescription{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    width: 450px;
+    transform: translateX(-50%);
+    font-style: normal;
+    /* font-weight: bold; */
+    font-size: 10px;
     /* line-height: 50px; */
     display: flex;
     align-items: center;
@@ -105,7 +148,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-    /* line-height: 50px; */
+    line-height: 50px;
     display: flex;
     align-items: center;
     text-align: center;
