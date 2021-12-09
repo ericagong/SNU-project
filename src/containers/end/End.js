@@ -4,13 +4,13 @@ import { withRouter } from 'react-router-dom';
 class End extends Component {
 
     render () {
-        const initialState = {
-            projects : [
-                {},
-                {},
-                {},
-            ]
-        }
+        // const initialState = {
+        //     projects : [
+        //         {},
+        //         {},
+        //         {},
+        //     ]
+        // }
         
         let projects = null
 
