@@ -77,7 +77,7 @@ class UserPhase1 extends Component {
             {(this.state.init === false) && (this.state.change === false) && 
                 <div className = 'BeforeChange'>
                     <div className = 'ImageGuide'>{imageGuideMsg}</div>
-                    <img id = 'suggester-image' alt = 'suggester-image-alt' src = './'/>
+                    <img id = 'suggester-image' alt = 'suggester-alt' src = './'/>
                     <button 
                         id = 'reward-button'
                         onClick = {() => this.clickSatisfyHandler("Reward")}>
@@ -103,7 +103,7 @@ class UserPhase1 extends Component {
                                 final = "true"
                             />
                         </div>
-                        <img id = 'channel-reward-image' alt = 'channel-reward-image-alt' src = './'/>
+                        <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
                         <div className = 'User'>
                             <User
                                 deposit = {this.state.userDeposit}
@@ -121,7 +121,7 @@ class UserPhase1 extends Component {
                                 final = "true"
                             />
                         </div>
-                        <img id = 'channel-reward-image' alt = 'channel-reward-image-alt' src = './'/>
+                        <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
                         <div className = 'User'>
                             <User deposit = {this.state.userDeposit}/>
                         </div>

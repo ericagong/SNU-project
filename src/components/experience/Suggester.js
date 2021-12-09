@@ -5,7 +5,7 @@ import React from 'react'
 const Suggester = (props) => {
     return (
         <div className = 'Suggester'>
-            <img id = 'suggester-image' alt = 'suggester-image-alt' src = './'/>
+            <img id = 'suggester-image' alt = 'suggester-alt' src = './'/>
             {(props.final === "false") && 
                 <button 
                 className = 'SelectSuggester'
