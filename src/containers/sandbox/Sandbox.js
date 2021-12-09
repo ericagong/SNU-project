@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
 import Button from './../../Assets/Images/Button.png'
+import LongButton from './../../Assets/Images/LongButton.png'
+import Character1 from './../../Assets/Images/character1.png'
+import Character2 from './../../Assets/Images/character2.png'
+import Character4 from './../../Assets/Images/character4.png'
+import Character5 from './../../Assets/Images/character5.png'
 
 import './Sandbox.css'
 
@@ -161,7 +166,7 @@ class Sandbox extends Component {
         return (
             <div className = 'Sandbox'>
                 <div className = 'Simulation'>
-                    샌드박스 모듈
+                    Sandbox Module
                 </div>      
                 <div className = 'display'>
                   [Display]
@@ -172,7 +177,11 @@ class Sandbox extends Component {
                   [RiskTaker] {this.state.riskTakerPop}
                   [Coward] {this.state.cowardPop}
                 </div>
-                <button 
+                <img className="LeftLongButtonStyle" src={LongButton} alt={LongButton} onClick = {() => this.setState({ currTab : 'Population'})} />
+                <div className="LeftLongButtonText" onClick = {() => this.setState({ currTab : 'Population'})}>Population Tab</div>
+                <img className="RightLongButtonStyle" src={LongButton} alt={LongButton} onClick = {() => this.setState({ currTab : 'Environment'})} />
+                <div className="RightLongButtonText" onClick = {() => this.setState({ currTab : 'Environment'})}>Environment Tab</div>
+                {/* <button 
                     id = 'population-tab'
                     onClick = {() => this.setState({ currTab : 'Population'})}>
                     Population Tab
@@ -181,13 +190,15 @@ class Sandbox extends Component {
                     id = 'environment-tab'
                     onClick = {() => this.setState({ currTab: 'Environment'})}>
                     Environment Tab
-                </button>
+                </button> */}
                 <div className = 'Inputbox'>
                   { (this.state.currTab === 'Population') &&
                     <div className = 'Popoulation'>
                       <label>Suggesters</label>
                       <p>
                         <label>[Easygoing]</label>
+                        <img id = 'character1' alt = {Character1} src = {Character1} />
+                        
                         <input 
                           id = 'easygoing-population'
                           type = 'number'
@@ -202,6 +213,7 @@ class Sandbox extends Component {
                       </p>
                       <p>
                         <label>[Tactful]</label>
+                        <img id = 'character2' alt = {Character2} src = {Character2} />
                         <input 
                           id = 'tactful-population'
                           type = 'number'
@@ -218,6 +230,7 @@ class Sandbox extends Component {
                       <label>Users</label>
                       <p>
                         <label>[RiskTaker]</label>
+                        <img id = 'character4' alt = {Character4} src = {Character4} />
                         <input 
                           id = 'risktaker-population'
                           type = 'number'
@@ -232,6 +245,7 @@ class Sandbox extends Component {
                       </p>
                       <p>
                         <label>[Coward]</label>
+                        <img id = 'character5' alt = {Character5} src = {Character5} />
                         <input 
                           id = 'coward-population'
                           type = 'number'

@@ -1,3 +1,23 @@
+@font-face{
+    font-family: 'Futura Handwritten';
+    src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+  }
+
+.Simulation{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
 .ButtonStyle{
     position: absolute;
     height: 63px;
@@ -27,4 +47,104 @@
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
+}
+
+.LeftLongButtonStyle{
+    position: absolute;
+    height: 63px;
+    top: 100px;
+    left: 25%;
+    transform: translateX(-25%);
+}
+
+.LeftLongButtonStyle:active{
+    left: 24%;
+    transform: translateX(-26%);
+    opacity: 70%;
+}
+
+.LeftLongButtonText{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 108px;
+    /* bottom: 105px; */
+    left: 29%;
+    transform: translateX(-29%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.RightLongButtonStyle{
+    position: absolute;
+    height: 63px;
+    top: 100px;
+    left: 75%;
+    transform: translateX(-75%);
+}
+
+.RightLongButtonStyle:active{
+    right: 74%;
+    transform: translateX(-76%);
+    opacity: 70%;
+}
+
+.RightLongButtonText{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 108px;
+    /* bottom: 105px; */
+    left: 71%;
+    transform: translateX(-71%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+#character1{
+    position: absolute;
+    height: 150px;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#character2{
+    position: absolute;
+    height: 150px;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#character4{
+    position: absolute;
+    height: 150px;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#character5{
+    position: absolute;
+    height: 150px;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
