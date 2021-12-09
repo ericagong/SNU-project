@@ -1,9 +1,9 @@
 @font-face{
     font-family: 'Futura Handwritten';
     src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
-  }
+}
 
-.ConceptTitle{
+.LimitationsTitle{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -18,19 +18,19 @@
     font-family: 'Futura Handwritten';
 }
 
-.ProjectConcept{
-    position: absolute;
-    width: 50%;
-    height: 80%;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 10px;
-    text-align: left;
+.Limitation{
+        position: absolute;
+        /* width: 50%; */
+        /* height: 80%; */
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        font-size: 10px;
+        text-align: left;
 }
 
-.ButtonStyle{
+#next-button{
     position: absolute;
     width: 174px;
     height: 63px;
@@ -39,7 +39,7 @@
     transform: translateX(-50%);
 }
 
-.ButtonText{
+#button-text{
     display: flex;
     justify-content: center;
     position: absolute;
