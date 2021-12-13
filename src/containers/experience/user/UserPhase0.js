@@ -40,7 +40,12 @@ class UserPhase0 extends Component {
     }
 
     startTransferHandler = () => {
-        this.props.history.push(`/experience/user/phase1/${this.state.pickedSuggesterID}/${this.state.deposit}`)
+        if(this.state.pickedSuggester !== null && this.state.deposit !== null) {
+            this.props.history.push(`/experience/user/phase1/${this.state.pickedSuggesterID}/${this.state.pickedSuggester.reputation}/${this.state.deposit}`)
+        }
+        else {
+            alert('Suggester 중 한 명을 선택하고, user deposit을 설정하여야 거래를 시작할 수 있습니다.')
+        }
     }
 
     render () {
@@ -72,13 +77,16 @@ class UserPhase0 extends Component {
             )
         })
 
-        let suggesterGuideMsg = '거래 하고자 하는 Suggester를 골라주세요.'
-        let depositSetGuideMsg = `Suggester가 제공한 사진을 받고 Reward 할 경우, Suggester의 예치금이 500 증가하고, 당신의 예치금이 500 감소합니다.\n
-                               Burn 할 경우, Suggester의 예치금과 당신의 예치금이 동시에 500 만큼 사라집니다. `
+        const suggesterGuideMsg = '거래 하고자 하는 Suggester를 골라주세요.'
+        const depositSetGuideMsg = `Suggester가 제공한 사진을 받고 Reward 할 경우, Suggester의 예치금이 500 증가하고, 당신의 예치금이 500 감소합니다.\n
+                                    Burn 할 경우, Suggester의 예치금과 당신의 예치금이 동시에 500 만큼 사라집니다. 따라서 500 이상 1000이하의 값으로 user Deposit을 설정해주세요.`
+        const settingGuideMsg = '위 상태에서 거래를 시작하고자 하면 아래 거래시작 버튼을 눌러주세요.'
+        
         let suggesterSelectMsg = ''
         let depositGuideMsg = ''
         let depositSelectMsg = ''
         let loadingMsg = ''
+        
 
         if(this.state.pickedSuggesterID !== 0) {
             suggesterSelectMsg = `Suggester${this.state.pickedSuggesterID}를 선택하셨습니다.`
@@ -86,7 +94,7 @@ class UserPhase0 extends Component {
             if(this.state.deposit !== 0) depositSelectMsg = `Suggester${this.state.pickedSuggesterID}에게 ${this.state.deposit}의 Deposit으로 채널 형성을 제안하시겠습니까?`
             loadingMsg = `Suggester${this.state.pickedSuggesterID}에게 채널 승인이 올 때까지 기다려주세요.`
         }
-
+        
         
         return (
             <div className = 'UserPhase0'>
@@ -132,7 +140,7 @@ class UserPhase0 extends Component {
             }
             {((this.state.loading === true) && (this.state.channel === false)) && 
                 <div className = 'InLoading'>
-                    <img id = 'loading-image' alt = 'loading-image-alt' src = './'/>
+                    <img id = 'loading-image' alt = 'loading-alt' src = './'/>
                     <div className = 'LoadingGuide'>{loadingMsg}</div>
                     {this.loadingHandler()}
                 </div>
@@ -150,13 +158,18 @@ class UserPhase0 extends Component {
                                 />
                             </div>
                         }
-                        <img id = 'channel-image' alt = 'channel-image-alt' src = './'/>
+                        <img id = 'channel-image' alt = 'channel-alt' src = './'/>
                         <div className = 'User'>
                             <User
                                 deposit = {this.state.deposit}
                             />
                         </div>
+<<<<<<< HEAD
                         {/* <button 
+=======
+                        {settingGuideMsg}
+                        <button 
+>>>>>>> e2e73234576fd1639ba113818386ce65ac92ea8a
                             id = 'transfer-button'
                             onClick = {() => this.startTransferHandler()}>
                             start transfer

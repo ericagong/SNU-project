@@ -6,13 +6,13 @@ import './End.css'
 class End extends Component {
 
     render () {
-        const initialState = {
-            projects : [
-                {},
-                {},
-                {},
-            ]
-        }
+        // const initialState = {
+        //     projects : [
+        //         {},
+        //         {},
+        //         {},
+        //     ]
+        // }
         
         let projects = null
 

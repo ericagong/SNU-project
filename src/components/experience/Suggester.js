@@ -18,7 +18,7 @@ const Suggester = (props) => {
                 {props.name}
                 </button>
             }
-            {(props.final === true) &&
+            {(props.final === "true") &&
                 <div className = 'deposit'>Suggester Deposit : {props.deposit}</div>
             }
             <div className = 'Reputation'>
