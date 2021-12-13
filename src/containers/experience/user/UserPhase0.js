@@ -5,6 +5,7 @@ import Suggester from '../../../components/experience/Suggester';
 import User from '../../../components/experience/User';
 
 import Button from '../../../Assets/Images/Button.png';
+import Channel from '../../../Assets/Images/Channel.png'
 
 
 import './UserPhase0.css';
@@ -149,7 +150,7 @@ class UserPhase0 extends Component {
                 <div className = 'AfterLoading'>
                     <div className = 'SetChannel'>
                         {(this.state.pickedSuggester) &&
-                            <div className = 'Suggester'>
+                            <div className = 'AfterLoading_Suggester'>
                                 <Suggester 
                                     name = {this.state.pickedSuggester.name}
                                     reputation = {this.state.pickedSuggester.reputation}
@@ -158,25 +159,21 @@ class UserPhase0 extends Component {
                                 />
                             </div>
                         }
-                        <img id = 'channel-image' alt = 'channel-alt' src = './'/>
-                        <div className = 'User'>
+                        <img id = 'channel-image' alt = {Channel} src = {Channel}/>
+                        <div className = 'AfterLoading_User'>
                             <User
                                 deposit = {this.state.deposit}
                             />
                         </div>
-<<<<<<< HEAD
+                        <div className = "AfterLoading_GuideMsg">{settingGuideMsg}</div>
                         {/* <button 
-=======
-                        {settingGuideMsg}
-                        <button 
->>>>>>> e2e73234576fd1639ba113818386ce65ac92ea8a
                             id = 'transfer-button'
                             onClick = {() => this.startTransferHandler()}>
                             start transfer
-                        </button> */}
-                        <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.startTransferHandler()} />
-                        <div className="UserPhaseButtonText" onClick = {() => this.startTransferHandler()}>Start Transfer</div>
+                        </button>  */}
                     </div>
+                    <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.startTransferHandler()} />
+                        <div className="UserPhaseButtonText" onClick = {() => this.startTransferHandler()}>Start Transfer</div>
                 </div>
             }
             

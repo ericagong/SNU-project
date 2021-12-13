@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Character1 from './../../Assets/Images/character1.png'
+import Character2 from './../../Assets/Images/character2.png'
 
 import './Suggester.css'
 
@@ -9,7 +9,7 @@ import './Suggester.css'
 const Suggester = (props) => {
     return (
         <div className = 'Suggester'>
-            <img id = 'suggester-image' alt = {Character1} src = {Character1}/>
+            <img id = 'suggester-image' alt = {Character2} src = {Character2}/>
             {(props.final === "false") && 
                 <button 
                 className = 'SelectSuggester'
