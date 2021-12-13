@@ -173,7 +173,7 @@ class UserPhase0 extends Component {
                         </button>  */}
                     </div>
                     <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.startTransferHandler()} />
-                        <div className="UserPhaseButtonText" onClick = {() => this.startTransferHandler()}>Start Transfer</div>
+                    <div className="UserPhaseButtonText" onClick = {() => this.startTransferHandler()}>Start Transfer</div>
                 </div>
             }
             

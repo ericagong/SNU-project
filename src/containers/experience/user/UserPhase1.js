@@ -4,6 +4,13 @@ import { withRouter } from 'react-router-dom';
 import Suggester from '../../../components/experience/Suggester';
 import User from '../../../components/experience/User';
 
+import Box from '../../../Assets/Images/Box.png'
+import Button from '../../../Assets/Images/Button.png'
+import LongButton from '../../../Assets/Images/LongButton.png'
+import Channel from '../../../Assets/Images/Channel.png'
+
+import './UserPhase1.css';
+
 class UserPhase1 extends Component {
     state = {
         init : true,
@@ -67,6 +74,9 @@ class UserPhase1 extends Component {
         
         return (
             <div className = 'UserPhase1'>
+                <p className = 'UserPhaseTitle'>
+                        UserPhase
+                </p>
             {(this.state.init === true) && 
                 <div className = 'InitialState'>
                     <div className = 'InitMessage'>
@@ -77,8 +87,9 @@ class UserPhase1 extends Component {
             {(this.state.init === false) && (this.state.change === false) && 
                 <div className = 'BeforeChange'>
                     <div className = 'ImageGuide'>{imageGuideMsg}</div>
-                    <img id = 'suggester-image' alt = 'suggester-alt' src = './'/>
-                    <button 
+                    {/* <img id = 'suggester-image' alt = 'suggester-alt' src = './'/> */}
+                    <img id = 'imagebox' alt = {Box} src = {Box} />
+                    {/* <button 
                         id = 'reward-button'
                         onClick = {() => this.clickSatisfyHandler("Reward")}>
                         Reward
@@ -87,15 +98,22 @@ class UserPhase1 extends Component {
                         id = 'burn-button'
                         onClick = {() => this.clickSatisfyHandler("Burn")}>
                         Burn
-                    </button>
+                    </button> */}
+
+                    <img className="RewardButtonStyle" src={Button} alt={Button} onClick = {() => this.clickSatisfyHandler("Reward")} />
+                    <div className="RewardButtonText" onClick = {() => this.clickSatisfyHandler("Reward")}>Reward</div>
+
+                    <img className="BurnButtonStyle" src={Button} alt={Button} onClick = {() => this.clickSatisfyHandler("Burn")} />
+                    <div className="BurnButtonText" onClick = {() => this.clickSatisfyHandler("Burn")}>Burn</div>
                 </div>
             }
             {(this.state.init === false) && (this.state.change === true) && 
                 <div className = 'DepositChanged'>
-                    {depositGuideMsg}
+                    <div className = 'DepositChanged_Content'>
+                    <div className = 'depositGuideMsg'>{depositGuideMsg}</div>
                     {(this.state.satisfy) && 
                     <div className = 'Reward'>
-                        <div className = 'Suggester'>
+                        <div className = 'DepositChanged_Suggester'>
                             <Suggester 
                                 id = {this.state.suggesterID}
                                 deposit = {this.state.suggesterDeposit}
@@ -103,8 +121,8 @@ class UserPhase1 extends Component {
                                 final = "true"
                             />
                         </div>
-                        <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
-                        <div className = 'User'>
+                        <img id = 'channel-reward-image' alt = {Channel} src = {Channel}/>
+                        <div className = 'DepositChanged_User'>
                             <User
                                 deposit = {this.state.userDeposit}
                             />
@@ -113,7 +131,7 @@ class UserPhase1 extends Component {
                     }   
                     {(!this.state.satisfy) && 
                     <div className = 'Burn'>
-                        <div className = 'Suggester'>
+                        <div className = 'DepositChanged_Suggester'>
                             <Suggester 
                                 id = {this.state.suggesterID}
                                 deposit = {this.state.suggesterDeposit}
@@ -121,20 +139,26 @@ class UserPhase1 extends Component {
                                 final = "true"
                             />
                         </div>
-                        <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
-                        <div className = 'User'>
+                        <img id = 'channel-reward-image' alt = {Channel} src = {Channel}/>
+                        <div className = 'DepositChanged_User'>
                             <User deposit = {this.state.userDeposit}/>
                         </div>
                     </div>
                     }
-                    {recurGuideMsg}
-                    <button 
+                    <div className = 'recurGuideMsg'>{recurGuideMsg}</div>
+                    {/* <button 
                             id = 'experience-suggester-button'
                             onClick = {() => this.experienceSuggesterHandler()}>
                             Experience Suggester
-                    </button>
+                    </button>      */}
+                    </div>
+
+                    <img className="ExperienceSuggesterButtonStyle" src={LongButton} alt={LongButton} onClick = {() => this.clickSatisfyHandler("Burn")} />
+                    <div className="ExperienceSuggesterButtonText" onClick = {() => this.experienceSuggesterHandler()}>Experience Suggester</div>               
+                    
                 </div>
             }
+            
             </div>
         )
     }

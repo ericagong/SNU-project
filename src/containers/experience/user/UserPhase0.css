@@ -30,8 +30,6 @@
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
-    /* line-height: 50px; */
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -151,20 +149,11 @@
 /* after loading */
 
 .SetChannel{
-    /* display: flex; */
     justify-content: center;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translateX(-50%);
-    /* font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten'; */
 }
 
 .AfterLoading_Suggester{
@@ -186,7 +175,6 @@
     height: 90%;
     left: 50%;
     transform: translateX(-50%);
-    /* top: 120%; */
     top: 450%;
 }
 
@@ -195,7 +183,6 @@
     top: 280px;
     font-style: normal;
     font-size: 15px;
-
     font-family: 'Futura Handwritten';
 }
 

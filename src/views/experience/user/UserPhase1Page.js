@@ -10,7 +10,7 @@ class UserPhase1Page extends Component {
         let userDeposit = parseInt(this.props.match.params.deposit)
         return (
             <div className = 'UserPhase1Page'>
-                UserPhase1Page
+                {/* UserPhase1Page */}
                 <UserPhase1 reputation = {reputation} id = {suggesterID} deposit = {userDeposit}/>
                 <Footer/>
             </div>
