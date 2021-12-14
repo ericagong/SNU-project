@@ -125,7 +125,7 @@ class SuggesterPhase0 extends Component {
                     <img className = 'SuggesterPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()} />
                     <div className = 'SuggesterPhaseButtonText' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()}>start-transfer</div>
                 </div>
-            }
+            } 
             </div>
         )
     }
