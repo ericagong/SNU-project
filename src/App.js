@@ -22,7 +22,6 @@ import LimitationPage from './views/outro/LimitationPage';
 
 import EndingPage from './views/end/EndingPage';
 
-// TODO: not found 페이지 만들기
 
 function App() {
   return (
@@ -39,9 +38,8 @@ function App() {
           <Route path='/experience/user/phase0' exact component={UserPhase0Page}/>
           <Route path='/experience/user/phase1/:id/:reputation/:deposit' exact component={UserPhase1Page}/>
           <Route path='/experience/suggester/phase0' exact component={SuggesterPhase0Page}/>
-          <Route path='/experience/suggester/phase1' exact component={SuggesterPhase1Page}/>
-          <Route path='/experience/termination/condition0' exact component={TerminateCondition0Page}/>
-          <Route path='/experience/termination/condition1' exact component={TerminateCondition1Page}/>
+          <Route path='/experience/suggester/phase1/:deposit' exact component={SuggesterPhase1Page}/>
+          <Route path='/experience/termination/conditions' exact component={TerminateCondition0Page}/>
           
           <Route path='/sandbox' exact component={SandboxPage}/>
 

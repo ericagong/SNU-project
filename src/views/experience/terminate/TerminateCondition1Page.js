@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-// import Login from '../containers/login/Login';
-// import Footer from '../../components/footer/Footer';
+import Footer from '../../../containers/footer/Footer';
 
 class TerminateConditionPage extends Component {
     render () {
         return (
             <div className = 'TerminateConditionPage'>
                 TerminateConditionPage
-                {/* <Login/>
-                <Footer/> */}
+                <Footer/>
             </div>
         )
     }
