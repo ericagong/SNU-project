@@ -7,7 +7,7 @@ class TerminateConditionPage extends Component {
     render () {
         return (
             <div className = 'TerminateCondition0Page'>
-                TerminateConditionPage
+                {/* TerminateConditionPage */}
                 <TerminateCondition/>
                 <Footer/>
             </div>
