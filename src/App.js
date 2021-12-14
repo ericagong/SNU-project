@@ -13,8 +13,7 @@ import UserPhase0Page from './views/experience/user/UserPhase0Page';
 import UserPhase1Page from './views/experience/user/UserPhase1Page';
 import SuggesterPhase0Page from './views/experience/suggester/SuggesterPhase0Page';
 import SuggesterPhase1Page from './views/experience/suggester/SuggesterPhase1Page';
-import TerminateCondition0Page from './views/experience/terminate/TerminateCondition0Page';
-import TerminateCondition1Page from './views/experience/terminate/TerminateCondition1Page';
+import TerminateConditionPage from './views/experience/terminate/TerminateConditionPage';
 
 import SandboxPage from './views/sandbox/SandboxPage';
 
@@ -39,7 +38,7 @@ function App() {
           <Route path='/experience/user/phase1/:id/:reputation/:deposit' exact component={UserPhase1Page}/>
           <Route path='/experience/suggester/phase0' exact component={SuggesterPhase0Page}/>
           <Route path='/experience/suggester/phase1/:deposit' exact component={SuggesterPhase1Page}/>
-          <Route path='/experience/termination/conditions' exact component={TerminateCondition0Page}/>
+          <Route path='/experience/termination/conditions' exact component={TerminateConditionPage}/>
           
           <Route path='/sandbox' exact component={SandboxPage}/>
 
