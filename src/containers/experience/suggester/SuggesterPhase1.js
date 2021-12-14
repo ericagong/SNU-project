@@ -14,7 +14,7 @@ class SuggesterPhase1 extends Component {
         init : true,
         select : false,
         send : false,
-        selectedImg : "",
+        selectedImg : '',
         deposit : 500,
         userDeposit : 1000,
         suggesterDeposit : 1000,
@@ -36,21 +36,21 @@ class SuggesterPhase1 extends Component {
 
 
     clickImgHandler = (img) => {
-        if(img === "Good") {
-            this.setState({ selectedImg : "Good", select : true}) 
+        if(img === 'Good') {
+            this.setState({ selectedImg : 'Good', select : true}) 
         }
         else {
-            this.setState({ selectedImg : "Bad", select : true})    
+            this.setState({ selectedImg : 'Bad', select : true})    
         }
     }
 
     clickSendHandler = () => {
         if(this.state.selectedImg === null) {
-            alert('어떤 종류의 이미지를 보낼지 선택하셔야합니다.')
+            alert('You have to choose what kind of image to send.')
         }
         else {
-            if(this.state.selectedImg === "Good") {
-                alert('Good image를 user에게 보냈습니다.')
+            if(this.state.selectedImg === 'Good') {
+                alert('You sent a good image to the user.')
                 this.setState({
                     suggesterDepoit : this.state.suggesterDeposit + this.state.deposit,
                     userDeposit : this.state.userDeposit - this.state.deposit,
@@ -60,7 +60,7 @@ class SuggesterPhase1 extends Component {
                 })
             }
             else {
-                alert('Bad image를 user에게 보냈습니다.')
+                alert('You sent a bad image to the user.')
                 this.setState({ 
                     suggesterDepoit : this.state.suggesterDeposit - this.state.deposit,
                     userDeposit : this.state.userDeposit - this.state.deposit,
@@ -80,16 +80,19 @@ class SuggesterPhase1 extends Component {
     render () {
         if(this.state.init === true) this.initState()
         
-        let initialGuideMsg = `형성된 채널에 User가 [Deposit : 1000] 예치 후, 당신과 거래를 희망합니다.\n
-            이 때, 거래의 reward나 burn에 사용되는 금액은 ${this.state.deposit}으로 동일합니다.`
-        let imageGuideMsg = `User에게 제공할 이미지를 선택하세요.\n 유저가 당신이 보낸 이미지에 만족할 경우, ${this.state.deposit}만큼 당신에게 지급됩니다.\n
-            동시에 500의 1%인 5만큼 당신의 reputation에 긍정적인 점수가 매겨집니다.\n
-            유저가 당신이 보낸 이미지에 불만족하는 경우, 당신이 채널에 예치해 둔 ${this.state.suggesterDeposit}에서 ${this.state.deposit}만큼이 차감됩니다.\n 맞나?
-            동시에 500의 1%인 5만큼 당신의 reputation에 부정적인 점수가 매겨집니다.
+        let initialGuideMsg = 
+            `User with [User Deposit: 1000] wants to make a deal with you.\n
+            Now, amount of money to burn and reward are same as ${this.state.deposit}.`
+        let imageGuideMsg = 
+            `Select an image you want to send to User.\n
+            If User satisfies with the recived image, you can get 500 by User from User Deposit : 1000].\n
+            Simulatenously, your Reputation will increase by 1% of 500, which equals 5.\n
+            If User doesn't satisfy with image, User havs to sacrifice his/her deposit by 500, also your deposit will be deducted by 500.\n
+            Also your Reputation of will decrease by 1% of 500, which means 5.
             `
-        let depositGuideMsg = 'Suggester와 User의 Deposit과 Suggester의 Reputation 변화를 확인하세요.'
-        let recurGuideMsg = '이러한 행위는 Suggester나 User 측에서 Withdraw가 일어나거나 양측 중 한 쪽이 파산할 때까지 반복됩니다.'
-        let selectGuideMsg = `User에게 ${this.state.selectedImg} image를 보내기로 선택하셨습니다. 보내시려면 send 버튼을 클릭해주세요.`
+        let depositGuideMsg = 'Check changes on deposit of User and Suggester and reputation of Suggester!'
+        let recurGuideMsg = 'This process repeats until withdraw occurs on the User or Sugester side OR either side goes bankrupt.'
+        let selectGuideMsg = `You choose to sen ${this.state.selectedImg} to user. If you want to send, Click send button.`
 
         return (
             <div className = 'SuggesterPhase1'>
@@ -110,24 +113,19 @@ class SuggesterPhase1 extends Component {
                     {/* img로 바꾸기 */}
                     <button 
                         id = 'good-img-button'
-                        onClick = {() => this.clickImgHandler("Good")}>
+                        onClick = {() => this.clickImgHandler('Good')}>
                         Good Image
                     </button>
                     <img className = 'BadImage' alt = {Box} src = {Box} />
                     <button 
                         id = 'bad-img-button'
-                        onClick = {() => this.clickImgHandler("Bad")}>
+                        onClick = {() => this.clickImgHandler('Bad')}>
                         Bad Image
                     </button>
                     {(this.state.select === true) && 
                         <div className = 'SelectGuide'>{selectGuideMsg}</div>}
-                    {/* <button 
-                        id = 'send-button'
-                        onClick = {() => this.clickSendHandler()}>
-                        Send
-                    </button> */}
-                    <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.clickSendHandler()} />
-                    <div className="UserPhaseButtonText" onClick = {() => this.clickSendHandler()}>Send</div>
+                    <img className = 'UserPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickSendHandler()} />
+                    <div className = 'UserPhaseButtonText' onClick = {() => this.clickSendHandler()}>Send</div>
                 </div>
             }
             {(this.state.init === false) && (this.state.select === true) && (this.state.send === true) &&
@@ -140,7 +138,7 @@ class SuggesterPhase1 extends Component {
                                 id = '1'
                                 deposit = {this.state.suggesterDeposit}
                                 reputation = {this.state.suggesterRep}
-                                final = "true"
+                                final = 'true'
                             />
                         </div>
                         <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
@@ -158,7 +156,7 @@ class SuggesterPhase1 extends Component {
                                 id = {this.state.suggesterID}
                                 deposit = {this.state.suggesterDeposit}
                                 reputation = {this.state.suggesterRep}
-                                final = "true"
+                                final = 'true'
                             />
                         </div>
                         <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
@@ -168,13 +166,8 @@ class SuggesterPhase1 extends Component {
                     </div>
                     }
                     <div className = 'recurGuideMsg'>{recurGuideMsg}</div>
-                    {/* <button 
-                            id = 'experience-suggester-button'
-                            onClick = {() => this.clickNextHandler()}>
-                            Next
-                    </button> */}
-                    <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
-                    <div className="UserPhaseButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
+                    <img className = 'UserPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickNextHandler()} />
+                    <div className = 'UserPhaseButtonText' onClick = {() => this.clickNextHandler()}>Next</div>
                     
                 </div>
             }

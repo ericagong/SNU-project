@@ -68,7 +68,7 @@ class UserPhase1 extends Component {
             If so, Suggester${this.state.suggesterID} can get 500 by User from User Deposit : ${this.state.userDeposit}].\n
             Simulatenously, Reputation of Suggester${this.state.suggesterID} will increase by 1% of 500, which equals 5.\n
             If you don't satisfy with image, then click Punish.\n
-            By clicking punish, User still have to sacrifice his/her deposit by 500, even though Suggester${this.state.suggesterID} cannot be able to get 500.\n
+            By clicking punish, User still have to sacrifice his/her deposit by 500, alwo Suggester${this.state.suggesterID} deposit also decreased by 500.\n
             Also Reputation of Suggester${this.state.suggesterID} will decrease by 1% of 500, which means 5.
             `
 
