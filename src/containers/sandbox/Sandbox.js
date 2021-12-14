@@ -101,7 +101,7 @@ class Sandbox extends Component {
   callMatch = () => {
     setTimeout(() => {
       this.match()
-    }, 4000)
+    }, 1000)
   }
 
   match = () => {
@@ -227,10 +227,10 @@ class Sandbox extends Component {
     let cowards = []
     let easygoings = []
     let tactfuls = []  
-    let lines = []
 
     if(this.state.setEnv && this.checkAlive()) {
-      this.match()
+      this.callMatch()
+      // this.match()
       console.log("match")
       console.log("suggesterDeposit", this.SuggesterDeposit)
       console.log("userDeposit", this.UserDeposit)
@@ -240,10 +240,7 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = 
-          <div className = {`user${i}`}>
-            <RiskTaker  connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
-          </div>
+        let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
@@ -317,14 +314,10 @@ class Sandbox extends Component {
                 [RiskTaker] {this.state.riskTakerPop}
                 [Coward] {this.state.cowardPop}
 
-                <div className = 'Users'>
-                  {riskTakers}
-                  {cowards}
-                </div>
-                <div className = 'Suggesters'>
-                  {easygoings}
-                  {tactfuls}
-                </div>
+                {riskTakers}
+                {cowards}
+                {easygoings}
+                {tactfuls}
                 {/* {lines} */}
               </div>
               <button 
