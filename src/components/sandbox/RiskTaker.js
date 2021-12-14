@@ -19,6 +19,9 @@ const RiskTaker = (props) => {
             <div className = 'Deposit'>
                 {props.deposit}
             </div>
+            <div className = 'Connect'>
+                Connect with Suggester{props.connect} 
+            </div>
         </div>
     )
 }

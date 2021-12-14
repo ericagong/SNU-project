@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
-import LineTo from 'react-lineto';
 
 import RiskTaker from '../../components/sandbox/RiskTaker';
 import Coward from '../../components/sandbox/Coward';
@@ -241,27 +240,21 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker className = {`user${i}`} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
-        let newCoward = <Coward className = {`user${i}`} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newCoward = <Coward className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing className = {`suggester${i}`} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful className = {`suggester${i}`} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         tactfuls.push(newTactful)
       }      
-      // for(let i = 0; i < this.Connnect.length(); i++) {
-      //   if(this.Connect[i] !== -1) {
-      //     let newLine = <LineTo from = {`user${i}`} to = {`suggester${this.Connect[i]}`}/>
-      //     lines.push(newLine)
-      //   } 
-      // }
     }
 
 
@@ -294,13 +287,6 @@ class Sandbox extends Component {
         let newTactful = <Tactful className = {`suggester${i}`} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         tactfuls.push(newTactful)
       }      
-      // for(let i = 0; i < this.Connnect.length(); i++) {
-      //   if(this.Connect[i] !== -1) {
-      //     let newLine = <LineTo from = {`user${i}`} to = {`suggester${this.Connect[i]}`}/>
-      //     lines.push(newLine)
-      //   } 
-      // }
-
     }
 
     return (

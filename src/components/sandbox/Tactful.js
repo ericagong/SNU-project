@@ -16,6 +16,9 @@ const Tactful = (props) => {
             <div className = 'Deposit'>
                 {props.deposit}
             </div>
+            <div className = 'ID'>
+                Suggester{props.id} 
+            </div>
         </div>
     )
 }
