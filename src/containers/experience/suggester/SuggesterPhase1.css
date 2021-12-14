@@ -1,0 +1,133 @@
+@font-face{
+    font-family: 'Futura Handwritten';
+    src: url('../../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+}
+
+.SuggesterPhaseTitle{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.GoodImage{
+    position: absolute;
+    top: 30%;
+    width: 450px;
+    left: calc(50% - 230px);
+    transform: translate(-50%);
+}
+
+.BadImage{
+    position: absolute;
+    top: 30%;
+    width: 450px;
+    left: calc(50% + 230px);
+    transform: translate(-50%);
+}
+
+#good-img-button{
+    position: absolute;
+    top: calc(30% + 250px);
+    width: 10%;
+    right: calc(50% + 10px);
+}
+
+#bad-img-button{
+    position: absolute;
+    top: calc(30% + 250px);
+    width: 10%;
+    right: calc(50% - 450px);
+}
+
+.SelectGuide{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    /* line-height: 50px; */
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+/* button in the bottom */
+
+.SuggesterPhaseButtonStyle{
+    position: absolute;
+    width: 174px;
+    height: 63px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SuggesterPhaseButtonStyle:active{
+    left: 49%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
+.SuggesterPhaseButtonText{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+
+.DepositChanged_Suggester{
+    position: absolute;
+    height: 30%;
+    top: 23%;
+    left: calc(50% - 100px);
+    transform: translateX(-50%);
+}
+
+.DepositChanged_User{
+    position: absolute;
+    height: 30%;
+    top: 23%;
+    left: calc(50% + 100px);
+    transform: translateX(-50%);
+}
+
+.DepositGuideMsg{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%);
+    font-style: normal;
+    font-size: 12px;
+    font-family: 'Futura Handwritten';
+}
+
+.recurGuideMsg{
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%);
+    font-style: normal;
+    font-size: 12px;
+    font-family: 'Futura Handwritten';
+}
