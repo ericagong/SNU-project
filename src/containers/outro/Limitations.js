@@ -17,7 +17,13 @@ class Limitations extends Component {
             <div className = 'Limitations'>
                 <p className='LimitationsTitle'>Limitations</p>
                 <div className = 'Limitation'>
-                    프로젝트 가정상의 한계들
+                1. Users should have greater influence on transactions than suggesters. (like larger deposit or more population)
+                The success of the Two Scored Earth search engine depends on how effectively the user punishes suggestor. 
+                In reality, however, Suggester often has more money than User. 
+                Because users and suggestors burn the same amount of money in punishment situation, users are more likely to go bankrupt first. 
+                If users run out of their deposit first, suggesters do not have to change their acts. 
+                Therefore, the project can only valid if the number of users is significantly higher than that of suggestor or if the deposit of users is larger enough than the deposit of suggesters.
+
                 </div>      
                 <img 
                     id = 'next-button'
