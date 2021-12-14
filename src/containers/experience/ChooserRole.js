@@ -13,7 +13,7 @@ class ChooseRole extends Component {
     render () {
         return (
             <div className = 'ChooseRole'>
-                <div className= 'ChooseRoleTitle' >Choose Role</div>
+                <p className= 'ChooseRoleTitle' >Choose Role</p>
                 <div className = 'RoleDescription'>
                     <div className = 'ChooseRoleUser'>
                         User

@@ -236,10 +236,9 @@ class Sandbox extends Component {
             <p className = 'Simulation'>
                 Sandbox Module
             </p>
-            <img className="Sandbox_Selector_Box" src={Box} alt={Box} />
             
-            <div className = 'Sandbox_Selector'>     
               <div className = 'display'>
+                <img className="display_Container" src={Box} alt={Box} />
                 [Display]
                 Suggesters
                 [Easygoing] {this.state.easygoingPop}
@@ -259,9 +258,10 @@ class Sandbox extends Component {
                   Environment Tab
               </button>
               <div className = 'Inputbox'>
+                <img className="Inputbox_Container" src={Box} alt={Box} />
                 { (this.state.currTab === 'Population') &&
-                  <div className = 'Popoulation'>
-                    <label>Suggesters</label>
+                  <div className = 'Population'>
+                    <b>Suggesters</b>
                     <p>
                       <label>[Easygoing]</label>
                       <input 
@@ -291,7 +291,7 @@ class Sandbox extends Component {
                       </b>
                     </p>
                     
-                    <label>Users</label>
+                    <b>Users</b>
                     <p>
                       <label>[RiskTaker]</label>
                       <input 
@@ -365,8 +365,6 @@ class Sandbox extends Component {
               onClick = {() => this.clickNextHandler()}>
               Next
           </button> */}
-          </div>
-
           <img className="NextButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
           <div className="NextButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
         

@@ -4,25 +4,24 @@
   }
 
 .ChooseRoleTitle{
-
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        top: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 50px;
-        line-height: 50px;
-        align-items: center;
-        text-align: center;
-        font-family: 'Futura Handwritten';
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
 }
 
 .ChooseRoleUser{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 40%;
+    top: 42%;
     left: 30%;
     transform: translateX(-50%);
     font-size: 50px;
@@ -37,7 +36,7 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 40%;
+    top: 42%;
     left: 70%;
     transform: translateX(-50%);
     font-size: 50px;

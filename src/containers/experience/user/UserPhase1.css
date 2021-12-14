@@ -64,6 +64,12 @@
     transform: translateX(-50%);
 }
 
+.RewardButtonStyle:active{
+    left: 39%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
 .RewardButtonText{
     display: flex;
     justify-content: center;
@@ -87,6 +93,12 @@
     bottom: 100px;
     left: 60%;
     transform: translateX(-50%);
+}
+
+.BurnButtonStyle:active{
+    left: 59%;
+    transform: translateX(-50%);
+    opacity: 70%;
 }
 
 .BurnButtonText{

@@ -1,8 +1,10 @@
 .App {
   text-align: center;
+  position: absolute;
   height: 100%;
   width: 100%;
-  min-width: 80%;
+  min-width: 1200px;
+  min-height: 650px;
   overflow-x: hidden;
   overflow-y: hidden;
 }

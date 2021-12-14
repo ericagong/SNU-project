@@ -203,6 +203,13 @@
     transform: translateX(-50%);
 }
 
+.UserPhaseButtonStyle:active{
+    left: 49%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
+
 .UserPhaseButtonText{
     display: flex;
     justify-content: center;

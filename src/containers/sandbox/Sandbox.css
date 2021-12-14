@@ -8,7 +8,7 @@
     justify-content: center;
     position: absolute;
     top: 20px;
-    left: 50%;
+    left: 50.5%;
     transform: translateX(-50%);
     font-size: 50px;
     line-height: 50px;
@@ -18,19 +18,95 @@
     font-family: 'Futura Handwritten';
 }
 
-.Sandbox_Selector{
+.Inputbox{
     position: absolute;
     width: 450px;
     height: 40%;
-    left: 50%;
+    left: 50.5%;
+    top: 28%;
     font-family: 'Futura Handwritten';
 }
 
-.Sandbox_Selector_Box{
+.Inputbox_Container{
     position: absolute;
     width: 450px;
+    left: 0%;
+    top: -4%;
+    /* top: 20%; */
+}
+
+.display{
+    position: absolute;
+    width: 450px;
+    height: 40%;
+    right: 50.5%;
+    top: 28%;
+    font-family: 'Futura Handwritten';
+}
+
+.display_Container{
+    position: absolute;
+    width: 450px;
+    left: 0%;
+    top: -4%;
+    /* top: 20%; */
+}
+
+
+#population-tab{
+    position: absolute;
+    top: 22%;
     left: 50%;
-    top: 20%;
+    width: 10%;
+
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
+}
+
+#population-tab:hover{
+    background-color: aqua;
+}
+
+#environment-tab{
+    position: absolute;
+    top: 22%;
+    left: 60.5%;
+    width: 10%;
+
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
+}
+
+#environment-tab:hover{
+    background-color: aqua;
+}
+
+#start-simulation{
+    position: absolute;
+    top: 18%;
+    width: 10%;
+
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
+}
+
+#start-simulation:hover{
+    background-color: aqua;
 }
 
 .NextButtonStyle{
@@ -59,7 +135,6 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 50px;
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
