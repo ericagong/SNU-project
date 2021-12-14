@@ -2,8 +2,7 @@ import React from 'react'
 
 // import Character2 from './../../Assets/Images/character2.png'
 
-// import './Tactful.css'
-import './SandboxComp.css'
+import './Tactful.css'
 
 
 const Tactful = (props) => {
@@ -14,10 +13,10 @@ const Tactful = (props) => {
             {(props.dead === true) &&
                 <img id = 'Tactful-dead-image' alt = 'Tactful-dead-alt' src = './'/>}
             <img id = 'Coward-dead-punish-image' alt = 'Coward-alt' src = './'/>
-            <div className = 'Deposit'>
+            <div className = 'Tactful_Deposit'>
                 {props.deposit}
             </div>
-            <div className = 'ID'>
+            <div className = 'Tactful_ID'>
                 Suggester{props.id} 
             </div>
         </div>

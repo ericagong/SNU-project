@@ -12,7 +12,6 @@
     transform: translateX(-50%);
     font-size: 50px;
     line-height: 50px;
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -22,12 +21,15 @@
     position: absolute;
     /* width: 50%; */
     /* height: 80%; */
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 700px;
 
-    font-size: 12px;
-    text-align: left;
+    font-size: 15px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
 }
 
 #next-button{

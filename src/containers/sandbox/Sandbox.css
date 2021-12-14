@@ -52,6 +52,20 @@
     /* top: 20%; */
 }
 
+.UserList{
+    position: absolute;
+    width: 450px;
+    left: -20%;
+    top: -4%;
+}
+
+.SuggesterList{
+    position: absolute;
+    width: 450px;
+    left: 30%;
+    top: -4%;
+}
+
 
 #population-tab{
     position: absolute;
@@ -93,7 +107,8 @@
 
 #start-simulation{
     position: absolute;
-    top: 18%;
+    bottom: 35%;
+    left: 50.5%;
     width: 10%;
 
     align-items: center;
@@ -140,14 +155,3 @@
     font-family: 'Futura Handwritten';
 }
 
-.user0{
-  left: 50%;
-  transform: translateX(-50%);
-  top: 30.3%;
-}
-
-.user1{
-    left: 50%;
-    transform: translateX(-50%);
-    top: 40.3%;
-}

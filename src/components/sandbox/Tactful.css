@@ -1,0 +1,39 @@
+.Tactful{
+    height: 30px;
+}
+
+#Tactful-alive-reward-image{
+    width: 30px;
+    height: 30px;
+}
+
+#Tactful-alive-punish-image{
+    width: 30px;
+    height: 30px;
+}
+
+#Tactful-dead-reward-image{
+    width: 30px;
+    height: 30px;
+}
+
+#Tactful-dead-punish-image{
+    width: 30px;
+    height: 30px;
+}
+
+.Tactful_Deposit{
+    /* left: 30px; */
+    /* top: -30px; */
+    /* font-size: 12px; */
+    position: relative;
+    top: -30px;
+    left: 30px;
+}
+
+.Tactful_ID{
+    /* left: 30px; */
+    position: relative;
+    top: -52px;
+    left: 80px;
+}

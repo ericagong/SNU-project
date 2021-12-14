@@ -2,8 +2,7 @@ import React from 'react'
 
 // import Character2 from './../../Assets/Images/character2.png'
 
-// import './RiskTake.css'
-import './SandboxComp.css'
+import './RiskTaker.css'
 
 const RiskTaker = (props) => {
     return (
@@ -18,10 +17,10 @@ const RiskTaker = (props) => {
                 <img id = 'RiskTaker-dead-punish-image' alt = 'RiskTaker-alt' src = './'/>}
             {/* TODO: delete             */}
             <img id = 'RiskTaker-dead-punish-image' alt = 'RiskTaker-alt' src = './'/>
-            <div className = 'Deposit'>
+            <div className = 'RiskTaker_Deposit'>
                 {props.deposit}
             </div>
-            <div className = 'Connect'>
+            <div className = 'RiskTaker_Connect'>
             {(props.connect !== -1) && <div className = 'ConnectMsg'>Connect~ with Suggester{props.connect}</div> }
             </div>
         </div>

@@ -2,8 +2,7 @@ import React from 'react'
 
 // import Character2 from './../../Assets/Images/character2.png'
 
-// import './Easygoing.css'
-import './SandboxComp.css'
+import './Easygoing.css'
 
 const Easygoing = (props) => {
     return (
@@ -13,10 +12,10 @@ const Easygoing = (props) => {
             {(props.dead === true) &&
                 <img id = 'Easygoing-dead-image' alt = 'Easygoing-dead-alt' src = './'/>}
             <img id = 'Coward-dead-punish-image' alt = 'Coward-alt' src = './'/>
-            <div className = 'Deposit'>
+            <div className = 'Easygoing_Deposit'>
                 {props.deposit}
             </div>
-            <div className = 'ID'>
+            <div className = 'Easygoing_ID'>
                 Suggester{props.id} 
             </div>
         </div>

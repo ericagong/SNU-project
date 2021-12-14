@@ -1,0 +1,39 @@
+.RiskTaker{
+    height: 30px;
+}
+
+#RiskTaker-alive-reward-image{
+    width: 30px;
+    height: 30px;
+}
+
+#RiskTaker-alive-punish-image{
+    width: 30px;
+    height: 30px;
+}
+
+#RiskTaker-dead-reward-image{
+    width: 30px;
+    height: 30px;
+}
+
+#RiskTaker-dead-punish-image{
+    width: 30px;
+    height: 30px;
+}
+
+.RiskTaker_Deposit{
+    /* left: 30px; */
+    /* top: -30px; */
+    /* font-size: 12px; */
+    position: relative;
+    top: -30px;
+    left: 30px;
+}
+
+.RiskTaker_Connect{
+    /* left: 30px; */
+    position: relative;
+    top: -52px;
+    left: 135px;
+}
