@@ -248,14 +248,30 @@ class Sandbox extends Component {
       console.log("SuggesterAlive", this.SuggesterAlive)
       console.log("UserAlive", this.UserAlive)
       console.log("Punish", this.Punish)
+
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newRiskTaker = <RiskTaker deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         riskTakers.push(newRiskTaker)
       }
+      for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
+        let newCoward = <Coward deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        cowards.push(newCoward)
+      }
+      for(let i = 0; i < this.state.easygoingPop; i++) {
+        let newEasygoing = <Easygoing deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        easygoings.push(newEasygoing)
+      }
+      for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
+        let newTactful = <Tactful deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        tactfuls.push(newTactful)
+      }
     }
+
+
     if(this.state.setEnv && !this.checkAlive()) {
       this.final()
     }
+
     if(this.state.final) {
       console.log("final")
       console.log("suggesterDeposit", this.SuggesterDeposit)
@@ -264,7 +280,25 @@ class Sandbox extends Component {
       console.log("SuggesterAlive", this.SuggesterAlive)
       console.log("UserAlive", this.UserAlive)
       console.log("Punish", this.Punish)
+
+      for(let i = 0; i < this.state.riskTakerPop; i++) {
+        let newRiskTaker = <RiskTaker deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        riskTakers.push(newRiskTaker)
+      }
+      for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
+        let newCoward = <Coward deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        cowards.push(newCoward)
+      }
+      for(let i = 0; i < this.state.easygoingPop; i++) {
+        let newEasygoing = <Easygoing deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        easygoings.push(newEasygoing)
+      }
+      for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
+        let newTactful = <Tactful deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        tactfuls.push(newTactful)
+      }
     }
+
     return (
         <div className = 'Sandbox'>
             <p className = 'Simulation'>
@@ -289,6 +323,11 @@ class Sandbox extends Component {
                 Users
                 [RiskTaker] {this.state.riskTakerPop}
                 [Coward] {this.state.cowardPop}
+
+                {riskTakers}
+                {cowards}
+                {easygoings}
+                {tactfuls}
               </div>
               <button 
                   id = 'population-tab'
