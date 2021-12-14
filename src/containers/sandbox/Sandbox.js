@@ -222,9 +222,7 @@ class Sandbox extends Component {
     let riskTakers = []
     let cowards = []
     let easygoings = []
-    let tactfuls = []
-    
-    
+    let tactfuls = []  
 
     if(this.state.setEnv && this.checkAlive()) {
       this.match()
