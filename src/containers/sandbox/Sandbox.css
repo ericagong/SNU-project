@@ -3,6 +3,35 @@
     src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
   }
 
+.Simulation{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.Sandbox_Selector{
+    position: absolute;
+    width: 450px;
+    height: 40%;
+    left: 50%;
+    font-family: 'Futura Handwritten';
+}
+
+.Sandbox_Selector_Box{
+    position: absolute;
+    width: 450px;
+    left: 50%;
+    top: 20%;
+}
 
 .NextButtonStyle{
     position: absolute;
