@@ -55,14 +55,14 @@
 .UserList{
     position: absolute;
     width: 450px;
-    left: -40%;
+    left: -30%;
     top: 17%;
 }
 
 .SuggesterList{
     position: absolute;
     width: 450px;
-    left: 20%;
+    left: 15%;
     top: 17%;
 }
 
