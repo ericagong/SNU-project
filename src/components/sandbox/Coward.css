@@ -1,39 +1,39 @@
 .Coward{
-    height: 30px;
+    height: 20px;
 }
 
 #Coward-alive-reward-image{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 #Coward-alive-punish-image{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 #Coward-dead-reward-image{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 #Coward-dead-punish-image{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .Coward_Deposit{
-    /* left: 30px; */
-    /* top: -30px; */
-    /* font-size: 12px; */
     position: relative;
-    top: -30px;
-    left: 30px;
+    top: -22px;
+    left: 240px;
+    text-align: left;
+    font-size: 12px;
 }
 
 .Coward_Connect{
-    /* left: 30px; */
     position: relative;
-    top: -52px;
-    left: 135px;
+    top: -37px;
+    left: 260px;
+    text-align: left;
+    font-size: 12px;
 }

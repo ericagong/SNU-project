@@ -297,6 +297,13 @@ class Sandbox extends Component {
             
               <div className = 'display'>
                 <img className="display_Container" src={Box} alt={Box} />
+                [Display]
+                Suggesters
+                [Easygoing] {this.state.easygoingPop} 
+                [Tactful] {this.state.tactfulPop}
+                Users
+                [RiskTaker] {this.state.riskTakerPop}
+                [Coward] {this.state.cowardPop}
                 <div className = 'UserList'>
                   {riskTakers}
                   {cowards}
@@ -414,12 +421,35 @@ class Sandbox extends Component {
                     </p>
                   </div>
                 }
+                { (this.state.currTab === 'Description') && 
+                  <div className = 'Description'>
+                    <p>
+                      <label>Description</label>
+                      <div className = "DescriptionContent">
+                        <br/>
+                        <b>Easygoing</b>: Suggester who does not increase service quality even if User punish them.
+                        <br/>
+                        <b>Tactful</b>: Suggester who increase <br/>service quality if User punish them.
+                        <br/>
+                        <b>Risktaker</b>: User who punishes Suggester <br/>for poor service quality.
+                        <br/>
+                        <b>Coward</b>: Users who do not punish Suggester even if the quality of service is low.
+                        <br/>
+                      </div>
+                    </p>
+                  </div>
+                }
               </div>
             <button 
                 id = 'start-simulation'
                 onClick = {() => this.clickStartSimulationHandler()}>
                 Start Simulation
             </button>  
+            <button 
+                  id = 'description-tab'
+                  onClick = {() => this.setState({ currTab: 'Description'})}>
+                  Description Tab
+              </button>
           {/* <button 
               id = 'next-button'
               onClick = {() => this.clickNextHandler()}>
@@ -427,22 +457,6 @@ class Sandbox extends Component {
           </button> */}
           <img className="NextButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
           <div className="NextButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
-                Easygoing: Suggester who does not increase service quality even if User punish them.
-                <br/>
-                Tactful: Suggester who increase service quality if User punish them.
-                <br/>
-                Risktaker: User who punishes Suggester for poor service quality.
-                <br/>
-                Coward: Users who do not punish Suggester even if the quality of service is low.
-                <br/>
-
-                [Display]
-                Suggesters
-                [Easygoing] {this.state.easygoingPop}
-                [Tactful] {this.state.tactfulPop}
-                Users
-                [RiskTaker] {this.state.riskTakerPop}
-                [Coward] {this.state.cowardPop}
       </div>
     )
   }
