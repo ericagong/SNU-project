@@ -91,7 +91,6 @@ class UserPhase1 extends Component {
             {(this.state.init === false) && (this.state.change === false) && 
                 <div className = 'BeforeChange'>
                     <div className = 'ImageGuide'>{imageGuideMsg}</div>
-                    <img id = 'suggester-image' alt = 'suggester-alt' src = './'/>
                     <img id = 'imagebox' alt = {Box} src = {Box} />
                     <img className = 'RewardButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickSatisfyHandler('Reward')} />
                     <div className = 'RewardButtonText' onClick = {() => this.clickSatisfyHandler('Reward')}>Reward</div>
@@ -102,7 +101,7 @@ class UserPhase1 extends Component {
             {(this.state.init === false) && (this.state.change === true) && 
                 <div className = 'DepositChanged'>
                     <div className = 'DepositChanged_Content'>
-                    <div className = 'depositGuideMsg'>{depositGuideMsg}</div>
+                    
                     {(this.state.satisfy) && 
                     <div className = 'Reward'>
                         <div className = 'DepositChanged_Suggester'>
@@ -137,10 +136,11 @@ class UserPhase1 extends Component {
                         </div>
                     </div>
                     }
+                    </div>   
+                    <div className = 'depositGuideMsg'>{depositGuideMsg}</div> 
                     <div className = 'recurGuideMsg'>{recurGuideMsg}</div>
                     <img className = 'ExperienceSuggesterButtonStyle' src = {LongButton} alt = {LongButton} onClick = {() => this.clickSatisfyHandler('Burn')} />
                     <div className = 'ExperienceSuggesterButtonText' onClick = {() => this.experienceSuggesterHandler()}>Experience Suggester</div>               
-                    </div>    
                 </div>
             }
             
