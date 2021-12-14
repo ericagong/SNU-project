@@ -142,13 +142,13 @@ class UserPhase0 extends Component {
                 <div className = 'InLoading'>
                     {/* <img id = 'loading-image' alt = 'loading-alt' src = './'/> */}
                     <div className = 'LoadingText'>Loading...</div>
-                    <div className = 'LoadingGuide'>{loadingMsg}</div>
+                    <div className = 'UserPhase_LoadingGuide'>{loadingMsg}</div>
                     {this.loadingHandler()}
                 </div>
             }
             {((this.state.loading === true) && (this.state.channel === true)) && 
                 <div className = 'AfterLoading'>
-                    <div className = 'SetChannel'>
+                    <div className = 'Userphase1_SetChannel'>
                         {(this.state.pickedSuggester) &&
                             <div className = 'AfterLoading_Suggester'>
                                 <Suggester 
@@ -159,7 +159,7 @@ class UserPhase0 extends Component {
                                 />
                             </div>
                         }
-                        <img id = 'channel-image' alt = {Channel} src = {Channel}/>
+                        <img id = 'afterloading-channel-image' alt = {Channel} src = {Channel}/>
                         <div className = 'AfterLoading_User'>
                             <User
                                 deposit = {this.state.deposit}

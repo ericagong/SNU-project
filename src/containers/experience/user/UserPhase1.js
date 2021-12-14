@@ -8,6 +8,7 @@ import Box from '../../../Assets/Images/Box.png'
 import Button from '../../../Assets/Images/Button.png'
 import LongButton from '../../../Assets/Images/LongButton.png'
 import Channel from '../../../Assets/Images/Channel.png'
+import ImageGood from '../../../Assets/Images/ImageGood.png'
 
 import './UserPhase1.css';
 
@@ -91,7 +92,7 @@ class UserPhase1 extends Component {
             {(this.state.init === false) && (this.state.change === false) && 
                 <div className = 'BeforeChange'>
                     <div className = 'ImageGuide'>{imageGuideMsg}</div>
-                    <img id = 'imagebox' alt = {Box} src = {Box} />
+                    <img id = 'imagebox' alt = {ImageGood} src = {ImageGood} />
                     <img className = 'RewardButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickSatisfyHandler('Reward')} />
                     <div className = 'RewardButtonText' onClick = {() => this.clickSatisfyHandler('Reward')}>Reward</div>
                     <img className = 'BurnButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickSatisfyHandler('Burn')} />
@@ -137,8 +138,8 @@ class UserPhase1 extends Component {
                     </div>
                     }
                     </div>   
-                    <div className = 'depositGuideMsg'>{depositGuideMsg}</div> 
-                    <div className = 'recurGuideMsg'>{recurGuideMsg}</div>
+                    <div className = 'Userphase1_depositGuideMsg'>{depositGuideMsg}</div> 
+                    <div className = 'Userphase1_recurGuideMsg'>{recurGuideMsg}</div>
                     <img className = 'ExperienceSuggesterButtonStyle' src = {LongButton} alt = {LongButton} onClick = {() => this.clickSatisfyHandler('Burn')} />
                     <div className = 'ExperienceSuggesterButtonText' onClick = {() => this.experienceSuggesterHandler()}>Experience Suggester</div>               
                 </div>

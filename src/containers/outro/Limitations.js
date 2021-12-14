@@ -17,7 +17,7 @@ class Limitations extends Component {
             <div className = 'Limitations'>
                 <p className='LimitationsTitle'>Limitations</p>
                 <div className = 'Limitation'>
-                1. Users should have greater influence on transactions than suggesters. (like larger deposit or more population)
+                Users should have greater influence on transactions than suggesters. (like larger deposit or more population)
                 The success of the Two Scored Earth search engine depends on how effectively the user punishes suggestor. 
                 In reality, however, Suggester often has more money than User. 
                 Because users and suggestors burn the same amount of money in punishment situation, users are more likely to go bankrupt first. 

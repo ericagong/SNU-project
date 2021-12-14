@@ -52,12 +52,25 @@
     /* top: 20%; */
 }
 
+.UserList{
+    position: absolute;
+    width: 450px;
+    left: -30%;
+    top: 17%;
+}
+
+.SuggesterList{
+    position: absolute;
+    width: 450px;
+    left: 15%;
+    top: 17%;
+}
 
 #population-tab{
     position: absolute;
     top: 22%;
     left: 50%;
-    width: 10%;
+    width: 9%;
 
     align-items: center;
     text-align: center;
@@ -75,8 +88,8 @@
 #environment-tab{
     position: absolute;
     top: 22%;
-    left: 60.5%;
-    width: 10%;
+    left: 59.5%;
+    width: 9%;
 
     align-items: center;
     text-align: center;
@@ -91,10 +104,31 @@
     background-color: aqua;
 }
 
+#description-tab{
+    position: absolute;
+    top: calc(30% + 230px);
+    left: calc(32% + 450px);
+    width: 9%;
+
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
+}
+
+#description-tab:hover{
+    background-color: aqua;
+}
+
 #start-simulation{
     position: absolute;
-    top: 18%;
-    width: 10%;
+    /* bottom: 35%; */
+    top: calc(30% + 230px);
+    left: calc(41.5% + 450px);
+    width: 9%;
 
     align-items: center;
     text-align: center;
@@ -107,6 +141,14 @@
 
 #start-simulation:hover{
     background-color: aqua;
+}
+
+.DescriptionContent{
+    position: absolute;
+    width: 330px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
 }
 
 .NextButtonStyle{
@@ -139,3 +181,4 @@
     text-align: center;
     font-family: 'Futura Handwritten';
 }
+

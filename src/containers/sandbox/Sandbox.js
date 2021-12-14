@@ -101,7 +101,7 @@ class Sandbox extends Component {
   callMatch = () => {
     setTimeout(() => {
       this.match()
-    }, 4000)
+    }, 1000)
   }
 
   match = () => {
@@ -227,10 +227,10 @@ class Sandbox extends Component {
     let cowards = []
     let easygoings = []
     let tactfuls = []  
-    let lines = []
 
     if(this.state.setEnv && this.checkAlive()) {
-      this.match()
+      this.callMatch()
+      // this.match()
       console.log("match")
       console.log("suggesterDeposit", this.SuggesterDeposit)
       console.log("userDeposit", this.UserDeposit)
@@ -297,27 +297,22 @@ class Sandbox extends Component {
             
               <div className = 'display'>
                 <img className="display_Container" src={Box} alt={Box} />
-                Easygoing: Suggester who does not increase service quality even if User punish them.
-                <br/>
-                Tactful: Suggester who increase service quality if User punish them.
-                <br/>
-                Risktaker: User who punishes Suggester for poor service quality.
-                <br/>
-                Coward: Users who do not punish Suggester even if the quality of service is low.
-                <br/>
-
-                [Display]
-                Suggesters
-                [Easygoing] {this.state.easygoingPop}
+                {/* [Display] */}
+                <b>Suggesters </b>
+                [Easygoing] {this.state.easygoingPop} 
                 [Tactful] {this.state.tactfulPop}
-                Users
+                <br/>
+                <b>Users </b>
                 [RiskTaker] {this.state.riskTakerPop}
                 [Coward] {this.state.cowardPop}
-
-                {riskTakers}
-                {cowards}
-                {easygoings}
-                {tactfuls}
+                <div className = 'UserList'>
+                  {riskTakers}
+                  {cowards}
+                </div>
+                <div className = 'SuggesterList'>
+                  {easygoings}
+                  {tactfuls}
+                </div>
                 {/* {lines} */}
               </div>
               <button 
@@ -427,12 +422,35 @@ class Sandbox extends Component {
                     </p>
                   </div>
                 }
+                { (this.state.currTab === 'Description') && 
+                  <div className = 'Description'>
+                    <p>
+                      <label>Description</label>
+                      <div className = "DescriptionContent">
+                        <br/>
+                        <b>Easygoing</b>: Suggester who does not increase service quality even if User punish them.
+                        <br/>
+                        <b>Tactful</b>: Suggester who increase <br/>service quality if User punish them.
+                        <br/>
+                        <b>Risktaker</b>: User who punishes Suggester <br/>for poor service quality.
+                        <br/>
+                        <b>Coward</b>: Users who do not punish Suggester even if the quality of service is low.
+                        <br/>
+                      </div>
+                    </p>
+                  </div>
+                }
               </div>
             <button 
                 id = 'start-simulation'
                 onClick = {() => this.clickStartSimulationHandler()}>
                 Start Simulation
             </button>  
+            <button 
+                  id = 'description-tab'
+                  onClick = {() => this.setState({ currTab: 'Description'})}>
+                  Description Tab
+              </button>
           {/* <button 
               id = 'next-button'
               onClick = {() => this.clickNextHandler()}>
@@ -440,7 +458,6 @@ class Sandbox extends Component {
           </button> */}
           <img className="NextButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
           <div className="NextButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
-        
       </div>
     )
   }

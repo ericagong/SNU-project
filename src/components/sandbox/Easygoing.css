@@ -1,0 +1,39 @@
+.Easygoing{
+    height: 20px;
+}
+
+#Easygoing-alive-reward-image{
+    width: 20px;
+    height: 20px;
+}
+
+#Easygoing-alive-punish-image{
+    width: 20px;
+    height: 20px;
+}
+
+#Easygoing-dead-reward-image{
+    width: 20px;
+    height: 20px;
+}
+
+#Easygoing-dead-punish-image{
+    width: 20px;
+    height: 20px;
+}
+
+.Easygoing_Deposit{
+    position: relative;
+    top: -22px;
+    left: 240px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.Easygoing_ID{
+    position: relative;
+    top: -37px;
+    left: 260px;
+    text-align: left;
+    font-size: 12px;
+}

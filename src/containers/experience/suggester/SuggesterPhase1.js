@@ -6,6 +6,8 @@ import User from '../../../components/experience/User';
 
 import Box from '../../../Assets/Images/Box.png'
 import Button from '../../../Assets/Images/Button.png'
+import ImageGood from '../../../Assets/Images/ImageGood.png'
+import ImageBad from '../../../Assets/Images/ImageBad.png'
 
 import './SuggesterPhase1.css'
 
@@ -109,14 +111,13 @@ class SuggesterPhase1 extends Component {
             {(this.state.init === false) && (this.state.send === false) && 
                 <div className = 'BeforeSelect'>
                     <div className = 'ImageGuide'>{imageGuideMsg}</div>
-                    <img className = 'GoodImage' alt = {Box} src = {Box} />
-                    {/* img로 바꾸기 */}
+                    <img className = 'GoodImage' alt = {Box} src = {ImageGood} />
                     <button 
                         id = 'good-img-button'
                         onClick = {() => this.clickImgHandler('Good')}>
                         Good Image
                     </button>
-                    <img className = 'BadImage' alt = {Box} src = {Box} />
+                    <img className = 'BadImage' alt = {Box} src = {ImageBad} />
                     <button 
                         id = 'bad-img-button'
                         onClick = {() => this.clickImgHandler('Bad')}>

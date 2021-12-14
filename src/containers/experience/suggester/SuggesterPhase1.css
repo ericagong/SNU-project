@@ -31,6 +31,13 @@
     width: 450px;
     left: calc(50% + 230px);
     transform: translate(-50%);
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
 }
 
 #good-img-button{
@@ -38,6 +45,13 @@
     top: calc(30% + 250px);
     width: 10%;
     right: calc(50% + 10px);
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
 }
 
 #bad-img-button{
@@ -45,6 +59,21 @@
     top: calc(30% + 250px);
     width: 10%;
     right: calc(50% - 450px);
+
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
+}
+
+#good-img-button:hover{
+    background-color: aqua;
+}
+#bad-img-button:hover{
+    background-color: aqua;
 }
 
 .SelectGuide{

@@ -1,0 +1,39 @@
+.Coward{
+    height: 20px;
+}
+
+#Coward-alive-reward-image{
+    width: 20px;
+    height: 20px;
+}
+
+#Coward-alive-punish-image{
+    width: 20px;
+    height: 20px;
+}
+
+#Coward-dead-reward-image{
+    width: 20px;
+    height: 20px;
+}
+
+#Coward-dead-punish-image{
+    width: 20px;
+    height: 20px;
+}
+
+.Coward_Deposit{
+    position: relative;
+    top: -22px;
+    left: 240px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.Coward_Connect{
+    position: relative;
+    top: -37px;
+    left: 260px;
+    text-align: left;
+    font-size: 12px;
+}
