@@ -26,9 +26,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 12px;
-    text-align: left;
-    
+    font-size: 13px;
+    text-align: center;
+
+    font-family: 'Futura Handwritten';    
+}
+
+#smartcontract-ideas{
+    text-decoration: underline;
+    background-color: rgb(197, 231, 231);
+}
+
+#original-idea{
+    text-decoration: underline;
+    background-color: rgb(197, 231, 231);
 }
 
 .ButtonStyle{

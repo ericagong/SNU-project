@@ -248,6 +248,15 @@ class Sandbox extends Component {
             
               <div className = 'display'>
                 <img className="display_Container" src={Box} alt={Box} />
+                Easygoing: Suggester who does not increase service quality even if User punish them.
+                <br/>
+                Tactful: Suggester who increase service quality if User punish them.
+                <br/>
+                Risktaker: User who punishes Suggester for poor service quality.
+                <br/>
+                Coward: Users who do not punish Suggester even if the quality of service is low.
+                <br/>
+
                 [Display]
                 Suggesters
                 [Easygoing] {this.state.easygoingPop}

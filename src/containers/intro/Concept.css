@@ -18,16 +18,21 @@
     font-family: 'Futura Handwritten';
 }
 
+.RoleExplain{
+    text-align: center;
+}
+
 .ProjectConcept{
     position: absolute;
     width: 50%;
     height: 80%;
-    top: 72%;
+    top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     font-size: 12px;
     text-align: left;
+    font-family: 'Futura Handwritten';
 }
 
 .ButtonStyle{
