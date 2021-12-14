@@ -13,10 +13,12 @@ const Tactful = (props) => {
                 <img id = 'Tactful-alive-image' alt = 'Tactful-alive-alt' src = './'/>}
             {(props.dead === true) &&
                 <img id = 'Tactful-dead-image' alt = 'Tactful-dead-alt' src = './'/>}
-            {/* TODO: delete             */}
-            <img id = 'RiskTaker-dead-punish-image' alt = 'RiskTaker-alt' src = './'/>
+            <img id = 'Coward-dead-punish-image' alt = 'Coward-alt' src = './'/>
             <div className = 'Deposit'>
                 {props.deposit}
+            </div>
+            <div className = 'ID'>
+                Suggester{props.id} 
             </div>
         </div>
     )

@@ -240,7 +240,10 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = 
+          <div className = {`user${i}`}>
+            <RiskTaker  connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+          </div>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
@@ -314,10 +317,14 @@ class Sandbox extends Component {
                 [RiskTaker] {this.state.riskTakerPop}
                 [Coward] {this.state.cowardPop}
 
-                {riskTakers}
-                {cowards}
-                {easygoings}
-                {tactfuls}
+                <div className = 'Users'>
+                  {riskTakers}
+                  {cowards}
+                </div>
+                <div className = 'Suggesters'>
+                  {easygoings}
+                  {tactfuls}
+                </div>
                 {/* {lines} */}
               </div>
               <button 

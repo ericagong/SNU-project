@@ -141,33 +141,13 @@
 }
 
 .user0{
-  width: 40%;
-  height: 7%;
   left: 50%;
   transform: translateX(-50%);
   top: 30.3%;
-  background: #282a30;
-  border-radius: 12px;
 }
 
 .user1{
-width: 40%;
-  height: 7%;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 30.3%;
-  background: #282a30;
-  border-radius: 12px;
-}
-
-.suggester1{
-    position: relative;
-    left: 0px;
-    top: 20px;
-}
-
-.suggester2{
-    position: relative;
-    left: 30px;
-    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40.3%;
 }
