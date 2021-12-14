@@ -15,8 +15,8 @@ const RiskTaker = (props) => {
                 <img id = 'RiskTaker-dead-reward-image' alt = 'RiskTaker-alt' src = './'/>}
             {(props.dead === true) && (props.punish === true) &&
                 <img id = 'RiskTaker-dead-punish-image' alt = 'RiskTaker-alt' src = './'/>}
-            <div className = 'Reputation'>
-                {props.reputation}
+            <div className = 'Deposit'>
+                {props.deposit}
             </div>
         </div>
     )

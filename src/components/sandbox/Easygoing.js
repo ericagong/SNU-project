@@ -11,8 +11,8 @@ const Easygoing = (props) => {
                 <img id = 'Easygoing-alive-image' alt = 'Easygoing-alive-alt' src = './'/>}
             {(props.dead === true) &&
                 <img id = 'Easygoing-dead-image' alt = 'Easygoing-dead-alt' src = './'/>}
-            <div className = 'Reputation'>
-                {props.reputation}
+            <div className = 'Deposit'>
+                {props.deposit}
             </div>
         </div>
     )
