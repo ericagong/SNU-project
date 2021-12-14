@@ -297,11 +297,12 @@ class Sandbox extends Component {
             
               <div className = 'display'>
                 <img className="display_Container" src={Box} alt={Box} />
-                [Display]
-                Suggesters
+                {/* [Display] */}
+                <b>Suggesters </b>
                 [Easygoing] {this.state.easygoingPop} 
                 [Tactful] {this.state.tactfulPop}
-                Users
+                <br/>
+                <b>Users </b>
                 [RiskTaker] {this.state.riskTakerPop}
                 [Coward] {this.state.cowardPop}
                 <div className = 'UserList'>
