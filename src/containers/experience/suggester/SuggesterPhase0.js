@@ -47,18 +47,19 @@ class SuggesterPhase0 extends Component {
 
     render () {
 
-        const depositGuideMsg = 'User와 거래하기 전, smart contract 채널에 예치할 금액을 선택해주세요.'
-        const waitGuideMsg = `User가 거래를 원하는 Suggester를 선택할 때까지 기다려주세요.`
-        const settingGuideMsg = `특정 User가 당신과 거래를 희망합니다.\n 거래를 위해서는 먼저 smart contract 채널을 설정하셔야합니다.\n
-                                해당 User와 smart contract 채널을 형성하시려면 채널 승인 버튼을 눌러주세요.`
-        const channelGuideMsg = '해당 User와의 채널이 아래와 같이 성공적으로 형성되었습니다.'
+        const depositGuideMsg = 'Before trading with User, please select the amount to deposit in the smart contract channel.'
+        const waitGuideMsg = `Please wait for the user to select the Sugester they want to trade with.`
+        const settingGuideMsg = `A specific user wants to make a deal with you.\n 
+                                For transactions, you must first set up a smart contract channel.\n
+                                Press the channel approval button to form a smart contact channel with the user.`
+        const channelGuideMsg = 'Channel with the user was successfully formed as follows.'
         
         let depositSelectMsg = ''
 
         if(this.state.suggesterDeposit !== 0) {
-            depositSelectMsg = `${this.state.suggesterDeposit}만큼을 예치하고자합니다. 해당 deposit으로 채널을 형성하시려면 채널 형성 버튼을 눌러주세요.`
+            depositSelectMsg = `Are you going to deposit [Suggester Deposit: ${this.state.suggesterDeposit}]?\n
+            Press the channel formation button to form a channel with the corresponding deposit.`
         }
-        
         
         return (
             <div className = 'SuggesterPhase0'>
@@ -79,14 +80,8 @@ class SuggesterPhase0 extends Component {
                     {(this.state.deposit !== 0) && 
                         <div className = 'SelectedDepositDescription'>{depositSelectMsg}</div>
                     }        
-                    {/* <button 
-                    id = 'next-button'
-                    disabled = {(this.state.pickedSuggesterID === 0) || (this.state.deposit === 0)}
-                    onClick = {() => this.clickSetChannelHandler()}>
-                    Set-Channel
-                    </button> */}
-                    <img className="SuggesterPhaseButtonStyle" src={Button} alt={Button} disabled = {(this.state.pickedSuggesterID === 0) || (this.state.deposit === 0)} onClick = {() => this.clickSetChannelHandler()} />
-                    <div className="SuggesterPhaseButtonText" src={Button} alt={Button} disabled = {(this.state.pickedSuggesterID === 0) || (this.state.deposit === 0)} onClick = {() => this.clickSetChannelHandler()}>Set-Channel</div>
+                    <img className = 'SuggesterPhaseButtonStyle' src = {Button} alt = {Button} disabled = {(this.state.pickedSuggesterID === 0) || (this.state.deposit === 0)} onClick = {() => this.clickSetChannelHandler()} />
+                    <div className = 'SuggesterPhaseButtonText' src = {Button} alt = {Button} disabled = {(this.state.pickedSuggesterID === 0) || (this.state.deposit === 0)} onClick = {() => this.clickSetChannelHandler()}>Set-Channel</div>
                 </div>
             }
             {((this.state.loading === true) && (this.state.channel === false)) && 
@@ -103,29 +98,22 @@ class SuggesterPhase0 extends Component {
                         {/* <img id = 'setting-image' alt = 'setting-alt' src = './'/> */}
                         <img id = 'user-image' alt = {Character5} src = {Character5} />
                         <div className = 'SettingGuide'>{settingGuideMsg}</div>
-                        {/* <button 
-                            id = 'setting-button'
-                            onClick = {() => this.settingHandler()}>
-                            set-channel
-                        </button> */}                    
+                        <img className = 'SuggesterPhaseButtonStyle' src={Button} alt={Button} onClick = {() => this.settingHandler()} />
+                        <div className = 'SuggesterPhaseButtonText' src={Button} alt={Button} onClick = {() => this.settingHandler()}>set-channel</div>
                     </div>
-                    <img className="SuggesterPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.settingHandler()} />
-                    <div className="SuggesterPhaseButtonText" src={Button} alt={Button} onClick = {() => this.settingHandler()}>set-channel</div>
                 </div>
             }
             {((this.state.loading === true) && (this.state.channel === true)) && (this.state.final === true) &&
                 <div className = 'AfterSetting'>
                     <div className = 'SetChannel'>
-
                         <div className = 'AfterSetting_Suggester'>
                             <Suggester 
                                 name = '1'
                                 reputation = '80'
                                 deposit = {this.state.suggesterDeposit}
-                                final = "true"
+                                final = 'true'
                             />
                         </div>
-                        {/* <img id = 'channel-image' alt = 'channel-alt' src = './'/> */}
                         <img id = 'channel-image' alt = {Channel} src = {Channel}/>
                         <div className = 'AfterSetting_User'>
                             <User
@@ -133,14 +121,9 @@ class SuggesterPhase0 extends Component {
                             />
                         </div>
                         <div className = 'channelGuideMsg'>{channelGuideMsg}</div>
-                        {/* <button 
-                            id = 'transfer-button'
-                            onClick = {() => this.startTransferHandler()}>
-                            start-transfer
-                        </button> */}
+                        <img className = 'SuggesterPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()} />
+                        <div className = 'SuggesterPhaseButtonText' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()}>start-transfer</div>
                     </div>
-                    <img className="SuggesterPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.startTransferHandler()} />
-                    <div className="SuggesterPhaseButtonText" src={Button} alt={Button} onClick = {() => this.startTransferHandler()}>start-transfer</div>
                 </div>
             }
             </div>
