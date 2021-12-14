@@ -96,7 +96,7 @@ class SuggesterPhase0 extends Component {
                 <div>
                     <div className = 'SetChannel'>
                         {/* <img id = 'setting-image' alt = 'setting-alt' src = './'/> */}
-                        <img id = 'user-image' alt = {Character5} src = {Character5} />
+                        <img id = 'setting-user-image' alt = {Character5} src = {Character5} />
                         <div className = 'SettingGuide'>{settingGuideMsg}</div>
                     </div>
                     <img className = 'SuggesterPhaseButtonStyle' src={Button} alt={Button} onClick = {() => this.settingHandler()} />

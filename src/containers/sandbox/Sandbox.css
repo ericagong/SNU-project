@@ -107,8 +107,9 @@
 
 #start-simulation{
     position: absolute;
-    bottom: 35%;
-    left: 50.5%;
+    /* bottom: 35%; */
+    top: calc(30% + 230px);
+    left: calc(40.5% + 450px);
     width: 10%;
 
     align-items: center;

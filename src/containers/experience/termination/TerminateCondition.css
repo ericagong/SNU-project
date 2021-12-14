@@ -19,6 +19,46 @@
     font-family: 'Futura Handwritten';
 }
 
+.TerminateImage1{
+    position: absolute;
+    top: 29%;
+    width: 450px;
+    left: calc(50% - 230px);
+    transform: translate(-50%);
+}
+
+.TerminateImage2{
+    position: absolute;
+    top: 29%;
+    width: 450px;
+    left: calc(50% + 230px);
+    transform: translate(-50%);
+}
+
+.TerminateExplain1{
+    position: absolute;
+    top: calc(30% + 230px);
+    width: 360px;
+    left: calc(50% - 230px);
+    transform: translate(-50%); 
+    font-size: 15px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.TerminateExplain2{
+    position: absolute;
+    top: calc(30% + 230px);
+    width: 450px;
+    left: calc(50% + 230px);
+    transform: translate(-50%); 
+    font-size: 15px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
 .ButtonStyle{
     position: absolute;
     width: 174px;
@@ -45,7 +85,6 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 50px;
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
