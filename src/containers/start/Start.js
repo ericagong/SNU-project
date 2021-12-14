@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import Button from './../../Assets/Images/Button.png'
-// import Box from './../../Assets/Images/Box.png'
 
 import './Start.css';
+
+// TODO: Subtitle 위치 조정하기 
 
 class Start extends Component {
 
@@ -16,13 +17,16 @@ class Start extends Component {
             <div className = 'Start'>
                 <div className = 'GameInfo'>
                     <p className = 'GameTitle'>
-                        GameTitle
+                        Scorched Earth
+                    </p>
+                    <p className = 'GameSubTitle'>
+                        Decentralized Content Suggestions Using Two Of Two Scorched Earth.
                     </p>
                     <p className = 'PlayTime'>
-                        PlayTime
+                        PlayTime : 10 mins
                     </p>
                     <p className = 'Creators'>
-                        Name of Creators 
+                        Creators : Boseol Mun, Eunchae Gong, Woojin Cha
                     </p>
                 </div>  
                 <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
