@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
+import './End.css'
+
 class End extends Component {
 
     render () {
@@ -16,6 +18,7 @@ class End extends Component {
 
         return (
             <div className = 'End'>
+                <p className = 'EndTitle'>Ending Credit</p>
                 <div className = 'CreditInfo'>
                     <p className = 'TeamName'>
                         Team Name of 창통설
@@ -27,7 +30,7 @@ class End extends Component {
                         Related Project
                         {projects}
                     </p>
-                </div>      
+                </div>  
             </div>
         )
     }

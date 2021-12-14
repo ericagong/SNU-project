@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import LongButton from './../../Assets/Images/LongButton.png'
+
+import './ChooserRole.css';
 
 class ChooseRole extends Component {
 
@@ -10,19 +13,22 @@ class ChooseRole extends Component {
     render () {
         return (
             <div className = 'ChooseRole'>
+                <p className= 'ChooseRoleTitle' >Choose Role</p>
                 <div className = 'RoleDescription'>
-                    <div className = 'User'>
+                    <div className = 'ChooseRoleUser'>
                         User
                     </div>
-                    <div className = 'Suggester'>
+                    <div className = 'ChooseRoleSuggester'>
                         Suggester
                     </div>
                 </div>
-                <button 
+                {/* <button 
                     id = 'user-button'
                     onClick = {() => this.clickUserHandler()}>
                     Experience User
-                </button>
+                </button> */}
+                <img className="LongButtonStyle" src={LongButton} alt={LongButton} onClick = {() => this.clickUserHandler()} />
+                <div className="ButtonText" onClick = {() => this.clickUserHandler()}>Experience User</div>
             </div>
         )
     }

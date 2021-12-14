@@ -1,0 +1,219 @@
+.Buttons{
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    /* margin-bottom: 0; */
+    bottom: -16px;
+    background-color: #000000;
+}
+
+/* button9 ui가 현재 페이지가 아닐 경우의 디자인 */
+.button9{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 20px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button8{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 70px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button7{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 120px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button6{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 170px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button5{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 220px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button4{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 270px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button3{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 320px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button2{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 370px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button1{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 420px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button0{
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    bottom: 9px;
+    right: 470px;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 900px;
+}
+
+.button9_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 20px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button8_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 70px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button7_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 120px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button6_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 170px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button5_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 220px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button4_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 270px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button3_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 320px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button2_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 370px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button1_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 420px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}
+
+.button0_now{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    right: 470px;
+    background-color: #ffffff; 
+    border-radius: 900px;
+}

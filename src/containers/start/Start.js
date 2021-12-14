@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import Button from './../../Assets/Images/Button.png'
+// import Box from './../../Assets/Images/Box.png'
+
+import './Start.css';
 
 class Start extends Component {
 
@@ -18,14 +22,11 @@ class Start extends Component {
                         PlayTime
                     </p>
                     <p className = 'Creators'>
-                        Name of Creators
+                        Name of Creators 
                     </p>
-                </div>      
-                <button 
-                    id = 'next-button'
-                    onClick = {() => this.clickNextHandler()}>
-                    Next
-                </button>
+                </div>  
+                <img className="ButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
+                <div className="ButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
             </div>
         )
     }

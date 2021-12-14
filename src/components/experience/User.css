@@ -1,0 +1,28 @@
+#user-image{
+    width: 100px;
+}
+
+.User{
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+/* 
+.SelectSuggester{
+    position: relative;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+} */
+
+.deposit{
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+/* 
+.Reputation{
+    text-align: center;
+    font-family: 'Futura Handwritten';
+} */

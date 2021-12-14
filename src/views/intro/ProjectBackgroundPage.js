@@ -7,7 +7,7 @@ class ProjectBackgroundPage extends Component {
     render () {
         return (
             <div className = 'ProjectBackgroundPage'>
-                ProjectBackgroundPage
+                {/* ProjectBackgroundPage */}
                 <Background/>
                 <Footer/>
             </div>

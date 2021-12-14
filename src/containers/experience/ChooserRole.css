@@ -1,0 +1,79 @@
+@font-face{
+    font-family: 'Futura Handwritten';
+    src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+  }
+
+.ChooseRoleTitle{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.ChooseRoleUser{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 42%;
+    left: 30%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.ChooseRoleSuggester{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 42%;
+    left: 70%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.LongButtonStyle{
+    position: absolute;
+    height: 63px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.LongButtonStyle:active{
+    left: 49%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
+.ButtonText{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}

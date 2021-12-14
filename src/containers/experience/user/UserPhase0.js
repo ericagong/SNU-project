@@ -4,6 +4,13 @@ import { withRouter } from 'react-router-dom';
 import Suggester from '../../../components/experience/Suggester';
 import User from '../../../components/experience/User';
 
+import Button from '../../../Assets/Images/Button.png';
+import Channel from '../../../Assets/Images/Channel.png'
+
+
+import './UserPhase0.css';
+
+
 class UserPhase0 extends Component {
     state = {
         picked : false,
@@ -92,10 +99,13 @@ class UserPhase0 extends Component {
         
         return (
             <div className = 'UserPhase0'>
+                <p className = 'UserPhaseTitle'>
+                        UserPhase
+                </p>
             {(this.state.loading === false) && 
                 <div className = 'BeforeLoading'>
                     <div className = 'SuggesterGuide'>{suggesterGuideMsg}</div>
-                    <div className = 'Suggesters'>
+                    <div className = 'UserPhaseSuggesters'>
                         {suggesters}   
                     </div>
                     {(this.state.pickedSuggesterID !== 0) && 
@@ -104,7 +114,7 @@ class UserPhase0 extends Component {
                         <div className = 'AfterSelect'> 
                             <div className = 'SetDeposit'>
                                 <div className = 'DepositGuide'>{depositGuideMsg}</div>
-                                {depositSetGuideMsg}
+                                <div className = 'depositSetGuideMsg'>{depositSetGuideMsg}</div>
                                 <input 
                                     className = 'Deposit'
                                     type = 'number'
@@ -117,19 +127,22 @@ class UserPhase0 extends Component {
                                     <div className = 'SelectedDepositDescription'>{depositSelectMsg}</div>
                                 }
                             </div>
-                            <button 
+                            {/* <button 
                             id = 'next-button'
                             disabled = {(this.state.pickedSuggesterID === 0) || (this.state.deposit === 0)}
                             onClick = {() => this.clickSetChannelHandler()}>
                             Set-Channel
-                            </button>
+                            </button> */}
+                            <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.clickSetChannelHandler()} />
+                            <div className="UserPhaseButtonText" onClick = {() => this.clickSetChannelHandler()}>Set-Channel</div>
                         </div>
                     }
                 </div>
             }
             {((this.state.loading === true) && (this.state.channel === false)) && 
                 <div className = 'InLoading'>
-                    <img id = 'loading-image' alt = 'loading-alt' src = './'/>
+                    {/* <img id = 'loading-image' alt = 'loading-alt' src = './'/> */}
+                    <div className = 'LoadingText'>Loading...</div>
                     <div className = 'LoadingGuide'>{loadingMsg}</div>
                     {this.loadingHandler()}
                 </div>
@@ -138,7 +151,7 @@ class UserPhase0 extends Component {
                 <div className = 'AfterLoading'>
                     <div className = 'SetChannel'>
                         {(this.state.pickedSuggester) &&
-                            <div className = 'Suggester'>
+                            <div className = 'AfterLoading_Suggester'>
                                 <Suggester 
                                     name = {this.state.pickedSuggester.name}
                                     reputation = {this.state.pickedSuggester.reputation}
@@ -147,19 +160,21 @@ class UserPhase0 extends Component {
                                 />
                             </div>
                         }
-                        <img id = 'channel-image' alt = 'channel-alt' src = './'/>
-                        <div className = 'User'>
+                        <img id = 'channel-image' alt = {Channel} src = {Channel}/>
+                        <div className = 'AfterLoading_User'>
                             <User
                                 deposit = {this.state.deposit}
                             />
                         </div>
-                        {settingGuideMsg}
-                        <button 
+                        <div className = "AfterLoading_GuideMsg">{settingGuideMsg}</div>
+                        {/* <button 
                             id = 'transfer-button'
                             onClick = {() => this.startTransferHandler()}>
                             start transfer
-                        </button>
+                        </button>  */}
                     </div>
+                    <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.startTransferHandler()} />
+                    <div className="UserPhaseButtonText" onClick = {() => this.startTransferHandler()}>Start Transfer</div>
                 </div>
             }
             

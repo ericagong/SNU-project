@@ -1,0 +1,229 @@
+@font-face{
+    font-family: 'Futura Handwritten';
+    src: url('../../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+}
+
+.UserPhaseTitle{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+/* before loading */
+
+.SuggesterGuide{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    /* font-weight: bold; */
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.UserPhaseSuggesters{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.PickedSuggesterDescription{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    /* line-height: 50px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.DepositGuide{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    /* line-height: 50px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.depositSetGuideMsg{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    width: 450px;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-size: 10px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.Deposit{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SelectedDepositDescription{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    width: 450px;
+    transform: translateX(-50%);
+    font-style: normal;
+    /* font-weight: bold; */
+    font-size: 12px;
+    /* line-height: 50px; */
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+/* while loading */
+
+/* //todo: add a loading image */
+
+.LoadingText{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+ 
+.LoadingGuide{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    width: 450px;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+ 
+/* after loading */
+
+.SetChannel{
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.AfterLoading_Suggester{
+    position: absolute;
+    height: 30%;
+    left: 0%;
+    transform: translateX(-50%);
+}
+
+.AfterLoading_User{
+    position: absolute;
+    height: 30%;
+    left: 100%;
+    transform: translateX(-50%);
+}
+
+#channel-image{
+    position: absolute;
+    height: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 450%;
+}
+
+.AfterLoading_GuideMsg{
+    position: relative;
+    top: 280px;
+    font-style: normal;
+    font-size: 12px;
+    font-family: 'Futura Handwritten';
+}
+
+/* button in the bottom */
+
+.UserPhaseButtonStyle{
+    position: absolute;
+    width: 174px;
+    height: 63px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.UserPhaseButtonStyle:active{
+    left: 49%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
+
+.UserPhaseButtonText{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+

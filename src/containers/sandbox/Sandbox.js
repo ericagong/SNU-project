@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
+import Button from './../../Assets/Images/Button.png'
+import Box from './../../Assets/Images/Box.png'
+
+import './Sandbox.css'
 import Suggester from '../../components/experience/Suggester'
 import User from '../../components/experience/User'
 
@@ -238,140 +242,141 @@ class Sandbox extends Component {
     }
     return (
         <div className = 'Sandbox'>
-            <div className = 'Simulation'>
-                샌드박스 모듈
-            </div>      
-            <div className = 'Display'>
-              [Display]
-              <div className = 'Suggesters'>
-                [Suggesters] 
+            <p className = 'Simulation'>
+                Sandbox Module
+            </p>
+            
+              <div className = 'display'>
+                <img className="display_Container" src={Box} alt={Box} />
+                [Display]
+                Suggesters
                 [Easygoing] {this.state.easygoingPop}
                 [Tactful] {this.state.tactfulPop}
-
+                Users
+                [RiskTaker] {this.state.riskTakerPop}
+                [Coward] {this.state.cowardPop}
               </div>
-              
-              
-              Users
-              [RiskTaker] {this.state.riskTakerPop}
-              [Coward] {this.state.cowardPop}
-            </div>
+              <button 
+                  id = 'population-tab'
+                  onClick = {() => this.setState({ currTab : 'Population'})}>
+                  Population Tab
+              </button>
+              <button 
+                  id = 'environment-tab'
+                  onClick = {() => this.setState({ currTab: 'Environment'})}>
+                  Environment Tab
+              </button>
+              <div className = 'Inputbox'>
+                <img className="Inputbox_Container" src={Box} alt={Box} />
+                { (this.state.currTab === 'Population') &&
+                  <div className = 'Population'>
+                    <b>Suggesters</b>
+                    <p>
+                      <label>[Easygoing]</label>
+                      <input 
+                        id = 'easygoing-population'
+                        type = 'number'
+                        min = '1'
+                        max = '5'
+                        value = {this.state.easygoingPop}
+                        onChange = {(event) => this.setState({easygoingPop : event.target.value })}>
+                      </input>
+                      <b>
+                        (min: 1, max: 5)
+                      </b>
+                    </p>
+                    <p>
+                      <label>[Tactful]</label>
+                      <input 
+                        id = 'tactful-population'
+                        type = 'number'
+                        min = '1'
+                        max = '5'
+                        value = {this.state.tactfulPop}
+                        onChange = {(event) => this.setState({tactfulPop : event.target.value })}>
+                      </input>
+                      <b>
+                        (min: 1, max: 5)
+                      </b>
+                    </p>
+                    
+                    <b>Users</b>
+                    <p>
+                      <label>[RiskTaker]</label>
+                      <input 
+                        id = 'risktaker-population'
+                        type = 'number'
+                        min = '3'
+                        max = '10'
+                        value = {this.state.riskTakerPop}
+                        onChange = {(event) => this.setState({riskTakerPop : event.target.value })}>
+                      </input>
+                      <b>
+                        (min: 3, max: 10)
+                      </b>
+                    </p>
+                    <p>
+                      <label>[Coward]</label>
+                      <input 
+                        id = 'coward-population'
+                        type = 'number'
+                        min = '2'
+                        max = '10'
+                        value = {this.state.cowardPop}
+                        onChange = {(event) => this.setState({cowardPop : event.target.value })}>
+                      </input>
+                      <b>
+                        (min: 2, max: 10)
+                      </b>
+                    </p>
+                  </div>
+                }
+                { (this.state.currTab === 'Environment') && 
+                  <div className = 'Environment'>
+                    <p>
+                      <label>[User Deposit]</label>
+                      <input 
+                        id = 'user-deposit'
+                        type = 'number'
+                        min = '80'
+                        max = '200'
+                        value = {this.state.userDeposit}
+                        onChange = {(event) => this.setState({userDeposit : event.target.value })}>
+                      </input>
+                      <b>
+                        (min: 80, max: 200)
+                      </b>
+                    </p>
+                    <p>
+                      <label>[Suggester Deposit]</label>
+                      <input 
+                        id = 'suggester-deposit'
+                        type = 'number'
+                        min = '20'
+                        max = '80'
+                        value = {this.state.suggesterDeposit}
+                        onChange = {(event) => this.setState({suggesterDeposit : event.target.value })}>
+                      </input>
+                      <b>
+                        (min: 20, max: 80)
+                      </b>
+                    </p>
+                  </div>
+                }
+              </div>
             <button 
-                id = 'population-tab'
-                onClick = {() => this.setState({ currTab : 'Population'})}>
-                Population Tab
-            </button>
-            <button 
-                id = 'environment-tab'
-                onClick = {() => this.setState({ currTab: 'Environment'})}>
-                Environment Tab
-            </button>
-            <div className = 'Inputbox'>
-              { (this.state.currTab === 'Population') &&
-                <div className = 'Popoulation'>
-                  <label>Suggesters</label>
-                  <p>
-                    <label>[Easygoing]</label>
-                    <input 
-                      id = 'easygoing-population'
-                      type = 'number'
-                      min = '1'
-                      max = '5'
-                      value = {this.state.easygoingPop}
-                      onChange = {(event) => this.setState({easygoingPop : event.target.value })}>
-                    </input>
-                    <b>
-                      (min: 1, max: 5)
-                    </b>
-                  </p>
-                  <p>
-                    <label>[Tactful]</label>
-                    <input 
-                      id = 'tactful-population'
-                      type = 'number'
-                      min = '1'
-                      max = '5'
-                      value = {this.state.tactfulPop}
-                      onChange = {(event) => this.setState({tactfulPop : event.target.value })}>
-                    </input>
-                    <b>
-                      (min: 1, max: 5)
-                    </b>
-                  </p>
-                  
-                  <label>Users</label>
-                  <p>
-                    <label>[RiskTaker]</label>
-                    <input 
-                      id = 'risktaker-population'
-                      type = 'number'
-                      min = '3'
-                      max = '10'
-                      value = {this.state.riskTakerPop}
-                      onChange = {(event) => this.setState({riskTakerPop : event.target.value })}>
-                    </input>
-                    <b>
-                      (min: 3, max: 10)
-                    </b>
-                  </p>
-                  <p>
-                    <label>[Coward]</label>
-                    <input 
-                      id = 'coward-population'
-                      type = 'number'
-                      min = '2'
-                      max = '10'
-                      value = {this.state.cowardPop}
-                      onChange = {(event) => this.setState({cowardPop : event.target.value })}>
-                    </input>
-                    <b>
-                      (min: 2, max: 10)
-                    </b>
-                  </p>
-                </div>
-              }
-              { (this.state.currTab === 'Environment') && 
-                <div className = 'Environment'>
-                  <p>
-                    <label>[User Deposit]</label>
-                    <input 
-                      id = 'user-deposit'
-                      type = 'number'
-                      min = '80'
-                      max = '200'
-                      value = {this.state.userDeposit}
-                      onChange = {(event) => this.setState({userDeposit : event.target.value })}>
-                    </input>
-                    <b>
-                      (min: 80, max: 200)
-                    </b>
-                  </p>
-                  <p>
-                    <label>[Suggester Deposit]</label>
-                    <input 
-                      id = 'suggester-deposit'
-                      type = 'number'
-                      min = '20'
-                      max = '80'
-                      value = {this.state.suggesterDeposit}
-                      onChange = {(event) => this.setState({suggesterDeposit : event.target.value })}>
-                    </input>
-                    <b>
-                      (min: 20, max: 80)
-                    </b>
-                  </p>
-                </div>
-              }
-            </div>
-          <button 
-              id = 'start-simulation'
-              onClick = {() => this.clickStartSimulationHandler()}>
-              Start Simulation
-          </button>  
-          <button 
+                id = 'start-simulation'
+                onClick = {() => this.clickStartSimulationHandler()}>
+                Start Simulation
+            </button>  
+          {/* <button 
               id = 'next-button'
               onClick = {() => this.clickNextHandler()}>
               Next
-          </button>
+          </button> */}
+          <img className="NextButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
+          <div className="NextButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
+        
       </div>
     )
   }

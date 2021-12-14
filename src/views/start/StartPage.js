@@ -7,7 +7,7 @@ class StartPage extends Component {
     render () {
         return (
             <div className = 'StartPage'>
-                startPage
+                {/* startPage */}
                 <Start/>
                 <Footer/>
             </div>

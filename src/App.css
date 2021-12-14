@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-width: 1200px;
+  min-height: 650px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .App-logo {
@@ -30,4 +37,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face{
+  font-family: 'Futura Handwritten';
+  src: url('./Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
 }

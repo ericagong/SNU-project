@@ -8,7 +8,7 @@ class ProjectConceptPage extends Component {
     render () {
         return (
             <div className = 'ProjectConceptPage'>
-                ProjectConceptPage
+                {/* ProjectConceptPage */}
                 <Concept />
                 <Footer/>
             </div>

@@ -7,7 +7,7 @@ class SandboxPage extends Component {
     render () {
         return (
             <div className = 'SandboxPage'>
-                SandboxPage
+                {/* SandboxPage */}
                 <Sandbox/>
                 <Footer/>
             </div>

@@ -1,0 +1,64 @@
+@font-face{
+    font-family: 'Futura Handwritten';
+    src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+  }
+
+.BackgroundTitle{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.ProjectBackground{
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 12px;
+    text-align: left;
+    
+}
+
+.ButtonStyle{
+    position: absolute;
+    width: 174px;
+    height: 63px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ButtonStyle:active{
+    left: 49%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
+.ButtonText{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}

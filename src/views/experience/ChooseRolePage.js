@@ -7,7 +7,7 @@ class ChooseRolePage extends Component {
     render () {
         return (
             <div className = 'ChooseRolePage'>
-                ChooseRolePage
+                {/* ChooseRolePage */}
                 <ChooserRole/>
                 <Footer/>
             </div>

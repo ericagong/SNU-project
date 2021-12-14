@@ -1,0 +1,38 @@
+#suggester-image{
+    width: 100px;
+}
+
+.Suggester{
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.SelectSuggester{
+    position: relative;
+    width: 100px;
+
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
+}
+
+.SelectSuggester:hover{
+    background-color: aqua;
+}
+
+.deposit{
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+.Reputation{
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}

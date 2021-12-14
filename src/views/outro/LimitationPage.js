@@ -7,7 +7,7 @@ class LimitationPage extends Component {
     render () {
         return (
             <div className = 'LimitationPage'>
-                LimitationPage
+                {/* LimitationPage */}
                 <Limitations/>
                 <Footer/>
             </div>
