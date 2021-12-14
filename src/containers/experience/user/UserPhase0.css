@@ -12,7 +12,6 @@
     transform: translateX(-50%);
     font-size: 50px;
     line-height: 50px;
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -28,8 +27,8 @@
     left: 50%;
     transform: translateX(-50%);
     font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
+    /* font-weight: bold; */
+    font-size: 12px;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -90,10 +89,7 @@
     width: 450px;
     transform: translateX(-50%);
     font-style: normal;
-    /* font-weight: bold; */
     font-size: 10px;
-    /* line-height: 50px; */
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -116,9 +112,8 @@
     transform: translateX(-50%);
     font-style: normal;
     /* font-weight: bold; */
-    font-size: 10px;
+    font-size: 12px;
     /* line-height: 50px; */
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -128,6 +123,20 @@
 
 /* //todo: add a loading image */
 
+.LoadingText{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+ 
 .LoadingGuide{
     display: flex;
     justify-content: center;
@@ -137,10 +146,7 @@
     width: 450px;
     transform: translateX(-50%);
     font-style: normal;
-    /* font-weight: bold; */
-    font-size: 10px;
-    /* line-height: 50px; */
-    display: flex;
+    font-size: 12px;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';

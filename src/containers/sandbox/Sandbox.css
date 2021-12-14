@@ -3,50 +3,23 @@
     src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
   }
 
-.Simulation{
-    display: flex;
-    justify-content: center;
+
+.NextButtonStyle{
     position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 50px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.display{
-    position: absolute;
-    /* display: flex; */
-    width: 80%;
-
-    bottom : 30%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    text-align: center;
-    font-family: 'Futura Handwritten';
-    font-size: 15px;
-}
-
-.ButtonStyle{
-    position: absolute;
+    width: 174px;
     height: 63px;
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.ButtonStyle:active{
+.NextButtonStyle:active{
     left: 49%;
     transform: translateX(-50%);
     opacity: 70%;
 }
 
-.ButtonText{
+.NextButtonText{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -60,181 +33,5 @@
     display: flex;
     align-items: center;
     text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.PopulationTabText{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 108px;
-    left: 34%;
-    transform: translateX(-50%);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.EnvironmentTabText{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 108px;
-    left: 66%;
-    transform: translateX(-50%);
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.Sandbox_SuggestersText{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 158px;
-    left: 34%;
-    transform: translateX(-50%);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.Sandbox_UsersText{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 158px;
-    left: 66%;
-    transform: translateX(-50%);
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-#character1{
-    position: absolute;
-    height: 150px;
-    left: 25%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-}
-
-#character1:active{
-    top: 44%;
-}
-
-#character1_container{
-    position: absolute;
-    left: 25%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    line-height: 5px;
-    font-family: 'Futura Handwritten';
-}
-
-#character2{
-    position: absolute;
-    height: 150px;
-    left: 40%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-}
-
-#character2:active{
-    top: 44%;
-}
-
-#character2_container{
-    position: absolute;
-    left: 40%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    line-height: 5px;
-    font-family: 'Futura Handwritten';
-}
-
-
-#character4{
-    position: absolute;
-    height: 150px;
-    left: 60%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-}
-
-#character4:active{
-    top: 44%;
-}
-
-#character4_container{
-    position: absolute;
-    left: 60%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    line-height: 5px;
-    font-family: 'Futura Handwritten';
-}
-
-
-#character5{
-    position: absolute;
-    height: 150px;
-    left: 75%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-}
-
-#character5:active{
-    top: 44%;
-}
-
-#character5_container{
-    position: absolute;
-    left: 75%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    line-height: 5px;
     font-family: 'Futura Handwritten';
 }

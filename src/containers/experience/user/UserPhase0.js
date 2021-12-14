@@ -141,7 +141,8 @@ class UserPhase0 extends Component {
             }
             {((this.state.loading === true) && (this.state.channel === false)) && 
                 <div className = 'InLoading'>
-                    <img id = 'loading-image' alt = 'loading-alt' src = './'/>
+                    {/* <img id = 'loading-image' alt = 'loading-alt' src = './'/> */}
+                    <div className = 'LoadingText'>Loading...</div>
                     <div className = 'LoadingGuide'>{loadingMsg}</div>
                     {this.loadingHandler()}
                 </div>

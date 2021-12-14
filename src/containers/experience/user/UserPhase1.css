@@ -12,7 +12,6 @@
     transform: translateX(-50%);
     font-size: 50px;
     line-height: 50px;
-    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -25,7 +24,7 @@
     top: 45%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 15px;
+    font-size: 12px;
 
     align-items: center;
     text-align: center;

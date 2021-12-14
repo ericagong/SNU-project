@@ -2,11 +2,6 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
 import Button from './../../Assets/Images/Button.png'
-import LongButton from './../../Assets/Images/LongButton.png'
-import Character1 from './../../Assets/Images/character1.png'
-import Character2 from './../../Assets/Images/character2.png'
-import Character4 from './../../Assets/Images/character4.png'
-import Character5 from './../../Assets/Images/character5.png'
 
 import './Sandbox.css'
 
@@ -361,11 +356,14 @@ class Sandbox extends Component {
               onClick = {() => this.clickStartSimulationHandler()}>
               Start Simulation
           </button>  
-          <button 
+          {/* <button 
               id = 'next-button'
               onClick = {() => this.clickNextHandler()}>
               Next
-          </button>
+          </button> */}
+
+          <img className="NextButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
+          <div className="NextButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
       </div>
     )
   }
