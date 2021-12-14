@@ -69,6 +69,7 @@
     position: absolute;
     top: 60%;
     left: 50%;
+    
     transform: translateX(-50%);
     font-style: normal;
     font-weight: bold;
@@ -100,15 +101,17 @@
     top: 70%;
     left: 50%;
     transform: translateX(-50%);
+    width: 15%;
 }
 
 .SelectedDepositDescription{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 74%;
+    /* display: flex; */
+    /* justify-content: center; */
+    position: relative;
+    /* top: 85%; */
+    margin-top: 43%;
     left: 50%;
-    width: 450px;
+    width: 800px;
     transform: translateX(-50%);
     font-style: normal;
     /* font-weight: bold; */
@@ -210,8 +213,6 @@
 }
 
 .UserPhaseButtonText{
-    display: flex;
-    justify-content: center;
     position: absolute;
     bottom: 105px;
     left: 50%;

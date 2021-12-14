@@ -140,7 +140,7 @@ class UserPhase0 extends Component {
             }
             {((this.state.loading === true) && (this.state.channel === false)) && 
                 <div className = 'InLoading'>
-                    <img id = 'loading-image' alt = 'loading-alt' src = './'/>
+                    {/* <img id = 'loading-image' alt = 'loading-alt' src = './'/> */}
                     <div className = 'LoadingText'>Loading...</div>
                     <div className = 'LoadingGuide'>{loadingMsg}</div>
                     {this.loadingHandler()}
@@ -166,9 +166,10 @@ class UserPhase0 extends Component {
                             />
                         </div>
                         <div className = 'AfterLoading_GuideMsg'>{settingGuideMsg}</div>
-                        <img className = 'UserPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()} />
-                        <div className = 'UserPhaseButtonText' onClick = {() => this.startTransferHandler()}>Start Transfer</div>
+                        
                     </div>
+                    <img className = 'UserPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()} />
+                    <div className = 'UserPhaseButtonText' onClick = {() => this.startTransferHandler()}>Start Transfer</div>
                 </div>
             }
             
