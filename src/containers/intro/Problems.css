@@ -20,9 +20,9 @@
 
 .CurrentProblems{
     position: absolute;
-    width: 50%;
+    width: 80%;
     height: 80%;
-    top: 72%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
 

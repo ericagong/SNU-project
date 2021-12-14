@@ -137,8 +137,8 @@ class UserPhase1 extends Component {
                     </div>
                     }
                     </div>   
-                    <div className = 'depositGuideMsg'>{depositGuideMsg}</div> 
-                    <div className = 'recurGuideMsg'>{recurGuideMsg}</div>
+                    <div className = 'Userphase1_depositGuideMsg'>{depositGuideMsg}</div> 
+                    <div className = 'Userphase1_recurGuideMsg'>{recurGuideMsg}</div>
                     <img className = 'ExperienceSuggesterButtonStyle' src = {LongButton} alt = {LongButton} onClick = {() => this.clickSatisfyHandler('Burn')} />
                     <div className = 'ExperienceSuggesterButtonText' onClick = {() => this.experienceSuggesterHandler()}>Experience Suggester</div>               
                 </div>

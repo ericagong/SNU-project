@@ -149,17 +149,17 @@
     top: 300%;
 }
 
-.depositGuideMsg{
+.Userphase1_depositGuideMsg{
     position: relative;
-    top: 300px;
+    top: 460px;
     font-style: normal;
     font-size: 15px;
     font-family: 'Futura Handwritten';
 }
 
-.recurGuideMsg{
+.Userphase1_recurGuideMsg{
     position: relative;
-    top: 300px;
+    top: 460px;
     font-style: normal;
     font-size: 15px;
     font-family: 'Futura Handwritten';

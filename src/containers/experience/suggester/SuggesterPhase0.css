@@ -23,8 +23,9 @@
     position: absolute;
     top: 40%;
     left: 50%;
+    width: 500px;
     transform: translateX(-50%);
-    font-size: 12px;
+    font-size: 20px;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -34,8 +35,9 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
+    width: 15%;
     transform: translateX(-50%);
     font-size: 12px;
     align-items: center;
@@ -44,7 +46,10 @@
 }
 
 .SelectedDepositDescription{
-    top: 50%;
+    /* top: 50%; */
+    position: absolute;
+    top: 60%;
+    font-size: 20px;
 }
 
 .SuggesterPhaseButtonStyle{
@@ -104,7 +109,7 @@
     width: 450px;
     transform: translateX(-50%);
     font-style: normal;
-    font-size: 12px;
+    font-size: 20px;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -112,16 +117,16 @@
 
 /* after loading */
 
+
 .SettingGuide{
-    display: flex;
-    justify-content: center;
+
     position: absolute;
-    top: 120%;
+    top: 130%;
     left: 50%;
-    width: 450px;
+    width: 650px;
     transform: translateX(-50%);
     font-style: normal;
-    font-size: 12px;
+    font-size: 20px;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
@@ -132,29 +137,36 @@
 .AfterSetting_Suggester{
     position: absolute;
     height: 30%;
-    left: -10%;
+    left: 35%;
+    top: 30%;
     transform: translateX(-50%);
 }
 
 .AfterSetting_User{
     position: absolute;
     height: 30%;
-    left: 110%;
+    left: 65%;
+    top: 30%;
     transform: translateX(-50%);
 }
 
 #channel-image{
     position: absolute;
-    height: 90%;
+    /* height: 90%; */
+    width: 21%;
     left: 50%;
+
     transform: translateX(-50%);
-    top: 450%;
+    top: 42%;
 }
 
 .channelGuideMsg{
-    position: relative;
-    top: 280px;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translateX(-50%);
+    
     font-style: normal;
-    font-size: 12px;
+    font-size: 20px;
     font-family: 'Futura Handwritten';
 }

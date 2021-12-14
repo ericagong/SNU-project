@@ -98,9 +98,9 @@ class SuggesterPhase0 extends Component {
                         {/* <img id = 'setting-image' alt = 'setting-alt' src = './'/> */}
                         <img id = 'user-image' alt = {Character5} src = {Character5} />
                         <div className = 'SettingGuide'>{settingGuideMsg}</div>
-                        <img className = 'SuggesterPhaseButtonStyle' src={Button} alt={Button} onClick = {() => this.settingHandler()} />
-                        <div className = 'SuggesterPhaseButtonText' src={Button} alt={Button} onClick = {() => this.settingHandler()}>set-channel</div>
                     </div>
+                    <img className = 'SuggesterPhaseButtonStyle' src={Button} alt={Button} onClick = {() => this.settingHandler()} />
+                    <div className = 'SuggesterPhaseButtonText' src={Button} alt={Button} onClick = {() => this.settingHandler()}>set-channel</div>
                 </div>
             }
             {((this.state.loading === true) && (this.state.channel === true)) && (this.state.final === true) &&
@@ -121,9 +121,9 @@ class SuggesterPhase0 extends Component {
                             />
                         </div>
                         <div className = 'channelGuideMsg'>{channelGuideMsg}</div>
-                        <img className = 'SuggesterPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()} />
-                        <div className = 'SuggesterPhaseButtonText' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()}>start-transfer</div>
                     </div>
+                    <img className = 'SuggesterPhaseButtonStyle' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()} />
+                    <div className = 'SuggesterPhaseButtonText' src = {Button} alt = {Button} onClick = {() => this.startTransferHandler()}>start-transfer</div>
                 </div>
             }
             </div>

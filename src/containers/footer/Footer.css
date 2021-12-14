@@ -155,7 +155,7 @@
     text-align: center;
     justify-content: center;
 
-    font-size: 10px;
+    font-size: 8px;
 }
 .button6:hover:before{
     position: absolute;
@@ -168,7 +168,7 @@
     text-align: center;
     justify-content: center;
 
-    font-size: 10px;
+    font-size: 7px;
 }
 
 .button5:hover:before{
@@ -208,7 +208,7 @@
     text-align: center;
     justify-content: center;
 
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .button2:hover:before{
@@ -222,7 +222,7 @@
     text-align: center;
     justify-content: center;
 
-    font-size: 10px;
+    font-size: 6px;
 }
 
 .button1:hover:before{
@@ -236,7 +236,7 @@
     text-align: center;
     justify-content: center;
 
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .button0:hover:before{
