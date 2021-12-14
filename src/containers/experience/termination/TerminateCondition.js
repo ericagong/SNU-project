@@ -8,8 +8,8 @@ class TermiateCondition extends Component {
     }
 
     render () {
-        const condition1GuideMsg = 'User나 Suggester 중 한 측이 응답이 없는 경우'
-        const condition2GuideMsg = 'User나 Suggester 중 한 측이 거래 중단 의사를 밝힌 경우'
+        const condition1GuideMsg = 'If either User or Sugester does not respond.'
+        const condition2GuideMsg = 'If either User or Sugester expresses their intention to suspend the transaction.'
 
         return (
             <div className = 'TermiateCondition'>
