@@ -228,17 +228,6 @@ class Sandbox extends Component {
     let easygoings = []
     let tactfuls = []  
 
-
-  //     //-------
-  // SuggesterDeposit = []
-  // SuggesterAlive = []
-
-  // UserDeposit = []
-  // UserAlive = []
-  // Punish = []
-
-  // Connect  = []
-  // //---
     if(this.state.setEnv && this.checkAlive()) {
       this.match()
       console.log("match")
@@ -250,19 +239,19 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = <RiskTaker deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
-        let newCoward = <Coward deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newCoward = <Coward deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newEasygoing = <Easygoing deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newTactful = <Tactful deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         tactfuls.push(newTactful)
       }
     }
@@ -282,19 +271,19 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = <RiskTaker deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
-        let newCoward = <Coward deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newCoward = <Coward deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newEasygoing = <Easygoing deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newTactful = <Tactful deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         tactfuls.push(newTactful)
       }
     }
@@ -350,12 +339,12 @@ class Sandbox extends Component {
                         id = 'easygoing-population'
                         type = 'number'
                         min = '1'
-                        max = '5'
+                        max = '3'
                         value = {this.state.easygoingPop}
                         onChange = {(event) => this.setState({easygoingPop : event.target.value })}>
                       </input>
                       <b>
-                        (min: 1, max: 5)
+                        (min: 1, max: 3)
                       </b>
                     </p>
                     <p>
@@ -364,12 +353,12 @@ class Sandbox extends Component {
                         id = 'tactful-population'
                         type = 'number'
                         min = '1'
-                        max = '5'
+                        max = '3'
                         value = {this.state.tactfulPop}
                         onChange = {(event) => this.setState({tactfulPop : event.target.value })}>
                       </input>
                       <b>
-                        (min: 1, max: 5)
+                        (min: 1, max: 3)
                       </b>
                     </p>
                     
@@ -380,12 +369,12 @@ class Sandbox extends Component {
                         id = 'risktaker-population'
                         type = 'number'
                         min = '3'
-                        max = '10'
+                        max = '5'
                         value = {this.state.riskTakerPop}
                         onChange = {(event) => this.setState({riskTakerPop : event.target.value })}>
                       </input>
                       <b>
-                        (min: 3, max: 10)
+                        (min: 3, max: 5)
                       </b>
                     </p>
                     <p>
@@ -394,12 +383,12 @@ class Sandbox extends Component {
                         id = 'coward-population'
                         type = 'number'
                         min = '2'
-                        max = '10'
+                        max = '5'
                         value = {this.state.cowardPop}
                         onChange = {(event) => this.setState({cowardPop : event.target.value })}>
                       </input>
                       <b>
-                        (min: 2, max: 10)
+                        (min: 2, max: 5)
                       </b>
                     </p>
                   </div>

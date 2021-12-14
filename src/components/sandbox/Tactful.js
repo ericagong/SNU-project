@@ -12,8 +12,8 @@ const Tactful = (props) => {
                 <img id = 'Tactful-alive-image' alt = 'Tactful-alive-alt' src = './'/>}
             {(props.dead === true) &&
                 <img id = 'Tactful-dead-image' alt = 'Tactful-dead-alt' src = './'/>}
-            <div className = 'Reputation'>
-                {props.reputation}
+            <div className = 'Deposit'>
+                {props.deposit}
             </div>
         </div>
     )
