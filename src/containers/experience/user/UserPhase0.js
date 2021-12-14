@@ -46,7 +46,7 @@ class UserPhase0 extends Component {
             this.props.history.push(`/experience/user/phase1/${this.state.pickedSuggesterID}/${this.state.pickedSuggester.reputation}/${this.state.deposit}`)
         }
         else {
-            alert('Suggester 중 한 명을 선택하고, user deposit을 설정하여야 거래를 시작할 수 있습니다.')
+            alert('You can start transfer after Select Suggester and Set Deposit of User')
         }
     }
 
@@ -96,7 +96,8 @@ class UserPhase0 extends Component {
         if(this.state.pickedSuggesterID !== 0) {
             suggesterSelectMsg = `You choose Suggester${this.state.pickedSuggesterID}!`
             depositGuideMsg = `Set User Deposit amount to offer Suggester${this.state.pickedSuggesterID} for setting channel.`
-            if(this.state.deposit !== 0) depositSelectMsg = `Are you going to request Suggester${this.state.pickedSuggesterID} with [user deposit: ${this.state.deposit}]?`
+            if(this.state.deposit !== 0) depositSelectMsg = `Are you going to request Suggester${this.state.pickedSuggesterID} with [User Deposit: ${this.state.deposit}]?\n\n
+            If so, Click start transfer button!`
             loadingMsg = `Please wait till you can get channel setting approval from Suggester${this.state.pickedSuggesterID}.`
         }
         
