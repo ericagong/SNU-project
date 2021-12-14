@@ -4,6 +4,11 @@ import { withRouter } from 'react-router-dom';
 import Suggester from '../../../components/experience/Suggester';
 import User from '../../../components/experience/User';
 
+import Box from '../../../Assets/Images/Box.png'
+import Button from '../../../Assets/Images/Button.png'
+
+import './SuggesterPhase1.css'
+
 class SuggesterPhase1 extends Component {
     state = {
         init : true,
@@ -88,6 +93,9 @@ class SuggesterPhase1 extends Component {
 
         return (
             <div className = 'SuggesterPhase1'>
+                <p className = 'SuggesterPhaseTitle'>
+                    SuggesterPhase
+                </p>
             {(this.state.init === true) && 
                 <div className = 'InitialState'>
                     <div className = 'InitMessage'>
@@ -98,12 +106,14 @@ class SuggesterPhase1 extends Component {
             {(this.state.init === false) && (this.state.send === false) && 
                 <div className = 'BeforeSelect'>
                     <div className = 'ImageGuide'>{imageGuideMsg}</div>
+                    <img className = 'GoodImage' alt = {Box} src = {Box} />
                     {/* img로 바꾸기 */}
                     <button 
                         id = 'good-img-button'
                         onClick = {() => this.clickImgHandler("Good")}>
                         Good Image
                     </button>
+                    <img className = 'BadImage' alt = {Box} src = {Box} />
                     <button 
                         id = 'bad-img-button'
                         onClick = {() => this.clickImgHandler("Bad")}>
@@ -111,19 +121,21 @@ class SuggesterPhase1 extends Component {
                     </button>
                     {(this.state.select === true) && 
                         <div className = 'SelectGuide'>{selectGuideMsg}</div>}
-                    <button 
+                    {/* <button 
                         id = 'send-button'
                         onClick = {() => this.clickSendHandler()}>
                         Send
-                    </button>
+                    </button> */}
+                    <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.clickSendHandler()} />
+                    <div className="UserPhaseButtonText" onClick = {() => this.clickSendHandler()}>Send</div>
                 </div>
             }
             {(this.state.init === false) && (this.state.select === true) && (this.state.send === true) &&
                 <div className = 'DepositChanged'>
-                    {depositGuideMsg}
+                    <div className = 'DepositGuideMsg'>{depositGuideMsg}</div>
                     {(this.state.satisfy) && 
                     <div className = 'Reward'>
-                        <div className = 'Suggester'>
+                        <div className = 'DepositChanged_Suggester'>
                             <Suggester 
                                 id = '1'
                                 deposit = {this.state.suggesterDeposit}
@@ -132,7 +144,7 @@ class SuggesterPhase1 extends Component {
                             />
                         </div>
                         <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
-                        <div className = 'User'>
+                        <div className = 'DepositChanged_User'>
                             <User
                                 deposit = {this.state.userDeposit}
                             />
@@ -141,7 +153,7 @@ class SuggesterPhase1 extends Component {
                     }   
                     {(!this.state.satisfy) && 
                     <div className = 'Burn'>
-                        <div className = 'Suggester'>
+                        <div className = 'DepositChanged_Suggester'>
                             <Suggester 
                                 id = {this.state.suggesterID}
                                 deposit = {this.state.suggesterDeposit}
@@ -150,17 +162,20 @@ class SuggesterPhase1 extends Component {
                             />
                         </div>
                         <img id = 'channel-reward-image' alt = 'channel-reward-alt' src = './'/>
-                        <div className = 'User'>
+                        <div className = 'DepositChanged_User'>
                             <User deposit = {this.state.userDeposit}/>
                         </div>
                     </div>
                     }
-                    {recurGuideMsg}
-                    <button 
+                    <div className = 'recurGuideMsg'>{recurGuideMsg}</div>
+                    {/* <button 
                             id = 'experience-suggester-button'
                             onClick = {() => this.clickNextHandler()}>
                             Next
-                    </button>
+                    </button> */}
+                    <img className="UserPhaseButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
+                    <div className="UserPhaseButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
+                    
                 </div>
             }
             </div>

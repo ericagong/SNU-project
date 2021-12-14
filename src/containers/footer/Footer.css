@@ -118,6 +118,141 @@
     border-radius: 900px;
 }
 
+.button9:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "End";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+.button8:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Limit";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+.button7:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Sandbox";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+.button6:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Suggester";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+
+.button5:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "User";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+.button4:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Role";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+.button3:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Concept";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+
+.button2:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Background";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+
+.button1:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Problem";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+
+.button0:hover:before{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Start";
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+/* 
 .button9_now{
     position: absolute;
     height: 40px;
@@ -216,4 +351,4 @@
     right: 470px;
     background-color: #ffffff; 
     border-radius: 900px;
-}
+} */

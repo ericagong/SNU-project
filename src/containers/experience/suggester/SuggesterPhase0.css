@@ -3,7 +3,7 @@
     src: url('../../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
 }
 
-.UserPhaseTitle{
+.SuggesterPhaseTitle{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -17,111 +17,69 @@
     font-family: 'Futura Handwritten';
 }
 
-/* before loading */
-
-.SuggesterGuide{
+.DepositGuide{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 20%;
+    top: 40%;
     left: 50%;
     transform: translateX(-50%);
-    font-style: normal;
-    /* font-weight: bold; */
     font-size: 12px;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
 }
 
-.UserPhaseSuggesters{
+.Deposit{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 25%;
+    top: 45%;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 12px;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
-}
-
-.PickedSuggesterDescription{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 57%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    /* line-height: 50px; */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.Userphase_DepositGuide{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    /* line-height: 50px; */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.depositSetGuideMsg{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 63%;
-    left: 50%;
-    width: 450px;
-    transform: translateX(-50%);
-    font-style: normal;
-    font-size: 10px;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.Userphase_Deposit{
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .SelectedDepositDescription{
+    top: 50%;
+}
+
+.SuggesterPhaseButtonStyle{
+    position: absolute;
+    width: 174px;
+    height: 63px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SuggesterPhaseButtonStyle:active{
+    left: 49%;
+    transform: translateX(-50%);
+    opacity: 70%;
+}
+
+.SuggesterPhaseButtonText{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 74%;
+    bottom: 105px;
     left: 50%;
-    width: 450px;
     transform: translateX(-50%);
     font-style: normal;
-    /* font-weight: bold; */
-    font-size: 12px;
-    /* line-height: 50px; */
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
     align-items: center;
     text-align: center;
     font-family: 'Futura Handwritten';
 }
 
-/* while loading */
-
-/* //todo: add a loading image */
+/* loading */
 
 .LoadingText{
     display: flex;
@@ -151,28 +109,37 @@
     text-align: center;
     font-family: 'Futura Handwritten';
 }
- 
+
 /* after loading */
 
-.SetChannel{
+.SettingGuide{
+    display: flex;
     justify-content: center;
     position: absolute;
-    top: 25%;
+    top: 120%;
     left: 50%;
+    width: 450px;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+}
+
+/* after setting  */
+
+.AfterSetting_Suggester{
+    position: absolute;
+    height: 30%;
+    left: -10%;
     transform: translateX(-50%);
 }
 
-.AfterLoading_Suggester{
+.AfterSetting_User{
     position: absolute;
     height: 30%;
-    left: 0%;
-    transform: translateX(-50%);
-}
-
-.AfterLoading_User{
-    position: absolute;
-    height: 30%;
-    left: 100%;
+    left: 110%;
     transform: translateX(-50%);
 }
 
@@ -184,45 +151,10 @@
     top: 450%;
 }
 
-.AfterLoading_GuideMsg{
+.channelGuideMsg{
     position: relative;
     top: 280px;
     font-style: normal;
     font-size: 12px;
     font-family: 'Futura Handwritten';
 }
-
-/* button in the bottom */
-
-.UserPhaseButtonStyle{
-    position: absolute;
-    width: 174px;
-    height: 63px;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.UserPhaseButtonStyle:active{
-    left: 49%;
-    transform: translateX(-50%);
-    opacity: 70%;
-}
-
-.UserPhaseButtonText{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 105px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: 'Futura Handwritten';
-}
-

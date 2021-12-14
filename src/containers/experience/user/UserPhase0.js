@@ -118,10 +118,10 @@ class UserPhase0 extends Component {
                     {(this.state.pickedSuggesterID !== 0) &&
                         <div className = 'AfterSelect'> 
                             <div className = 'SetDeposit'>
-                                <div className = 'DepositGuide'>{depositGuideMsg}</div>
+                                <div className = 'Userphase_DepositGuide'>{depositGuideMsg}</div>
                                 <div className = 'depositSetGuideMsg'>{depositSetGuideMsg}</div>
                                 <input 
-                                    className = 'Deposit'
+                                    className = 'Userphase_Deposit'
                                     type = 'number'
                                     min = '500'
                                     max = '1000'

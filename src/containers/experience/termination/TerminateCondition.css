@@ -1,9 +1,10 @@
 @font-face{
     font-family: 'Futura Handwritten';
-    src: url('../../Assets/Fonts/FuturaHandwritten.ttf') format('truetype')
+    /* src: url('../Assets/Fonts/FuturaHandwritten.ttf') format('truetype') */
+    src: url('../../../Assets//Fonts//FuturaHandwritten.ttf') format('truetype')
   }
 
-.ConceptTitle{
+.TerminateConditionTitle{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -15,23 +16,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-    font-family: 'Futura Handwritten';
-}
-
-.RoleExplain{
-    text-align: center;
-}
-
-.ProjectConcept{
-    position: absolute;
-    width: 50%;
-    height: 80%;
-    top: 62%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 12px;
-    text-align: left;
     font-family: 'Futura Handwritten';
 }
 

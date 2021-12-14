@@ -15,6 +15,7 @@ class ChooseRole extends Component {
     render () {
         return (
             <div className = 'ChooseRole'>
+                
                 There are two roles in the Scored Earth project.
                 <p className= 'ChooseRoleTitle' >Choose Role</p>
                 <div className = 'RoleDescription'>

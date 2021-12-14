@@ -8,7 +8,7 @@ class SuggesterPhase1Page extends Component {
         let suggesterDeposit = parseInt(this.props.match.params.deposit)
         return (
             <div className = 'SuggesterPhase1Page'>
-                SuggesterPhase1Page
+                {/* SuggesterPhase1Page */}
                 <SuggesterPhase1 deposit = {suggesterDeposit}/>
                 <Footer/>
             </div>
