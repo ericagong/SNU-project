@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
+import RiskTaker from '../../components/sandbox/RiskTaker';
+import Coward from '../../components/sandbox/Coward';
+import Easygoing from '../../components/sandbox/Easygoing';
+import Tactful from '../../components/sandbox/Tactful';
+
 import Button from './../../Assets/Images/Button.png'
 import Box from './../../Assets/Images/Box.png'
 
 import './Sandbox.css'
-import Suggester from '../../components/experience/Suggester'
-import User from '../../components/experience/User'
+
 
 class Sandbox extends Component {
 
@@ -224,6 +228,17 @@ class Sandbox extends Component {
     let easygoings = []
     let tactfuls = []  
 
+
+  //     //-------
+  // SuggesterDeposit = []
+  // SuggesterAlive = []
+
+  // UserDeposit = []
+  // UserAlive = []
+  // Punish = []
+
+  // Connect  = []
+  // //---
     if(this.state.setEnv && this.checkAlive()) {
       this.match()
       console.log("match")
@@ -233,6 +248,10 @@ class Sandbox extends Component {
       console.log("SuggesterAlive", this.SuggesterAlive)
       console.log("UserAlive", this.UserAlive)
       console.log("Punish", this.Punish)
+      for(let i = 0; i < this.state.riskTakerPop; i++) {
+        let newRiskTaker = <RiskTaker deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        riskTakers.push(newRiskTaker)
+      }
     }
     if(this.state.setEnv && !this.checkAlive()) {
       this.final()

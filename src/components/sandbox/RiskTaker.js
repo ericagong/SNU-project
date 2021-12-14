@@ -2,20 +2,19 @@ import React from 'react'
 
 // import Character2 from './../../Assets/Images/character2.png'
 
-// import './Coward.css'
+// import './RiskTake.css'
 
-
-const Coward = (props) => {
+const RiskTaker = (props) => {
     return (
-        <div className = 'Coward'>
+        <div className = 'RiskTaker'>
             {(props.dead === false) && (props.punish === false) &&
-                <img id = 'Coward-alive-reward-image' alt = 'Coward-alt' src = './'/>}
+                <img id = 'RiskTaker-alive-reward-image' alt = 'RiskTaker-alt' src = './'/>}
             {(props.dead === false) && (props.punish === true) &&
-                <img id = 'Coward-alive-punish-image' alt = 'Coward-alt' src = './'/>}
+                <img id = 'RiskTaker-alive-punish-image' alt = 'RiskTaker-alt' src = './'/>}
             {(props.dead === true) && (props.punish === false) &&
-                <img id = 'Coward-dead-reward-image' alt = 'Coward-alt' src = './'/>}
+                <img id = 'RiskTaker-dead-reward-image' alt = 'RiskTaker-alt' src = './'/>}
             {(props.dead === true) && (props.punish === true) &&
-                <img id = 'Coward-dead-punish-image' alt = 'Coward-alt' src = './'/>}
+                <img id = 'RiskTaker-dead-punish-image' alt = 'RiskTaker-alt' src = './'/>}
             <div className = 'Reputation'>
                 {props.reputation}
             </div>
@@ -23,4 +22,4 @@ const Coward = (props) => {
     )
 }
 
-export default Coward;
+export default RiskTaker;
