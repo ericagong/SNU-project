@@ -228,17 +228,6 @@ class Sandbox extends Component {
     let easygoings = []
     let tactfuls = []  
 
-
-  //     //-------
-  // SuggesterDeposit = []
-  // SuggesterAlive = []
-
-  // UserDeposit = []
-  // UserAlive = []
-  // Punish = []
-
-  // Connect  = []
-  // //---
     if(this.state.setEnv && this.checkAlive()) {
       this.match()
       console.log("match")
@@ -250,19 +239,19 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = <RiskTaker deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
-        let newCoward = <Coward deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newCoward = <Coward deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newEasygoing = <Easygoing deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newTactful = <Tactful deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         tactfuls.push(newTactful)
       }
     }
@@ -282,19 +271,19 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = <RiskTaker deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
-        let newCoward = <Coward deposit = {UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newCoward = <Coward deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newEasygoing = <Easygoing deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful deposit = {SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newTactful = <Tactful deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
         tactfuls.push(newTactful)
       }
     }
