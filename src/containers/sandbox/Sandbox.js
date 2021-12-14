@@ -5,6 +5,8 @@ import Button from './../../Assets/Images/Button.png'
 import Box from './../../Assets/Images/Box.png'
 
 import './Sandbox.css'
+import Suggester from '../../components/experience/Suggester'
+import User from '../../components/experience/User'
 
 class Sandbox extends Component {
 
@@ -209,6 +211,13 @@ class Sandbox extends Component {
   }
 
   render () {
+    let riskTakers = []
+    let cowards = []
+    let easygoings = []
+    let tactfuls = []
+    
+    
+
     if(this.state.setEnv && this.checkAlive()) {
       this.match()
       console.log("match")
