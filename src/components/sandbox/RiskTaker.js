@@ -3,6 +3,7 @@ import React from 'react'
 // import Character2 from './../../Assets/Images/character2.png'
 
 // import './RiskTake.css'
+import './SandboxComp.css'
 
 const RiskTaker = (props) => {
     return (

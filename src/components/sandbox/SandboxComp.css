@@ -1,0 +1,23 @@
+.Coward{
+    position: absolute;
+    top: 80%;
+    left: 0%;
+}
+
+.Easygoing{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+}
+
+.RiskTaker{
+    position: absolute;
+    top: 100%;
+    left: 0%;
+}
+
+.Tactful{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+}

@@ -3,7 +3,7 @@ import React from 'react'
 // import Character2 from './../../Assets/Images/character2.png'
 
 // import './Coward.css'
-
+import './SandboxComp.css'
 
 const Coward = (props) => {
     return (
