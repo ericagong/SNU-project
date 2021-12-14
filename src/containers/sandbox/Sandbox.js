@@ -92,6 +92,14 @@ class Sandbox extends Component {
     this.setState({round : 0, setEnv : true})
   }
  
+  
+  // TODO: change to call callMatch()
+  callMatch = () => {
+    setTimeout(() => {
+      this.match()
+    }, 4000)
+  }
+
   match = () => {
     console.log("M")
     this.RiskTakers.map((user, userIdx)=>{
