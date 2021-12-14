@@ -11,8 +11,12 @@ const Easygoing = (props) => {
                 <img id = 'Easygoing-alive-image' alt = 'Easygoing-alive-alt' src = './'/>}
             {(props.dead === true) &&
                 <img id = 'Easygoing-dead-image' alt = 'Easygoing-dead-alt' src = './'/>}
+            <img id = 'Coward-dead-punish-image' alt = 'Coward-alt' src = './'/>
             <div className = 'Deposit'>
                 {props.deposit}
+            </div>
+            <div className = 'ID'>
+                Suggester{props.id} 
             </div>
         </div>
     )

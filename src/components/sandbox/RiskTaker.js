@@ -15,8 +15,12 @@ const RiskTaker = (props) => {
                 <img id = 'RiskTaker-dead-reward-image' alt = 'RiskTaker-alt' src = './'/>}
             {(props.dead === true) && (props.punish === true) &&
                 <img id = 'RiskTaker-dead-punish-image' alt = 'RiskTaker-alt' src = './'/>}
+            <img id = 'Coward-dead-punish-image' alt = 'Coward-alt' src = './'/>
             <div className = 'Deposit'>
                 {props.deposit}
+            </div>
+            <div className = 'Connect'>
+                Connect with Suggester{props.connect} 
             </div>
         </div>
     )
