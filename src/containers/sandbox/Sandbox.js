@@ -54,7 +54,7 @@ class Sandbox extends Component {
        [Deposit]:\n
        [Suggester Deposit] : ${this.state.suggesterDeposit}\n
        [User Deposit] : ${this.state.userDeposit}\n
-       \n\n\n\n
+       \n\n\n
        We'll show you data in Array format. Followings are description of each array.\n\n [Description of Arrays]::\n
        Suggester Deposit : It records the amount of remaining deposit of Suggesters corresponding to each suggester’s index. Suggester's index ranges from 0 to the number of Suggesters and is given in the order of Easygoing to Tactful.\n
        User Deposit : It records the remaining amount of deposit of the Users corresponding to each user’s index. User's index ranges from 0 to the number of Users and is given in the order of Risktaker to Coward.\n
