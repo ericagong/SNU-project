@@ -296,7 +296,7 @@ class Sandbox extends Component {
             </p>
             
               <div className = 'display'>
-                <img className="display_Container" src={Box} alt={Box} />
+                {/* <img className="display_Container" src={Box} alt={Box} /> */}
                 {/* [Display] */}
                 <b>Suggesters </b>
                 [Easygoing] {this.state.easygoingPop} 
@@ -326,7 +326,7 @@ class Sandbox extends Component {
                   Environment Tab
               </button>
               <div className = 'Inputbox'>
-                <img className="Inputbox_Container" src={Box} alt={Box} />
+                
                 { (this.state.currTab === 'Population') &&
                   <div className = 'Population'>
                     <b>Suggesters</b>
@@ -440,6 +440,7 @@ class Sandbox extends Component {
                     </p>
                   </div>
                 }
+                
               </div>
             <button 
                 id = 'start-simulation'
