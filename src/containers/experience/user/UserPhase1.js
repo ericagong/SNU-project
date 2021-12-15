@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import Suggester from '../../../components/experience/Suggester';
 import User from '../../../components/experience/User';
 
-import Box from '../../../Assets/Images/Box.png'
 import Button from '../../../Assets/Images/Button.png'
 import LongButton from '../../../Assets/Images/LongButton.png'
 import Channel from '../../../Assets/Images/Channel.png'

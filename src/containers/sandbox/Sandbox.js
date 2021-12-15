@@ -45,7 +45,26 @@ class Sandbox extends Component {
   //---
  
   setEnviroment = () => {
-    
+    let consoleLog = 
+      `Followings are data came out from your simulation!\n\n
+       [Simulation Parameters]::\n
+       [Population]:\n
+       [Suggesters]: (Easygoing: ${this.state.easygoingPop}), (Tactful: ${this.state.tactfulPop})\n
+       [Users]: (RiskTaker: ${this.state.riskTakerPop}), (Coward: ${this.state.cowardPop})\n
+       [Deposit]:\n
+       [Suggester Deposit] : ${this.state.suggesterDeposit}\n
+       [User Deposit] : ${this.state.userDeposit}\n
+       \n\n\n\n
+       We'll show you data in Array format. Followings are description of each array.\n\n [Description of Arrays]::\n
+       Suggester Deposit : It records the amount of remaining deposit of Suggesters corresponding to each suggester’s index. Suggester's index ranges from 0 to the number of Suggesters and is given in the order of Easygoing to Tactful.\n
+       User Deposit : It records the remaining amount of deposit of the Users corresponding to each user’s index. User's index ranges from 0 to the number of Users and is given in the order of Risktaker to Coward.\n
+       Connect :  It records the Suggester connected to User corresponding to each user’s index. Suggester can be differentiated by the suggester’s index given above. If user is not connected to anyone, it will be recorded as -1.\n
+       Punish : It determines whether the User corresponding to each index punished counterparty. If the User punished the current counterparty in this round, it will be recorded as 1, otherwise it will be recorded as 0.\n
+       Suggester Alive : It records the bankruptcy of Suggester who has corresponding index. It is recorded as 1 if it is not bankrupt and 0 if it is bankrupt.\n
+       User Alive : It records the bankruptcy of User who has corresponding index. It is recorded as 1 if it is not bankrupt and 0 if it is bankrupt.\n
+      `
+      console.log(consoleLog)
+
     let population = [parseInt(this.state.riskTakerPop), this.state.cowardPop, parseInt(this.state.easygoingPop), this.state.tactfulPop]
     let userDeposit = this.state.userDeposit
     let suggesterDeposit = this.state.suggesterDeposit
