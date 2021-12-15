@@ -22,7 +22,7 @@ const RiskTaker = (props) => {
                 {props.deposit}
             </div>
             <div className = 'RiskTaker_Connect'>
-            {(props.connect !== -1) && <div className = 'ConnectMsg'>Connect~ with Suggester{props.connect}</div> }
+            {(props.connect !== -1) && <div className = 'ConnectMsg'>Connect with Suggester{props.connect}</div> }
             </div>
         </div>
     )

@@ -22,7 +22,7 @@ class Sandbox extends Component {
     tactfulPop : 1,
     userDeposit : 80,
     suggesterDeposit : 20,
-    currTab: 'Population',
+    currTab: 'Description',
     setEnv : false,
     final : false,
   }
@@ -45,8 +45,8 @@ class Sandbox extends Component {
   //---
  
   setEnviroment = () => {
-    console.log("SE")
-    let population = [this.state.riskTakerPop, this.state.cowardPop, this.state.easygoingPop, this.state.tactfulPop]
+    
+    let population = [parseInt(this.state.riskTakerPop), this.state.cowardPop, parseInt(this.state.easygoingPop), this.state.tactfulPop]
     let userDeposit = this.state.userDeposit
     let suggesterDeposit = this.state.suggesterDeposit
 
@@ -89,7 +89,7 @@ class Sandbox extends Component {
     this.Suggesters.push(this.Tactfuls)
     this.Suggesters = this.Suggesters.flat(1)
 
-    console.log("CHECK ENV")
+    console.log('CHECK ENV')
     console.log(this.Users)
     console.log(this.Suggesters)
 
@@ -219,6 +219,11 @@ class Sandbox extends Component {
       this.props.history.push('/outro/limitations')
   }
 
+  clickResetHandler = () => {
+    console.log("GO")
+    this.props.history.push('/sandbox')
+  }
+
   render () {
     let riskTakers = []
     let cowards = []
@@ -227,19 +232,17 @@ class Sandbox extends Component {
 
     if(this.state.setEnv && this.checkAlive()) {
       this.callMatch()
-      console.log("match")
-      console.log("suggesterDeposit", this.SuggesterDeposit)
-      console.log("userDeposit", this.UserDeposit)
-      console.log("Connect", this.Connect)
-      console.log("SuggesterAlive", this.SuggesterAlive)
-      console.log("UserAlive", this.UserAlive)
-      console.log("Punish", this.Punish)
       
-      console.log("check pop")
-      console.log("riskTaker", this.state.riskTakerPop)
-      console.log("cowardPop", this.state.cowardPop)
-      console.log("easygoingPop", this.state.easygoingPop)
-      console.log("tactfulPop", this.state.tactfulPop)
+      let consoleLog = 
+      `Match::\n
+       \tSuggester Deposits : ${this.SuggesterDeposit}\n
+       \tUser Deposits : ${this.UserDeposit}\n
+       \tConnect : ${this.Connect}\n
+       \tPunish : ${this.Punish}\n
+       \tSuggester Alive : ${this.SuggesterAlive}\n
+       \tUser Alive : ${this.UserAlive}\n
+      `
+      console.log(consoleLog)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
         let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish = {this.Punish[i] ? true : false}  dead = {this.UserAlive[i] ? false : true}/>
@@ -250,11 +253,11 @@ class Sandbox extends Component {
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
+        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? false : true}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
+        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? false : true}/>
         tactfuls.push(newTactful)
       }      
     }
@@ -265,13 +268,16 @@ class Sandbox extends Component {
     }
 
     if(this.state.final) {
-      console.log("final")
-      console.log("suggesterDeposit", this.SuggesterDeposit)
-      console.log("userDeposit", this.UserDeposit)
-      console.log("Connect", this.Connect)
-      console.log("SuggesterAlive", this.SuggesterAlive)
-      console.log("UserAlive", this.UserAlive)
-      console.log("Punish", this.Punish)
+      let consoleLog = 
+      `Final::\n
+       \tSuggester Deposits : ${this.suggesterDeposit}\n
+       \tUser Deposits : ${this.UserDeposit}\n
+       \tConnect : ${this.Connect}\n
+       \tPunish : ${this.Punish}\n
+       \tSuggester Alive : ${this.SuggesterAlive}\n
+       \tUser Alive : ${this.UserAlive}\n
+      `
+      console.log(consoleLog)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
         let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish = {this.Punish[i] ? true : false}  dead = {this.UserAlive[i] ? false : true}/>
@@ -282,11 +288,11 @@ class Sandbox extends Component {
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
+        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? false : true}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
+        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? false : true}/>
         tactfuls.push(newTactful)
       }    
     }
@@ -298,7 +304,7 @@ class Sandbox extends Component {
             </p>
             
               <div className = 'display'>
-                {/* <img className="display_Container" src={Box} alt={Box} /> */}
+                {/* <img className='display_Container' src={Box} alt={Box} /> */}
                 {/* [Display] */}
                 <b>Suggesters </b>
                 [Easygoing] {this.state.easygoingPop} 
@@ -327,7 +333,6 @@ class Sandbox extends Component {
                   Environment Tab
               </button>
               <div className = 'Inputbox'>
-                
                 { (this.state.currTab === 'Population') &&
                   <div className = 'Population'>
                     <b>Suggesters</b>
@@ -339,7 +344,7 @@ class Sandbox extends Component {
                         min = '1'
                         max = '3'
                         value = {this.state.easygoingPop}
-                        onChange = {(event) => this.setState({easygoingPop : event.target.value })}>
+                        onChange = {(event) => this.setState({easygoingPop : parseInt(event.target.value) })}>
                       </input>
                       <b>
                         (min: 1, max: 3)
@@ -353,7 +358,7 @@ class Sandbox extends Component {
                         min = '1'
                         max = '3'
                         value = {this.state.tactfulPop}
-                        onChange = {(event) => this.setState({tactfulPop : event.target.value })}>
+                        onChange = {(event) => this.setState({tactfulPop : parseInt(event.target.value) })}>
                       </input>
                       <b>
                         (min: 1, max: 3)
@@ -368,7 +373,7 @@ class Sandbox extends Component {
                         min = '3'
                         max = '5'
                         value = {this.state.riskTakerPop}
-                        onChange = {(event) => this.setState({riskTakerPop : event.target.value })}>
+                        onChange = {(event) => this.setState({riskTakerPop : parseInt(event.target.value), })}>
                       </input>
                       <b>
                         (min: 3, max: 5)
@@ -382,7 +387,7 @@ class Sandbox extends Component {
                         min = '2'
                         max = '5'
                         value = {this.state.cowardPop}
-                        onChange = {(event) => this.setState({cowardPop : event.target.value })}>
+                        onChange = {(event) => this.setState({cowardPop : parseInt(event.target.value) })}>
                       </input>
                       <b>
                         (min: 2, max: 5)
@@ -392,6 +397,7 @@ class Sandbox extends Component {
                 }
                 { (this.state.currTab === 'Environment') && 
                   <div className = 'Environment'>
+                    <b>Deposits on Smart Contract Channel</b>
                     <p>
                       <label>[User Deposit]</label>
                       <input 
@@ -400,7 +406,7 @@ class Sandbox extends Component {
                         min = '80'
                         max = '200'
                         value = {this.state.userDeposit}
-                        onChange = {(event) => this.setState({userDeposit : event.target.value })}>
+                        onChange = {(event) => this.setState({userDeposit : parseInt(event.target.value) })}>
                       </input>
                       <b>
                         (min: 80, max: 200)
@@ -414,7 +420,7 @@ class Sandbox extends Component {
                         min = '20'
                         max = '80'
                         value = {this.state.suggesterDeposit}
-                        onChange = {(event) => this.setState({suggesterDeposit : event.target.value })}>
+                        onChange = {(event) => this.setState({suggesterDeposit : parseInt(event.target.value) })}>
                       </input>
                       <b>
                         (min: 20, max: 80)
@@ -426,15 +432,28 @@ class Sandbox extends Component {
                   <div className = 'Description'>
                     <p>
                       <label>Description</label>
-                      <div className = "DescriptionContent">
+                      <div className = 'DescriptionContent'>
                         <br/>
                         <b>Easygoing</b>: Suggester who does not increase service quality even if User punish them.
                         <br/>
-                        <b>Tactful</b>: Suggester who increase <br/>service quality if User punish them.
+                        <b>Tactful</b>: Suggester who increase service quality if User punish them.
                         <br/>
-                        <b>Risktaker</b>: User who punishes Suggester <br/>for poor service quality.
+                        <b>Risktaker</b>: User who punishes Suggester for poor service quality.
                         <br/>
                         <b>Coward</b>: Users who do not punish Suggester even if the quality of service is low.
+                        <br/>
+                        <b>Adjust Population of upon Agents on Popultation Tab!</b>
+                        <br/>
+                        <br/>
+                        <b>You can handle deposit parameters on Environment Tab!</b>
+                        <br/>
+                        <br/>
+                        <b>Click Start Simulatoin if you want to start!</b>
+                        <br/>
+                        <br/>
+                        <b>After start, you cannot adjust values. If you want to simulate again, <br/>please click Restart simulation Button.</b>
+                        <br/>
+                        <b>If you want to see detailed data information, <br/>open Inspect element of browser then go console!</b>
                         <br/>
                       </div>
                     </p>
@@ -451,14 +470,16 @@ class Sandbox extends Component {
                   id = 'description-tab'
                   onClick = {() => this.setState({ currTab: 'Description'})}>
                   Description Tab
-              </button>
-          {/* <button 
-              id = 'next-button'
-              onClick = {() => this.clickNextHandler()}>
-              Next
-          </button> */}
-          <img className="NextButtonStyle" src={Button} alt={Button} onClick = {() => this.clickNextHandler()} />
-          <div className="NextButtonText" onClick = {() => this.clickNextHandler()}>Next</div>
+            </button>
+            <button 
+                  id = 'resetbutton'
+                  onClick = {() => this.clickResetHandler()}>
+                  Reset Simulation
+            </button>
+          <img className = 'NextButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickNextHandler()} />
+          <div className = 'NextButtonText' onClick = {() => this.clickNextHandler()}>Next</div>
+          {/* <img className = 'ResetButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickResetHandler()} />
+          <div className = 'ResetButtonText' onClick = {() => this.clickResetHandler()}>Reset Simulation</div> */}
       </div>
     )
   }
