@@ -45,21 +45,21 @@
 .UserList{
     position: absolute;
     width: 450px;
-    left: -30%;
+    left: -31%;
     top: 17%;
 }
 
 .SuggesterList{
     position: absolute;
     width: 450px;
-    left: 15%;
+    left: 14%;
     top: 17%;
 }
 
 #population-tab{
     position: absolute;
     top: 22%;
-    left: 50%;
+    left: 50.5%;
     width: 9%;
 
     align-items: center;
@@ -78,7 +78,7 @@
 #environment-tab{
     position: absolute;
     top: 22%;
-    left: 59.5%;
+    left: 60%;
     width: 9%;
 
     align-items: center;
@@ -97,7 +97,7 @@
 #description-tab{
     position: absolute;
     top: calc(30% + 245px);
-    left: calc(32% + 450px);
+    left: calc(22.5% + 450px);
     width: 9%;
 
     align-items: center;
@@ -116,7 +116,7 @@
 #start-simulation{
     position: absolute;
     top: calc(30% + 245px);
-    left: calc(41.5% + 450px);
+    left: calc(32% + 450px);
     width: 9%;
 
     align-items: center;
@@ -132,12 +132,31 @@
     background-color: aqua;
 }
 
+#restartbutton{
+    position: absolute;
+    top: calc(30% + 245px);
+    left: calc(41.5% + 450px);
+    width: 9%;
+
+    align-items: center;
+    text-align: center;
+    font-family: 'Futura Handwritten';
+
+    border-radius: 8px;
+    outline: 0;
+    border: 0;
+}
+
+#resetbutton:hover{
+    background-color: aqua;
+}
+
 .DescriptionContent{
     position: absolute;
-    width: 330px;
+    width: 430px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .NextButtonStyle{

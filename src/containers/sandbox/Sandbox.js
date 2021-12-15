@@ -460,9 +460,9 @@ class Sandbox extends Component {
                         <br/>
                         <b>Easygoing</b>: Suggester who does not increase service quality even if User punish them.
                         <br/>
-                        <b>Tactful</b>: Suggester who increase <br/>service quality if User punish them.
+                        <b>Tactful</b>: Suggester who increase service quality if User punish them.
                         <br/>
-                        <b>Risktaker</b>: User who punishes Suggester <br/>for poor service quality.
+                        <b>Risktaker</b>: User who punishes Suggester for poor service quality.
                         <br/>
                         <b>Coward</b>: Users who do not punish Suggester even if the quality of service is low.
                         <br/>
@@ -472,12 +472,12 @@ class Sandbox extends Component {
                         <b>You can handle deposit parameters on Environment Tab!</b>
                         <br/>
                         <br/>
-                        <b>Click Start Simulatoin If you want to start!</b>
+                        <b>Click Start Simulatoin if you want to start!</b>
                         <br/>
                         <br/>
-                        <b>After start, you cannot adjust values, If you want to simulate again, Please click Restart simulation Button.</b>
+                        <b>After start, you cannot adjust values. If you want to simulate again, <br/>please click Restart simulation Button.</b>
                         <br/>
-                        <b>If you want to see detailed data information, Open Inspect element of browser then go console!</b>
+                        <b>If you want to see detailed data information, <br/>open Inspect element of browser then go console!</b>
                         <br/>
                       </p>
                     </div>
@@ -487,6 +487,7 @@ class Sandbox extends Component {
               </div>
             <button 
                 id = 'start-simulation'
+                disabled = {(this.state.start)? 'disabled' : ''}
                 onClick = {() => this.clickStartSimulationHandler()}>
                 Start Simulation
             </button>  
@@ -496,9 +497,9 @@ class Sandbox extends Component {
                   Description Tab
             </button>
             <button 
-                  id = 'reset-simulation'
+                  id = 'restartbutton'
                   onClick = {() => this.clickResetHandler()}>
-                  Reset Simulation
+                  Restart Simulation
             </button>
           <img className = 'NextButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickNextHandler()} />
           <div className = 'NextButtonText' onClick = {() => this.clickNextHandler()}>Next</div>
