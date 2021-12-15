@@ -21,7 +21,7 @@
 .Inputbox{
     position: absolute;
     width: 450px;
-    height: 225px;
+    height: 240px;
     left: 50.5%;
     top: 28%;
     font-family: 'Futura Handwritten';
@@ -33,7 +33,7 @@
 .display{
     position: absolute;
     width: 450px;
-    height: 225px;
+    height: 240px;
     right: 50.5%;
     top: 28%;
     font-family: 'Futura Handwritten';
@@ -96,7 +96,7 @@
 
 #description-tab{
     position: absolute;
-    top: calc(30% + 230px);
+    top: calc(30% + 245px);
     left: calc(32% + 450px);
     width: 9%;
 
@@ -115,8 +115,7 @@
 
 #start-simulation{
     position: absolute;
-    /* bottom: 35%; */
-    top: calc(30% + 230px);
+    top: calc(30% + 245px);
     left: calc(41.5% + 450px);
     width: 9%;
 
