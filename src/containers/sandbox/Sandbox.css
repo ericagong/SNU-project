@@ -21,35 +21,25 @@
 .Inputbox{
     position: absolute;
     width: 450px;
-    height: 40%;
+    height: 225px;
     left: 50.5%;
     top: 28%;
     font-family: 'Futura Handwritten';
-}
 
-.Inputbox_Container{
-    position: absolute;
-    width: 450px;
-    left: 0%;
-    top: -4%;
-    /* top: 20%; */
+    border-radius: 8px;
+    background-color: rgb(231, 231, 231)
 }
 
 .display{
     position: absolute;
     width: 450px;
-    height: 40%;
+    height: 225px;
     right: 50.5%;
     top: 28%;
     font-family: 'Futura Handwritten';
-}
 
-.display_Container{
-    position: absolute;
-    width: 450px;
-    left: 0%;
-    top: -4%;
-    /* top: 20%; */
+    border-radius: 8px;
+    background-color: rgb(231, 231, 231)
 }
 
 .UserList{
