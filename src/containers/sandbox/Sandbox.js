@@ -7,7 +7,6 @@ import Easygoing from '../../components/sandbox/Easygoing';
 import Tactful from '../../components/sandbox/Tactful';
 
 import Button from './../../Assets/Images/Button.png'
-import Box from './../../Assets/Images/Box.png'
 
 import './Sandbox.css'
 
@@ -24,6 +23,7 @@ class Sandbox extends Component {
     suggesterDeposit : 20,
     currTab: 'Description',
     setEnv : false,
+    start: false,
     final : false,
   }
 
@@ -45,7 +45,26 @@ class Sandbox extends Component {
   //---
  
   setEnviroment = () => {
-    
+    let consoleLog = 
+      `Followings are data came out from your simulation!\n\n
+       [Simulation Parameters]::\n
+       [Population]:\n
+       [Suggesters]: (Easygoing: ${this.state.easygoingPop}), (Tactful: ${this.state.tactfulPop})\n
+       [Users]: (RiskTaker: ${this.state.riskTakerPop}), (Coward: ${this.state.cowardPop})\n
+       [Deposit]:\n
+       [Suggester Deposit] : ${this.state.suggesterDeposit}\n
+       [User Deposit] : ${this.state.userDeposit}\n
+       \n\n\n
+       We'll show you data in Array format. Followings are description of each array.\n\n [Description of Arrays]::\n
+       Suggester Deposit : It records the amount of remaining deposit of Suggesters corresponding to each suggester’s index. Suggester's index ranges from 0 to the number of Suggesters and is given in the order of Easygoing to Tactful.\n
+       User Deposit : It records the remaining amount of deposit of the Users corresponding to each user’s index. User's index ranges from 0 to the number of Users and is given in the order of Risktaker to Coward.\n
+       Connect :  It records the Suggester connected to User corresponding to each user’s index. Suggester can be differentiated by the suggester’s index given above. If user is not connected to anyone, it will be recorded as -1.\n
+       Punish : It determines whether the User corresponding to each index punished counterparty. If the User punished the current counterparty in this round, it will be recorded as 1, otherwise it will be recorded as 0.\n
+       Suggester Alive : It records the bankruptcy of Suggester who has corresponding index. It is recorded as 1 if it is not bankrupt and 0 if it is bankrupt.\n
+       User Alive : It records the bankruptcy of User who has corresponding index. It is recorded as 1 if it is not bankrupt and 0 if it is bankrupt.\n
+      `
+      console.log(consoleLog)
+
     let population = [parseInt(this.state.riskTakerPop), this.state.cowardPop, parseInt(this.state.easygoingPop), this.state.tactfulPop]
     let userDeposit = this.state.userDeposit
     let suggesterDeposit = this.state.suggesterDeposit
@@ -89,17 +108,13 @@ class Sandbox extends Component {
     this.Suggesters.push(this.Tactfuls)
     this.Suggesters = this.Suggesters.flat(1)
 
-    console.log('CHECK ENV')
-    console.log(this.Users)
-    console.log(this.Suggesters)
-
     this.setState({round : 0, setEnv : true})
   }
  
   callMatch = () => {
     setTimeout(() => {
       this.match()
-    }, 1000)
+    }, 500)
   }
 
   match = () => {
@@ -212,6 +227,7 @@ class Sandbox extends Component {
     }
     else {
       this.setEnviroment()
+      this.setState({start : true})
     }
   }
 
@@ -220,8 +236,13 @@ class Sandbox extends Component {
   }
 
   clickResetHandler = () => {
-    console.log("GO")
-    this.props.history.push('/sandbox')
+    if(!this.state.final) {
+      alert('You can restart simulation, only when current simulation is done. Please wait.')
+    }
+    else {
+      console.log('GO')
+      window.location.reload()
+    }
   }
 
   render () {
@@ -234,7 +255,7 @@ class Sandbox extends Component {
       this.callMatch()
       
       let consoleLog = 
-      `Match::\n
+      `Match:: #Round: ${this.state.round}\n
        \tSuggester Deposits : ${this.SuggesterDeposit}\n
        \tUser Deposits : ${this.UserDeposit}\n
        \tConnect : ${this.Connect}\n
@@ -270,7 +291,7 @@ class Sandbox extends Component {
     if(this.state.final) {
       let consoleLog = 
       `Final::\n
-       \tSuggester Deposits : ${this.suggesterDeposit}\n
+       \tSuggester Deposits : ${this.SuggesterDeposit}\n
        \tUser Deposits : ${this.UserDeposit}\n
        \tConnect : ${this.Connect}\n
        \tPunish : ${this.Punish}\n
@@ -302,98 +323,99 @@ class Sandbox extends Component {
             <p className = 'Simulation'>
                 Sandbox Module
             </p>
-            
-              <div className = 'display'>
-                {/* <img className='display_Container' src={Box} alt={Box} /> */}
-                {/* [Display] */}
-                <b>Suggesters </b>
-                [Easygoing] {this.state.easygoingPop} 
-                [Tactful] {this.state.tactfulPop}
-                <br/>
-                <b>Users </b>
-                [RiskTaker] {this.state.riskTakerPop}
-                [Coward] {this.state.cowardPop}
-                <div className = 'UserList'>
-                  {riskTakers}
-                  {cowards}
-                </div>
-                <div className = 'SuggesterList'>
-                  {easygoings}
-                  {tactfuls}
-                </div>
+            <div className = 'display'>
+              <b>Suggesters </b>
+              [Easygoing] {this.state.easygoingPop} 
+              [Tactful] {this.state.tactfulPop}
+              <br/>
+              <b>Users </b>
+              [RiskTaker] {this.state.riskTakerPop}
+              [Coward] {this.state.cowardPop}
+              <div className = 'UserList'>
+                {riskTakers}
+                {cowards}
               </div>
-              <button 
-                  id = 'population-tab'
-                  onClick = {() => this.setState({ currTab : 'Population'})}>
-                  Population Tab
-              </button>
-              <button 
-                  id = 'environment-tab'
-                  onClick = {() => this.setState({ currTab: 'Environment'})}>
-                  Environment Tab
-              </button>
-              <div className = 'Inputbox'>
-                { (this.state.currTab === 'Population') &&
-                  <div className = 'Population'>
-                    <b>Suggesters</b>
-                    <p>
-                      <label>[Easygoing]</label>
-                      <input 
-                        id = 'easygoing-population'
-                        type = 'number'
-                        min = '1'
-                        max = '3'
-                        value = {this.state.easygoingPop}
-                        onChange = {(event) => this.setState({easygoingPop : parseInt(event.target.value) })}>
-                      </input>
-                      <b>
-                        (min: 1, max: 3)
-                      </b>
-                    </p>
-                    <p>
-                      <label>[Tactful]</label>
-                      <input 
-                        id = 'tactful-population'
-                        type = 'number'
-                        min = '1'
-                        max = '3'
-                        value = {this.state.tactfulPop}
-                        onChange = {(event) => this.setState({tactfulPop : parseInt(event.target.value) })}>
-                      </input>
-                      <b>
-                        (min: 1, max: 3)
-                      </b>
-                    </p>   
-                    <b>Users</b>
-                    <p>
-                      <label>[RiskTaker]</label>
-                      <input 
-                        id = 'risktaker-population'
-                        type = 'number'
-                        min = '3'
-                        max = '5'
-                        value = {this.state.riskTakerPop}
-                        onChange = {(event) => this.setState({riskTakerPop : parseInt(event.target.value), })}>
-                      </input>
-                      <b>
-                        (min: 3, max: 5)
-                      </b>
-                    </p>
-                    <p>
-                      <label>[Coward]</label>
-                      <input 
-                        id = 'coward-population'
-                        type = 'number'
-                        min = '2'
-                        max = '5'
-                        value = {this.state.cowardPop}
-                        onChange = {(event) => this.setState({cowardPop : parseInt(event.target.value) })}>
-                      </input>
-                      <b>
-                        (min: 2, max: 5)
-                      </b>
-                    </p>
-                  </div>
+              <div className = 'SuggesterList'>
+                {easygoings}
+                {tactfuls}
+              </div>
+            </div>
+            <button 
+                id = 'population-tab'
+                onClick = {() => this.setState({ currTab : 'Population'})}>
+                Population Tab
+            </button>
+            <button 
+                id = 'environment-tab'
+                onClick = {() => this.setState({ currTab: 'Environment'})}>
+                Environment Tab
+            </button>
+            <div className = 'Inputbox'>
+              { (this.state.currTab === 'Population') &&
+                <div className = 'Population'>
+                  <b>Suggesters</b>
+                  <p>
+                    <label>[Easygoing]</label>
+                    <input 
+                      id = 'easygoing-population'
+                      type = 'number'
+                      min = '1'
+                      max = '3'
+                      disabled = {(this.state.start) ? 'diabled' : ''}
+                      value = {this.state.easygoingPop}
+                      onChange = {(event) => this.setState({easygoingPop : parseInt(event.target.value) })}>
+                    </input>
+                    <b>
+                      (min: 1, max: 3)
+                    </b>
+                  </p>
+                  <p>
+                    <label>[Tactful]</label>
+                    <input 
+                      id = 'tactful-population'
+                      type = 'number'
+                      min = '1'
+                      max = '3'
+                      disabled = {(this.state.start) ? 'diabled' : ''}
+                      value = {this.state.tactfulPop}
+                      onChange = {(event) => this.setState({tactfulPop : parseInt(event.target.value) })}>
+                    </input>
+                    <b>
+                      (min: 1, max: 3)
+                    </b>
+                  </p>   
+                  <b>Users</b>
+                  <p>
+                    <label>[RiskTaker]</label>
+                    <input 
+                      id = 'risktaker-population'
+                      type = 'number'
+                      min = '3'
+                      max = '5'
+                      disabled = {(this.state.start) ? 'diabled' : ''}
+                      value = {this.state.riskTakerPop}
+                      onChange = {(event) => this.setState({riskTakerPop : parseInt(event.target.value), })}>
+                    </input>
+                    <b>
+                      (min: 3, max: 5)
+                    </b>
+                  </p>
+                  <p>
+                    <label>[Coward]</label>
+                    <input 
+                      id = 'coward-population'
+                      type = 'number'
+                      min = '2'
+                      max = '5'
+                      disabled = {(this.state.start) ? 'diabled' : ''}
+                      value = {this.state.cowardPop}
+                      onChange = {(event) => this.setState({cowardPop : parseInt(event.target.value) })}>
+                    </input>
+                    <b>
+                      (min: 2, max: 5)
+                    </b>
+                  </p>
+                </div>
                 }
                 { (this.state.currTab === 'Environment') && 
                   <div className = 'Environment'>
@@ -405,6 +427,7 @@ class Sandbox extends Component {
                         type = 'number'
                         min = '80'
                         max = '200'
+                        disabled = {(this.state.start) ? 'diabled' : ''}
                         value = {this.state.userDeposit}
                         onChange = {(event) => this.setState({userDeposit : parseInt(event.target.value) })}>
                       </input>
@@ -419,6 +442,7 @@ class Sandbox extends Component {
                         type = 'number'
                         min = '20'
                         max = '80'
+                        disabled = {(this.state.start) ? 'diabled' : ''}
                         value = {this.state.suggesterDeposit}
                         onChange = {(event) => this.setState({suggesterDeposit : parseInt(event.target.value) })}>
                       </input>
@@ -430,9 +454,9 @@ class Sandbox extends Component {
                 }
                 { (this.state.currTab === 'Description') && 
                   <div className = 'Description'>
-                    <p>
+                    <div>
                       <label>Description</label>
-                      <div className = 'DescriptionContent'>
+                      <p className = 'DescriptionContent'>
                         <br/>
                         <b>Easygoing</b>: Suggester who does not increase service quality even if User punish them.
                         <br/>
@@ -455,14 +479,15 @@ class Sandbox extends Component {
                         <br/>
                         <b>If you want to see detailed data information, <br/>open Inspect element of browser then go console!</b>
                         <br/>
-                      </div>
-                    </p>
+                      </p>
+                    </div>
                   </div>
                 }
                 
               </div>
             <button 
                 id = 'start-simulation'
+                disabled = {(this.state.start)? 'disabled' : ''}
                 onClick = {() => this.clickStartSimulationHandler()}>
                 Start Simulation
             </button>  
@@ -472,14 +497,12 @@ class Sandbox extends Component {
                   Description Tab
             </button>
             <button 
-                  id = 'resetbutton'
+                  id = 'restartbutton'
                   onClick = {() => this.clickResetHandler()}>
-                  Reset Simulation
+                  Restart Simulation
             </button>
           <img className = 'NextButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickNextHandler()} />
           <div className = 'NextButtonText' onClick = {() => this.clickNextHandler()}>Next</div>
-          {/* <img className = 'ResetButtonStyle' src = {Button} alt = {Button} onClick = {() => this.clickResetHandler()} />
-          <div className = 'ResetButtonText' onClick = {() => this.clickResetHandler()}>Reset Simulation</div> */}
       </div>
     )
   }

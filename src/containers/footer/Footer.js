@@ -46,7 +46,7 @@ class Footer extends Component {
     render () {
         return (
             <div className = 'UserPhase0'>
-                <p className = 'Buttons'>
+                <div className = 'Buttons'>
                     <div 
                         className = 'button0'
                         id = 'goto-start-button'
@@ -107,7 +107,7 @@ class Footer extends Component {
                         onClick = {() => this.clickNextHandler(9)}>
                         {/* End */}
                     </div>
-                </p>
+                </div>
             </div>
         )
     }

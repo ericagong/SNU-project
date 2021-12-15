@@ -132,7 +132,7 @@
     background-color: aqua;
 }
 
-#resetbutton{
+#restartbutton{
     position: absolute;
     top: calc(30% + 245px);
     left: calc(41.5% + 450px);

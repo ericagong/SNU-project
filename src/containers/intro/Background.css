@@ -34,12 +34,14 @@
 
 #smartcontract-ideas{
     text-decoration: underline;
-    background-color: rgb(197, 231, 231);
+    color: blue;
+    /* background-color: rgb(197, 231, 231); */
 }
 
 #original-idea{
     text-decoration: underline;
-    background-color: rgb(197, 231, 231);
+    color: blue;
+    /* background-color: rgb(197, 231, 231); */
 }
 
 .ButtonStyle{
