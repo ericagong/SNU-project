@@ -96,8 +96,6 @@ class Sandbox extends Component {
     this.setState({round : 0, setEnv : true})
   }
  
-  
-  // TODO: change to call callMatch()
   callMatch = () => {
     setTimeout(() => {
       this.match()
@@ -105,7 +103,6 @@ class Sandbox extends Component {
   }
 
   match = () => {
-    console.log("M")
     this.RiskTakers.map((user, userIdx)=>{
       if(user[2]>0){
         let candidates = []
@@ -230,7 +227,6 @@ class Sandbox extends Component {
 
     if(this.state.setEnv && this.checkAlive()) {
       this.callMatch()
-      // this.match()
       console.log("match")
       console.log("suggesterDeposit", this.SuggesterDeposit)
       console.log("userDeposit", this.UserDeposit)
@@ -238,6 +234,12 @@ class Sandbox extends Component {
       console.log("SuggesterAlive", this.SuggesterAlive)
       console.log("UserAlive", this.UserAlive)
       console.log("Punish", this.Punish)
+      
+      console.log("check pop")
+      console.log("riskTaker", this.state.riskTakerPop)
+      console.log("cowardPop", this.state.cowardPop)
+      console.log("easygoingPop", this.state.easygoingPop)
+      console.log("tactfulPop", this.state.tactfulPop)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
         let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
@@ -313,7 +315,6 @@ class Sandbox extends Component {
                   {easygoings}
                   {tactfuls}
                 </div>
-                {/* {lines} */}
               </div>
               <button 
                   id = 'population-tab'
@@ -357,8 +358,7 @@ class Sandbox extends Component {
                       <b>
                         (min: 1, max: 3)
                       </b>
-                    </p>
-                    
+                    </p>   
                     <b>Users</b>
                     <p>
                       <label>[RiskTaker]</label>
