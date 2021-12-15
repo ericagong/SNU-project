@@ -14,7 +14,6 @@ const Tactful = (props) => {
                 <img id = 'Tactful-alive-image' alt = {sandbox_tactful} src = {sandbox_tactful}/>}
             {(props.dead === true) &&
                 <img id = 'Tactful-dead-image' alt = {sandbox_dead} src = {sandbox_dead}/>}
-            <img id = 'Coward-dead-punish-image' alt = {sandbox_tactful} src = {sandbox_tactful}/>
             <div className = 'Tactful_Deposit'>
                 {props.deposit}
             </div>

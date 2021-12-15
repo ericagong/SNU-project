@@ -18,7 +18,6 @@ const Coward = (props) => {
                 <img id = 'Coward-dead-reward-image' alt = {sandbox_dead} src = {sandbox_dead}/>}
             {(props.dead === true) && (props.punish === true) &&
                 <img id = 'Coward-dead-punish-image' alt = {sandbox_dead} src = {sandbox_dead}/>}
-            <img id = 'Coward-dead-punish-image' alt = {sandbox_coward} src = {sandbox_coward}/>
             <div className = 'Coward_Deposit'>
                 {props.deposit}
             </div>

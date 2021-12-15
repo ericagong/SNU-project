@@ -13,7 +13,6 @@ const Easygoing = (props) => {
                 <img id = 'Easygoing-alive-image' alt = {sandbox_easygoing} src = {sandbox_easygoing}/>}
             {(props.dead === true) &&
                 <img id = 'Easygoing-dead-image' alt = {sandbox_dead} src = {sandbox_dead}/>}
-            <img id = 'Coward-dead-punish-image' alt = {sandbox_easygoing} src = {sandbox_easygoing}/>
             <div className = 'Easygoing_Deposit'>
                 {props.deposit}
             </div>

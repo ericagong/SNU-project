@@ -205,10 +205,10 @@ class Sandbox extends Component {
 
   clickStartSimulationHandler = () => {
     if(this.state.riskTakerPop <= this.state.easygoingPop + this.state.tactfulPop) {
-      alert('Population of Risk Taker should be larger than that of users. Please adjust population values.')
+      alert('Population of Risk Taker should be larger than that of Suggesters. Please adjust population values.')
     }
     else if(this.state.userDeposit <= this.state.suggesterDeposit) {
-      alert('Population of Risk Taker should be larger than that of users. Please adjust population values.')
+      alert('User Deposit should be larger than that of Suggesters')
     }
     else {
       this.setEnviroment()
@@ -242,19 +242,19 @@ class Sandbox extends Component {
       console.log("tactfulPop", this.state.tactfulPop)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish = {this.Punish[i] ? true : false}  dead = {this.UserAlive[i] ? false : true}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
-        let newCoward = <Coward className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newCoward = <Coward className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish = {this.Punish[i] ? true : false}  dead = {this.UserAlive[i] ? false : true}/>
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
         tactfuls.push(newTactful)
       }      
     }
@@ -274,21 +274,21 @@ class Sandbox extends Component {
       console.log("Punish", this.Punish)
 
       for(let i = 0; i < this.state.riskTakerPop; i++) {
-        let newRiskTaker = <RiskTaker className = {`user${i}`} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newRiskTaker = <RiskTaker className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish = {this.Punish[i] ? true : false}  dead = {this.UserAlive[i] ? false : true}/>
         riskTakers.push(newRiskTaker)
       }
       for(let i = this.state.riskTakerPop; i < this.state.riskTakerPop + this.state.cowardPop; i++) {
-        let newCoward = <Coward className = {`user${i}`} deposit = {this.UserDeposit[i]} punish={this.UserAlive[i]} dead = {this.UserAlive[i]}/>
+        let newCoward = <Coward className = {`user${i}`} connect = {this.Connect[i]} deposit = {this.UserDeposit[i]} punish = {this.Punish[i] ? true : false}  dead = {this.UserAlive[i] ? false : true}/>
         cowards.push(newCoward)
       }
       for(let i = 0; i < this.state.easygoingPop; i++) {
-        let newEasygoing = <Easygoing className = {`suggester${i}`} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newEasygoing = <Easygoing className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
         easygoings.push(newEasygoing)
       }
       for(let i = this.state.easygoingPop; i < this.state.easygoingPop + this.state.tactfulPop; i++) {
-        let newTactful = <Tactful className = {`suggester${i}`} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i]}/>
+        let newTactful = <Tactful className = {`suggester${i}`} id = {i} deposit = {this.SuggesterDeposit[i]} dead = {this.SuggesterAlive[i] ? true : false}/>
         tactfuls.push(newTactful)
-      }      
+      }    
     }
 
     return (

@@ -18,8 +18,6 @@ const RiskTaker = (props) => {
                 <img id = 'RiskTaker-dead-reward-image' alt = {sandbox_dead} src = {sandbox_dead}/>}
             {(props.dead === true) && (props.punish === true) &&
                 <img id = 'RiskTaker-dead-punish-image' alt = {sandbox_dead} src = {sandbox_dead}/>}
-            {/* TODO: delete             */}
-            <img id = 'RiskTaker-dead-punish-image' alt = {sandbox_risktaker} src = {sandbox_risktaker}/>
             <div className = 'RiskTaker_Deposit'>
                 {props.deposit}
             </div>
