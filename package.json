@@ -42,6 +42,7 @@
     },
     "devDependencies": {
         "enzyme-adapter-react-17-updated": "^1.0.2",
-        "enzyme-to-json": "^3.6.2"
+        "enzyme-to-json": "^3.6.2",
+        "gh-pages": "^3.2.3"
     }
 }
