@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/SNU-project/static/css/main.769a8e0e.chunk.css",
+    "main.js": "/SNU-project/static/js/main.8a381da3.chunk.js",
+    "main.js.map": "/SNU-project/static/js/main.8a381da3.chunk.js.map",
+    "runtime-main.js": "/SNU-project/static/js/runtime-main.fdd10b8b.js",
+    "runtime-main.js.map": "/SNU-project/static/js/runtime-main.fdd10b8b.js.map",
+    "static/js/2.80d3e61b.chunk.js": "/SNU-project/static/js/2.80d3e61b.chunk.js",
+    "static/js/2.80d3e61b.chunk.js.map": "/SNU-project/static/js/2.80d3e61b.chunk.js.map",
+    "index.html": "/SNU-project/index.html",
+    "static/css/main.769a8e0e.chunk.css.map": "/SNU-project/static/css/main.769a8e0e.chunk.css.map",
+    "static/js/2.80d3e61b.chunk.js.LICENSE.txt": "/SNU-project/static/js/2.80d3e61b.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/SNU-project/static/media/Background.a6d694e3.png",
+    "static/media/End.css": "/SNU-project/static/media/FuturaHandwritten.dbaf4545.ttf",
+    "static/media/ImageBad.d44e7139.png": "/SNU-project/static/media/ImageBad.d44e7139.png",
+    "static/media/ImageGood.7287548c.png": "/SNU-project/static/media/ImageGood.7287548c.png",
+    "static/media/Terminate1.8c59c221.png": "/SNU-project/static/media/Terminate1.8c59c221.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fdd10b8b.js",
+    "static/js/2.80d3e61b.chunk.js",
+    "static/css/main.769a8e0e.chunk.css",
+    "static/js/main.8a381da3.chunk.js"
+  ]
+}
